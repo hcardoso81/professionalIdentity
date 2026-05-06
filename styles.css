@@ -269,7 +269,7 @@
       gap: 18px;
     }
 
-    @media (max-width: 760px) {
+    @media screen and (max-width: 760px) {
       body {
         background: var(--paper);
         font-size: 10.2pt;
