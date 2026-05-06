@@ -58,9 +58,15 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - MUI X Charts
 - ApexCharts
 - React Router
+- React Query
 - React Hook Form
 - Zod
+- Yup
 - i18next
+- Framer Motion
+- React PDF
+- React Quill
+- Draft.js
 - JavaScript
 - HTML
 - CSS
@@ -70,6 +76,11 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - Node.js
 - NestJS
 - Express
+- MongoDB
+- Mongoose
+- JWT
+- bcrypt
+- Nodemailer
 - PHP
 - Laravel
 - WordPress Plugin API
@@ -119,9 +130,12 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - Vercel
 - AWS
 - AWS S3
+- AWS SDK
 - NGINX
+- PM2
 - Helm/Kubernetes
 - Runtime configuration
+- Winston / CloudWatch logging
 
 ### AI / Integraciones
 
@@ -196,6 +210,7 @@ Resumen de proyectos principales:
 - Insider Newsletters: plugin WordPress para creacion, renderizado y exportacion de newsletters HTML responsive.
 - WP Admin Posts Extended: plugin WordPress para filtros editoriales avanzados y exportacion Excel.
 - Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
+- News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
 - WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
 - CUTI: aplicacion mobile React Native para conference calls corporativas con audio en vivo, Agora RTC, Socket.IO, PDFs y grabaciones.
 - POC Cartas: aplicacion mobile con React Native y Expo para manipulacion interactiva de una baraja espanola.
@@ -203,7 +218,7 @@ Resumen de proyectos principales:
 
 ## Keywords Para LinkedIn / ATS
 
-React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, GraphQL, Apollo, REST API, Node.js, NestJS, Express, WordPress Plugin Development, PHP, Laravel, MySQL, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, AI Assistant, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, API integrations, legacy modernization.
+React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, JWT, WordPress Plugin Development, PHP, Laravel, MySQL, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, AI Assistant, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
 
 ## Tono Profesional Deseado
 

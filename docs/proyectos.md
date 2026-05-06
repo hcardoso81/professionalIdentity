@@ -242,6 +242,61 @@ Version corta:
 
 Desarrollo y mantenimiento de una aplicacion administrativa React + TypeScript para gestion de expensas, consorcios, empleados, liquidaciones, pagos y soporte interno. Implementacion de Clean Architecture, CQRS y Presenter Pattern, integracion con Apollo GraphQL, subscriptions en tiempo real, Material UI, MUI DataGrid, React Router e i18next.
 
+### News Kiosk
+
+Plataforma web para la gestion, busqueda, analisis y visualizacion de articulos y noticias.
+
+Resumen:
+
+News Kiosk permite explorar contenido periodistico por sectores, industrias, fuentes, terminos relevantes, companias y metricas. Ofrece una experiencia tipo dashboard para filtrar articulos, visualizar detalle, detectar topicos, resaltar terminos, guardar busquedas favoritas y compartir resultados por email o enlaces publicos.
+
+El proyecto esta compuesto por una aplicacion frontend moderna en React y TypeScript, y una API REST desarrollada con Node.js, Express y MongoDB. La interfaz incluye autenticacion, rutas protegidas, dashboards, vistas de articulos, gestion de busquedas guardadas, emails, navegacion por topicos, lectura de PDFs/contenido plano y componentes reutilizables basados en Material UI.
+
+Arquitectura frontend:
+
+El frontend esta organizado con separacion por capas:
+
+- Presentation: paginas, layouts, componentes, temas, contextos y rutas.
+- Domain: modelos, repositorios y casos de uso.
+- Data: DTOs, datasources y repositorios concretos para consumir APIs.
+
+Para el manejo de datos asincronicos utiliza React Query, mientras que Axios centraliza la comunicacion HTTP con servicios backend.
+
+Arquitectura backend:
+
+El backend expone una API REST modular organizada por rutas, controladores, modelos y middlewares. Gestiona entidades como usuarios, sesiones, articulos, topicos, terminos, sectores, fuentes, busquedas, carpetas, templates, historial, importaciones y contenido compartido.
+
+Utiliza Mongoose para modelado y persistencia en MongoDB, JWT para autenticacion, Nodemailer para envio de emails, Winston/CloudWatch para logging y Docker/PM2 para despliegue y ejecucion en entornos productivos.
+
+Funcionalidades:
+
+- Autenticacion y rutas protegidas.
+- Dashboards de exploracion y analisis de noticias.
+- Busqueda y filtrado por sectores, industrias, fuentes, companias y terminos clave.
+- Visualizacion de detalle de articulos.
+- Deteccion y navegacion por topicos.
+- Resaltado de terminos relevantes.
+- Gestion de busquedas favoritas.
+- Compartido de resultados por email o enlaces publicos.
+- Lectura de PDFs y contenido plano.
+- Gestion de templates, historial, importaciones y contenido compartido.
+
+Stack:
+
+Frontend: React 18, TypeScript, React Router, Material UI, Emotion, React Query, Axios, React Hook Form, Yup, i18next, Framer Motion, React PDF, React Quill, Draft.js.
+
+Backend: Node.js, Express, MongoDB, Mongoose, JWT, bcrypt, Nodemailer, AWS SDK, Winston, PM2.
+
+Infraestructura y herramientas: Docker, Docker Compose, GitLab CI/CD, ESLint, Prettier, npm/yarn.
+
+Version para LinkedIn/CV:
+
+Desarrolle y mantuve una plataforma full stack de analisis y gestion de noticias, orientada a la busqueda avanzada, categorizacion, visualizacion y seguimiento de articulos por sectores, industrias, fuentes, companias y terminos clave. Implemente una arquitectura frontend en React + TypeScript separada por capas de presentacion, dominio y datos, integrando React Query, Axios, Material UI, rutas protegidas, autenticacion JWT, dashboards interactivos, lectura de PDFs y gestion de busquedas guardadas. En backend trabaje con Node.js, Express, MongoDB y Mongoose, disenando APIs REST modulares para articulos, usuarios, sesiones, terminos, fuentes, busquedas, templates, historial, importaciones y funcionalidades de compartido/envio por email. El proyecto incluye despliegue con Docker/PM2, logging con Winston/CloudWatch y automatizacion CI/CD con GitLab.
+
+Version corta:
+
+Plataforma full stack para analisis, busqueda y gestion de noticias. Frontend en React + TypeScript con arquitectura por capas, Material UI, React Query y Axios. Backend REST en Node.js/Express con MongoDB/Mongoose, autenticacion JWT, envio de emails, logging y despliegue con Docker/PM2.
+
 ### WhatsApp AI Tournament Assistant
 
 Asistente inteligente para torneos amateur de futbol que permite a participantes y organizadores consultar informacion en lenguaje natural directamente desde WhatsApp.
