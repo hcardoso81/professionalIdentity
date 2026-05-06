@@ -7,7 +7,6 @@ Repositorio personal para documentar, mantener y publicar mi CV profesional, jun
 Version publicada en GitHub Pages:
 
 - CV in English: https://hcardoso81.github.io/identityProfesional/
-- English direct URL: https://hcardoso81.github.io/identityProfesional/cv-hernan-cardoso-en.html
 - CV en espanol: https://hcardoso81.github.io/identityProfesional/cv-hernan-cardoso-es.html
 
 ## Perfil
@@ -28,8 +27,8 @@ Experiencia destacada:
 ```text
 .
 |-- index.html                         # CV online en ingles por defecto
-|-- cv-hernan-cardoso-en.html          # CV online en ingles
 |-- cv-hernan-cardoso-es.html          # CV online en espanol
+|-- styles.css                         # Estilos compartidos del CV online
 |-- AGENTS.md                          # Manual de identidad profesional para IA
 |-- README.md                          # Descripcion del repositorio
 `-- docs/
