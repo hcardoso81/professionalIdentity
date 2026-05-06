@@ -328,14 +328,4 @@
       .language-switch {
         display: none;
       }
-
-      a {
-        color: inherit;
-      }
-
-      .skills,
-      .project-list li,
-      .project-card {
-        background: #ffffff;
-      }
     }
