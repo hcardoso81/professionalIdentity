@@ -6,9 +6,9 @@ Repositorio personal para documentar, mantener y publicar mi CV profesional, jun
 
 Version publicada en GitHub Pages:
 
+- CV in English: https://hcardoso81.github.io/identityProfesional/
+- English direct URL: https://hcardoso81.github.io/identityProfesional/cv-hernan-cardoso-en.html
 - CV en espanol: https://hcardoso81.github.io/identityProfesional/cv-hernan-cardoso-es.html
-- CV in English: https://hcardoso81.github.io/identityProfesional/cv-hernan-cardoso-en.html
-- Selector de idioma: https://hcardoso81.github.io/identityProfesional/
 
 ## Perfil
 
@@ -27,13 +27,12 @@ Experiencia destacada:
 
 ```text
 .
-|-- index.html                         # Entrada para GitHub Pages
+|-- index.html                         # CV online en ingles por defecto
+|-- cv-hernan-cardoso-en.html          # CV online en ingles
+|-- cv-hernan-cardoso-es.html          # CV online en espanol
 |-- AGENTS.md                          # Manual de identidad profesional para IA
 |-- README.md                          # Descripcion del repositorio
 `-- docs/
-    |-- index.html                     # Selector de idioma
-    |-- cv-hernan-cardoso-en.html      # CV online en ingles
-    |-- cv-hernan-cardoso-es.html      # CV online en espanol
     |-- cv-hernan-cardoso-en.md        # Version Markdown del CV en ingles
     |-- experiencia.md                 # Timeline profesional
     `-- proyectos.md                   # Detalle de proyectos
@@ -52,7 +51,7 @@ Experiencia destacada:
 
 Este sitio esta publicado con GitHub Pages desde la rama `main`.
 
-La raiz del sitio carga `index.html`, que redirige al selector de idioma dentro de `docs/`.
+La raiz del sitio carga `index.html`, que contiene la version en ingles del CV por defecto. Desde el switch superior se puede acceder a la version en espanol.
 
 ## Uso Del Contenido
 
