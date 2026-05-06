@@ -52,6 +52,16 @@ Este sitio esta publicado con GitHub Pages desde la rama `main`.
 
 La raiz del sitio carga `index.html`, que contiene la version en ingles del CV por defecto. Desde el switch superior se puede acceder a la version en espanol.
 
+## Exportacion A PDF
+
+Para generar PDFs desde los HTML del CV:
+
+- Exportar sin headers/footers automaticos del navegador.
+- En Edge/Chrome headless usar `--no-pdf-header-footer`.
+- Mantener los estilos de impresion definidos en `styles.css`.
+- Evitar titulos de seccion separados de su contenido, especialmente en experiencia profesional.
+- Verificar que el PDF final no incluya fecha, hora, URL local `file:///...` ni metadata visible de impresion.
+
 ## Uso Del Contenido
 
 Este repositorio funciona como fuente de verdad para:

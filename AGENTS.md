@@ -314,3 +314,17 @@ English: Upper-Intermediate in progress. Able to work in technical environments,
 - Redacta una version breve y contundente del proyecto Portal de Aliados para LinkedIn.
 - Sugiere una forma de explicar mi transicion desde WordPress/PHP hacia React/TypeScript sin que parezca un cambio improvisado.
 - Genera respuestas para entrevistas sobre arquitectura frontend, integracion de APIs, legacy modernization y AI integrations usando mi experiencia real.
+
+## Reglas Para Exportar CV A PDF
+
+Cuando se genere un PDF desde HTML:
+
+- No incluir headers/footers automaticos del navegador.
+- No permitir que aparezcan fecha, hora, titulo del documento, URL local `file:///...` o numeros de pagina agregados por el navegador.
+- Si se usa Edge/Chrome headless, usar el flag `--no-pdf-header-footer`.
+- Mantener el formato visual del HTML: cabecera en dos columnas, cards en grilla y colores suaves de secciones.
+- El responsive mobile debe aplicar solo a pantalla, no a impresion. Usar `@media screen and (max-width: ...)` para mobile.
+- Evitar que un titulo de seccion quede separado de su contenido al final de una pagina.
+- Para secciones principales largas, forzar saltos controlados con clases especificas, por ejemplo `.experience-section { break-before: page; page-break-before: always; }`.
+- Agrupar titulos con sus secciones usando `break-inside: avoid`, `page-break-inside: avoid` y saltos explicitos cuando sea necesario.
+- Antes de entregar el PDF, validar que el texto extraido no contenga `file://`, fecha/hora de impresion ni metadata visible del navegador.

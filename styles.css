@@ -328,4 +328,10 @@
       .language-switch {
         display: none;
       }
+
+      .experience-section {
+        break-before: page;
+        page-break-before: always;
+        margin-top: 0;
+      }
     }
