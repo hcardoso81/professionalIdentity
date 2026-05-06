@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Hernan Federico Cardoso - Senior Full Stack Engineer CV in English and Spanish.">
+  <title>Hernan Federico Cardoso - CV</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5c6b7a;
+      --accent: #176b87;
+      --accent-strong: #0f4c68;
+      --paper: #ffffff;
+      --canvas: #f3f7fa;
+      --line: #d6e1ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(23, 107, 135, 0.18), transparent 34rem),
+        linear-gradient(180deg, #f8fbfd 0%, var(--canvas) 100%);
+      font-family: Inter, "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    main {
+      width: min(100%, 640px);
+      padding: 36px;
+      background: var(--paper);
+      border: 1px solid rgba(15, 76, 104, 0.12);
+      border-radius: 10px;
+      box-shadow: 0 22px 70px rgba(23, 32, 51, 0.12);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 7vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .headline {
+      color: var(--accent-strong);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent-strong);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    a.primary {
+      color: #ffffff;
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hernan Federico Cardoso</h1>
+    <p class="headline">Senior Full Stack Engineer | React &amp; TypeScript | Clean Architecture</p>
+    <p>Choose a language to view the online CV.</p>
+    <div class="actions" aria-label="Language options">
+      <a class="primary" href="./cv-hernan-cardoso-en.html" hreflang="en">English CV</a>
+      <a href="./cv-hernan-cardoso-es.html" hreflang="es">CV en Español</a>
+    </div>
+  </main>
+</body>
+</html>
