@@ -129,6 +129,8 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - OpenAI-compatible APIs
 - Groq
 - Twilio WhatsApp API
+- Agora RTC
+- Socket.IO
 - Function calling / tools
 - Conversational flows
 - Google Docs as no-code CMS
@@ -137,6 +139,9 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 
 - React Native
 - Expo
+- React Navigation
+- React Native WebView
+- AsyncStorage
 - react-native-svg
 - Mobile-first UI
 
@@ -192,6 +197,7 @@ Resumen de proyectos principales:
 - WP Admin Posts Extended: plugin WordPress para filtros editoriales avanzados y exportacion Excel.
 - Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
 - WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
+- CUTI: aplicacion mobile React Native para conference calls corporativas con audio en vivo, Agora RTC, Socket.IO, PDFs y grabaciones.
 - POC Cartas: aplicacion mobile con React Native y Expo para manipulacion interactiva de una baraja espanola.
 - Portal de Aliados: portal B2B React + TypeScript para gestion de eventos, ventas, pagos, dashboards y reportes.
 

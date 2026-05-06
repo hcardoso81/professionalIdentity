@@ -277,6 +277,56 @@ Version corta:
 
 Construi un asistente de IA por WhatsApp para torneos de futbol amateur, desarrollado con NestJS, TypeScript, Twilio, Groq/OpenAI-compatible APIs, Google Docs y CopaFacil API. El bot entiende consultas en lenguaje natural, gestiona multiples torneos, responde FAQs desde una base editable y consulta datos en vivo para fixture, resultados, posiciones, jugadores y rankings.
 
+### CUTI - Corporate Conference Calls
+
+Aplicacion mobile orientada a la gestion y participacion en conference calls corporativas, con foco en la interaccion entre empresas e inversores.
+
+Resumen:
+
+CUTI permite registrar usuarios con distintos perfiles, autenticar sesiones, crear llamadas, listar y buscar conferencias, participar en llamadas en vivo por audio, gestionar speakers/audience, levantar la mano para solicitar participacion, visualizar documentos PDF asociados y acceder a grabaciones posteriores.
+
+El proyecto integra comunicacion en tiempo real mediante Agora RTC para audio en vivo y Socket.IO para sincronizacion de estado de las llamadas, actualizaciones de participantes y eventos de moderacion. Ademas, consume una API REST para autenticacion, gestion de usuarios, creacion de calls, obtencion de tokens Agora, busqueda, edicion de perfil y administracion de participantes.
+
+Funcionalidades:
+
+- Registro y autenticacion de usuarios.
+- Gestion de perfiles empresa/inversor.
+- Creacion, listado y busqueda de conference calls.
+- Participacion en llamadas en vivo por audio mediante Agora RTC.
+- Sincronizacion realtime con Socket.IO.
+- Gestion de speakers y audience.
+- Accion de levantar la mano para solicitar participacion.
+- Visualizacion de documentos PDF asociados.
+- Reproduccion de grabaciones posteriores.
+- Edicion de perfil y avatar.
+- Persistencia de sesion/token con AsyncStorage.
+- Consumo de API REST con Axios.
+- Manejo centralizado de errores.
+
+Arquitectura:
+
+La aplicacion esta organizada con una separacion clara por capas, cercana a Clean Architecture:
+
+- `ui`: pantallas, componentes reutilizables, theme, navegacion y logica de presentacion.
+- `core/domain`: entidades de dominio, contratos, validadores, errores y tipos principales.
+- `core/useCases`: casos de uso para login, registro, creacion de calls, busqueda, moderacion y gestion de usuarios.
+- `core/infrastructure`: implementaciones concretas para HTTP, almacenamiento local, formateo de respuestas, manejo de errores y servicios externos.
+- `extensions` / `ui/agora`: integracion tecnica con Agora RTC, permisos nativos y funciones de audio.
+
+Esta estructura permite mantener la logica de negocio desacoplada de la interfaz y de los proveedores externos, haciendo que las pantallas consuman casos de uso en lugar de interactuar directamente con la API.
+
+Stack:
+
+React Native 0.68, TypeScript, React 17, React Navigation Native Stack, Agora RTC SDK, Socket.IO Client, Axios, AsyncStorage, React Native Config, React Native WebView, React Native Image Crop Picker, React Native Simple Audio Player, Sound Player, Jest, ESLint, Android, iOS.
+
+Version para LinkedIn:
+
+Desarrolle una aplicacion mobile en React Native y TypeScript para la gestion de conference calls corporativas entre empresas e inversores. La app incluye autenticacion, registro de perfiles, creacion y busqueda de llamadas, participacion en audio en vivo mediante Agora RTC, sincronizacion en tiempo real con Socket.IO, gestion de speakers/audience, visualizacion de PDFs, reproduccion de grabaciones y edicion de perfil. Implemente una arquitectura por capas inspirada en Clean Architecture, separando UI, casos de uso, dominio e infraestructura para mejorar mantenibilidad, escalabilidad y testabilidad.
+
+Version para CV:
+
+Aplicacion mobile de conference calls corporativas desarrollada con React Native, TypeScript, Agora RTC, Socket.IO y Axios. Implementa autenticacion, registro de usuarios, gestion de perfiles empresa/inversor, creacion y busqueda de llamadas, audio en vivo, moderacion de participantes, visualizacion de documentos PDF y reproduccion de grabaciones. Arquitectura modular por capas con separacion entre UI, dominio, casos de uso e infraestructura, integrando API REST, almacenamiento local con AsyncStorage y manejo centralizado de errores.
+
 ### POC Cartas - Baraja Espanola
 
 Prueba de concepto mobile para la manipulacion interactiva de una baraja espanola configurable.
