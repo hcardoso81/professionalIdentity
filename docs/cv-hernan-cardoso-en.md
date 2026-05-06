@@ -13,7 +13,7 @@ Senior Full Stack Engineer with 18+ years of experience building, maintaining an
 
 In recent years, I have focused on React, TypeScript and frontend architecture, working on complex dashboards, B2B portals and business workflows using Clean Architecture, Hexagonal Architecture, CQRS and Presenter Pattern.
 
-I also have a strong background in PHP, WordPress plugin development, Node.js, REST/GraphQL APIs, Docker-based deployments and legacy system modernization. I am experienced in collaborating with international teams and currently continue improving my English for technical and professional environments.
+I also have a strong background in PHP, WordPress plugin development, Node.js, REST/GraphQL APIs, Docker-based deployments and legacy system modernization. I am recognized for technical ownership, clear communication, adaptability and a collaborative mindset with teams and clients.
 
 ## Technical Skills
 
@@ -35,6 +35,13 @@ Mobile and Realtime: Agora RTC, React Navigation, AsyncStorage, React Native Web
 
 AI and Integrations: LLM integrations, OpenAI-compatible APIs, Groq, Twilio WhatsApp API, function calling/tools, Mailchimp API, LinkedIn OAuth, Google reCAPTCHA.
 
+## Professional Strengths
+
+- Leadership and ownership: experienced leading teams, coordinating delivery, removing blockers and taking responsibility for product quality and technical outcomes.
+- Communication and client-facing work: comfortable explaining technical concepts, aligning with stakeholders, presenting demos and collaborating with clients and cross-functional teams.
+- Problem solving: pragmatic and adaptable approach to analyze problems, propose alternatives and balance technical quality, time and business needs.
+- Autonomy and teamwork: proactive, reliable and able to work without close supervision while keeping a positive, collaborative and supportive team dynamic.
+
 ## Professional Experience
 
 ### 404 Crafters - Senior Frontend / Full Stack Engineer
@@ -46,7 +53,7 @@ https://www.proyecto404.com/
 - Define and implement UI structures for administrative dashboards, using Material UI dashboard patterns as a design and interaction reference.
 - Work on layered frontend architectures separating presentation, domain, use cases, infrastructure and data access.
 - Integrate REST and GraphQL APIs, authentication flows, protected routes, dashboards, reports and complex business workflows.
-- Collaborate with international clients, including English-speaking environments.
+- Collaborate with international clients, including English-speaking environments, product discussions and demo presentations.
 
 Key projects:
 
@@ -124,8 +131,8 @@ Built a React Native and Expo proof of concept for interactive manipulation of a
 
 ## Education
 
-Software Engineering - UNICEN  
-Graduated in 2015
+Software Engineer Degree - UNICEN  
+Graduated, 2015
 
 ## Languages
 

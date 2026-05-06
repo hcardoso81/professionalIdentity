@@ -30,6 +30,11 @@ Fortalezas diferenciales:
 - Experiencia en dashboards, paneles administrativos, reportes, exportaciones y flujos operativos.
 - Exposicion a AI/LLM aplicada a productos conversacionales.
 - Experiencia colaborando con equipos y clientes internacionales.
+- Liderazgo, ownership tecnico y capacidad para coordinar equipos y remover bloqueos.
+- Comunicacion clara con perfiles tecnicos, producto, clientes y audiencias no tecnicas.
+- Capacidad para explicar conceptos tecnicos con paciencia y presentar demos.
+- Perfil pragmatico, adaptable, proactivo y orientado a resolver problemas.
+- Autonomia para trabajar sin supervision cercana, priorizar tareas relevantes y cumplir deadlines.
 
 ## Headline Base
 
@@ -270,6 +275,7 @@ Cuando se redacte contenido para LinkedIn o CV, priorizar:
 - Producto y negocio.
 - Trabajo en sistemas productivos.
 - Colaboracion internacional.
+- Liderazgo calmo, comunicacion clara, ownership y criterio para resolver problemas.
 
 Evitar:
 
@@ -277,6 +283,21 @@ Evitar:
 - Listas enormes sin contexto.
 - Presentar proyectos como ejercicios si fueron soluciones funcionales o POCs con arquitectura real.
 - Minimizar experiencia legacy: convertirla en ventaja de modernizacion y criterio tecnico.
+
+## Soft Skills / Recomendaciones
+
+Las recomendaciones de colegas, clientes y lideres destacan patrones consistentes:
+
+- Adaptabilidad ante proyectos con cambios constantes.
+- Refactorizacion y mejora de estructuras frontend aplicando Clean Code.
+- Buena disposicion, optimismo y aporte positivo al equipo.
+- Compromiso, colaboracion y disposicion para ayudar.
+- Liderazgo, organizacion y gestion eficiente de proyectos.
+- Vision estrategica, empatia y orientacion a soluciones.
+- Pragmatismo para analizar problemas desde distintas aristas y proponer alternativas.
+- Capacidad para balancear necesidades de equipo, tiempo, costos y calidad.
+- Proactividad, orientacion a objetivos y capacidad para ponerse del lado del cliente.
+- Responsabilidad, calidad tecnica y valor humano.
 
 ## Ingles
 
