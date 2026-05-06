@@ -161,42 +161,79 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 
 ## Experiencia Destacada
 
-### 404 Crafters - Senior Frontend Engineer
+### 404 Crafters - Senior Frontend Engineer / Full Stack Engineer
 
-Periodo sugerido: 2023 - presente
+Periodo: noviembre 2023 - actualidad
 
 - Desarrollo de interfaces administrativas complejas con React, TypeScript y Material UI.
 - Integracion de APIs REST y GraphQL para flujos de datos de alto uso operativo.
 - Aplicacion de Clean Architecture, CQRS y Presenter Pattern para mejorar mantenibilidad.
-- Participacion en productos B2B, dashboards, reportes, gestion de usuarios, eventos y pagos.
+- Participacion en productos B2B, dashboards, reportes, gestion de usuarios, eventos, pagos, noticias y expensas.
+- Definicion y construccion de UI tomando como referencia patrones del dashboard de Material UI.
 - Colaboracion con clientes y equipos internacionales en contextos de comunicacion tecnica en ingles.
 - Participacion en flujos de CI/CD, despliegues Dockerizados y configuraciones cloud.
 
+Proyectos asociados:
+
+- News Kiosk: noviembre 2023 - noviembre 2024.
+- Portal de Aliados: enero 2025 - noviembre 2025.
+- Portal Expensas Admins: noviembre 2025 - actualidad.
+
 ### Doppler - Senior WordPress Developer
 
-Periodo sugerido: 2013 - 2023
+Periodo: abril 2013 - febrero 2023
 
-- Desarrollo y mantenimiento de plataformas WordPress de alto trafico.
-- Desarrollo de plugins personalizados para automatizar flujos editoriales, captacion de leads, popups, newsletters y reportes.
+- Encargado de sitios institucionales de la empresa, incluyendo mantenimiento y evolucion de 5 sitios WordPress.
+- Desarrollo de features para el area de marketing, pedidos internos e integraciones.
 - Integracion con APIs externas y servicios de marketing.
 - Gestion de migraciones, mantenimiento de hosting, configuraciones NGINX y mejoras de performance.
 - Participacion en GOEMMS, uno de los eventos de marketing mas relevantes de Latinoamerica.
 
 ### Freelance / Growth Period
 
-Periodo sugerido: 2023 - 2024
+Periodo: febrero 2023 - noviembre 2023
 
 - Profundizacion en React, Node.js, React Native y Expo.
-- Desarrollo de pruebas de concepto mobile y backend REST con TypeScript.
-- Exploracion de integraciones con AI, LLMs y asistentes conversacionales.
-- Mejora continua de ingles tecnico hacia entorno B2.
+- Desarrollo freelance en CUTI, aplicacion mobile con React Native, TypeScript, Agora RTC y Socket.IO.
+- Aprendizaje autodidacta de React, TypeScript, Laravel, arquitectura hexagonal y clean code.
+- Inicio de cursos de ingles.
 
-### Avatar / Intercomgi
+### Freelance / IntermarketFlow
+
+Periodo: 2024 - actualidad
+
+- Trabajo freelance en intermarketflow.com, sitio orientado a analisis intermarket, tecnico y macroeconomico aplicado a mercados financieros.
+- Desarrollo del plugin SEO Content Locker para monetizacion, captacion de leads y control de acceso a contenido premium.
+- Mantenimiento y tareas evolutivas sobre el sitio WordPress.
+
+### Insider Latam / Insider
+
+Periodo: 2023 - actualidad
+
+- Mantenimiento del portal de noticias insiderlatam.com.
+- Migracion del sitio WordPress a PHP 8.
+- Desarrollo de plugins WordPress internos como newsletters, publicacion en LinkedIn, popups y mejoras del admin editorial.
+- Trabajo sobre necesidades editoriales, marketing, exportacion de contenido y automatizacion de flujos.
+
+### Intercomgi - Scrum Master / Frontend Developer
+
+Periodo: abril 2012 - abril 2013
+
+- Tareas de Scrum Master y desarrollo frontend en aplicacion web.
+- Trabajo con Backbone.js, JavaScript, MySQL y tecnologias web.
+
+### Avatar - Senior PHP Developer / Project Lead / Scrum Master
+
+Periodo: marzo 2008 - junio 2012
 
 - Liderazgo tecnico y coordinacion de equipos de desarrollo.
 - Entrega de plataformas web para clientes enterprise.
-- Trabajo con marcas y organizaciones como Mastercard, Disney, Coca-Cola y Banco Nacion.
+- Desarrollo y mantenimiento de sitios PHP para clientes de Latinoamerica.
+- Trabajo con marcas y organizaciones como Greenpeace Latinoamerica, Mastercard, Banco Nacion Argentina, Fashion TV Project Runway Latinoamerica, Disney Highway Zapping Zone Latinoamerica, Coca-Cola, Sherwin Williams y Telcosur.
+- Coordinacion de equipo, seguimiento de calidad y responsabilidad sobre productos entregados.
 - Participacion como Scrum Master y referente tecnico.
+
+El detalle cronologico extendido esta documentado en [docs/experiencia.md](docs/experiencia.md).
 
 ## Proyectos Clave
 

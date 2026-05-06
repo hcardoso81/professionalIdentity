@@ -8,6 +8,13 @@ Este documento contiene el detalle de proyectos para usar como fuente de verdad 
 
 Plugin personalizado para WordPress orientado a monetizacion, captacion de leads y control de acceso a contenido premium.
 
+Contexto:
+
+- Cliente/proyecto: IntermarketFlow.
+- Sitio: intermarketflow.com.
+- Periodo: freelance, 2024 - actualidad.
+- Dominio: analisis intermarket, tecnico y macroeconomico aplicado a mercados financieros.
+
 Resumen:
 
 Desarrolle una primera version funcional de SEO Content Locker, un plugin que permite bloquear secciones de articulos mediante shortcode, mostrar un modal de suscripcion, validar usuarios por email, restaurar sesiones existentes y limitar abusos mediante control por IP, expiracion temporal de acceso y Google reCAPTCHA.
@@ -55,6 +62,12 @@ Desarrolle un plugin WordPress personalizado para bloquear contenido SEO-friendl
 ### WP2LinkedIn
 
 Plugin WordPress orientado a publicar manualmente entradas de WordPress en una pagina de empresa de LinkedIn.
+
+Contexto:
+
+- Cliente/proyecto: Insider.
+- Sitio relacionado: insiderlatam.com.
+- Periodo: 2024 - 2025.
 
 Resumen:
 
@@ -106,6 +119,12 @@ Plugin administrativo liviano y especifico para conectar WordPress con una pagin
 
 Plugin personalizado para WordPress que permite administrar y mostrar un popup de bienvenida configurable en el frontend del sitio.
 
+Contexto:
+
+- Cliente/proyecto: Insider.
+- Sitio relacionado: insiderlatam.com.
+- Periodo: 2024 - 2025.
+
 Resumen:
 
 El plugin permite activar o desactivar el popup desde el panel de administracion, definir una imagen, descripcion, enlace asociado, retraso de aparicion y frecuencia de visualizacion mediante reglas como modo automatico o modo manual basado en cookies.
@@ -141,6 +160,12 @@ Desarrolle Welcome Popup Manager, un plugin personalizado para WordPress que per
 ### Insider Newsletters
 
 Plugin personalizado para WordPress orientado a centralizar la creacion, administracion y exportacion de newsletters y banners desde el panel de administracion.
+
+Contexto:
+
+- Cliente/proyecto: Insider.
+- Sitio relacionado: insiderlatam.com.
+- Periodo: 2024 - 2025.
 
 Resumen:
 
@@ -179,6 +204,12 @@ Desarrolle un plugin personalizado para WordPress orientado a la gestion integra
 
 Plugin personalizado para WordPress orientado a mejorar la gestion editorial dentro del panel administrativo.
 
+Contexto:
+
+- Cliente/proyecto: Insider.
+- Sitio relacionado: insiderlatam.com.
+- Periodo: 2024 - 2025.
+
 Resumen:
 
 El proyecto extiende la pantalla nativa de listado de posts agregando filtros avanzados por etiquetas, integracion con filtros existentes de categoria, fecha y busqueda, y exportacion de resultados filtrados a Excel.
@@ -211,6 +242,13 @@ Plugin WordPress personalizado para mejorar la gestion editorial del backend, ag
 ### Portal Expensas Admins
 
 Aplicacion web administrativa para la gestion integral de consorcios y expensas.
+
+Contexto:
+
+- Compania: 404 Crafters.
+- Periodo: noviembre 2025 - actualidad.
+- Rol: Senior Frontend Engineer / Full Stack Engineer.
+- Participacion: definicion general de UI tomando como guia el dashboard de Material UI, desarrollo y mantenimiento de modulos administrativos.
 
 Resumen:
 
@@ -245,6 +283,13 @@ Desarrollo y mantenimiento de una aplicacion administrativa React + TypeScript p
 ### News Kiosk
 
 Plataforma web para la gestion, busqueda, analisis y visualizacion de articulos y noticias.
+
+Contexto:
+
+- Compania: 404 Crafters.
+- Periodo: noviembre 2023 - noviembre 2024.
+- Cliente: cliente nativo de Estados Unidos.
+- Participacion: desarrollo full stack y definicion/planteo de UI.
 
 Resumen:
 
@@ -336,6 +381,12 @@ Construi un asistente de IA por WhatsApp para torneos de futbol amateur, desarro
 
 Aplicacion mobile orientada a la gestion y participacion en conference calls corporativas, con foco en la interaccion entre empresas e inversores.
 
+Contexto:
+
+- Modalidad: freelance / periodo de crecimiento profesional.
+- Periodo: febrero 2023 - noviembre 2023.
+- Foco: aprendizaje y aplicacion de React Native, TypeScript, arquitectura limpia e integraciones realtime.
+
 Resumen:
 
 CUTI permite registrar usuarios con distintos perfiles, autenticar sesiones, crear llamadas, listar y buscar conferencias, participar en llamadas en vivo por audio, gestionar speakers/audience, levantar la mano para solicitar participacion, visualizar documentos PDF asociados y acceder a grabaciones posteriores.
@@ -386,6 +437,12 @@ Aplicacion mobile de conference calls corporativas desarrollada con React Native
 
 Prueba de concepto mobile para la manipulacion interactiva de una baraja espanola configurable.
 
+Contexto:
+
+- Modalidad: proyecto autodidacta / aprendizaje continuo.
+- Periodo: 2025 - actualidad.
+- Foco: practica mobile con Expo, React Native, TypeScript, arquitectura hexagonal e interacciones tactiles.
+
 Resumen:
 
 El proyecto permite simular una mesa de juego donde el mazo comienza apilado boca abajo, las cartas pueden arrastrarse desde el mazo, soltarse libremente sobre la mesa, reposicionarse, superponerse dinamicamente y voltearse mediante doble toque o doble clic.
@@ -414,6 +471,12 @@ Arquitectura hexagonal, separacion de dominio y presentacion, casos de uso puros
 ### Portal de Aliados
 
 Portal web administrativo y de inteligencia de negocios para aliados de Fanki.
+
+Contexto:
+
+- Compania: 404 Crafters.
+- Periodo: enero 2025 - noviembre 2025.
+- Participacion: desarrollo de producto y definicion general de UI.
 
 Resumen:
 
