@@ -34,7 +34,8 @@ Experiencia destacada:
 `-- docs/
     |-- cv-hernan-cardoso-en.md        # Version Markdown del CV en ingles
     |-- experiencia.md                 # Timeline profesional
-    `-- proyectos.md                   # Detalle de proyectos
+    |-- proyectos.md                   # Detalle de proyectos
+    `-- plugins-wordpress.md           # Prompt generico para plugins WordPress
 ```
 
 ## Proyectos Destacados
@@ -71,4 +72,5 @@ Este repositorio funciona como fuente de verdad para:
 - Portfolio profesional.
 - Preparacion de entrevistas.
 - Prompts para herramientas de IA.
+- Prompt base para crear plugins WordPress personalizados.
 - Documentacion de proyectos y experiencia.
