@@ -244,6 +244,12 @@ El detalle cronologico extendido esta documentado en [docs/experiencia.md](docs/
 
 Los proyectos detallados estan documentados en [docs/proyectos.md](docs/proyectos.md).
 
+Para crear o documentar plugins WordPress personalizados, usar tambien [docs/plugins-wordpress.md](docs/plugins-wordpress.md). En los headers de plugins nuevos, usar como datos base:
+
+- Author: Hernan Cardoso
+- Author URI: https://www.linkedin.com/in/cardosohernan/
+- CV online: https://hcardoso81.github.io/professionalIdentity/
+
 Resumen de proyectos principales:
 
 - SEO Content Locker: plugin WordPress para bloqueo de contenido, captacion de leads, Mailchimp, reCAPTCHA, control por IP y panel administrativo.

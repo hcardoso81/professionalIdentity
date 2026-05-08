@@ -15,6 +15,9 @@ Completar esta seccion al iniciar un plugin nuevo:
 - Namespace:
 - Text domain:
 - Version:
+- Author: Hernan Cardoso
+- Author URI: https://www.linkedin.com/in/cardosohernan/
+- CV online: https://hcardoso81.github.io/professionalIdentity/
 - Objetivo:
 - Shortcodes:
 - CPTs:
@@ -156,7 +159,8 @@ Ejemplo:
  * Plugin Name: Plugin Name
  * Description: Plugin description.
  * Version: 1.0.0
- * Author: Author Name
+ * Author: Hernan Cardoso
+ * Author URI: https://www.linkedin.com/in/cardosohernan/
  * Text Domain: plugin-name
  */
 
