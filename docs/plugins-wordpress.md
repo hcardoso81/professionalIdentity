@@ -15,9 +15,6 @@ Completar esta seccion al iniciar un plugin nuevo:
 - Namespace:
 - Text domain:
 - Version:
-- Author: Hernan Cardoso
-- Author URI: https://www.linkedin.com/in/cardosohernan/
-- CV online: https://hcardoso81.github.io/professionalIdentity/
 - Objetivo:
 - Shortcodes:
 - CPTs:
@@ -161,6 +158,7 @@ Ejemplo:
  * Version: 1.0.0
  * Author: Hernan Cardoso
  * Author URI: https://www.linkedin.com/in/cardosohernan/
+ * CV online: https://hcardoso81.github.io/professionalIdentity/
  * Text Domain: plugin-name
  */
 
@@ -406,6 +404,11 @@ Sanitizacion:
 - `absint()`
 - `intval()`
 - `wp_unslash()`
+
+Requests:
+
+- Para valores de `$_POST` en admin, preferir `filter_has_var(INPUT_POST, 'campo')` y `filter_input(INPUT_POST, 'campo', FILTER_UNSAFE_RAW, FILTER_REQUIRE_SCALAR)` antes de sanitizar. Esto evita falsos positivos de Intelephense como `Undefined variable '$_POST'` y fuerza payloads escalares.
+- Si se usa `$_POST` directo por convencion WordPress, validar siempre existencia, tipo esperado, nonce y permisos antes de guardar.
 
 Escaping:
 
@@ -664,12 +667,14 @@ Crear `.vscode/settings.json`:
     "wordpress",
     "Core",
     "standard",
+    "spl",
     "date",
     "pcre",
     "session",
     "json",
     "filter"
   ],
+  "intelephense.diagnostics.undefinedVariables": false,
   "php.suggest.basic": false,
   "php.validate.enable": true,
   "files.associations": {
