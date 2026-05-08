@@ -4,6 +4,8 @@ Guia de trabajo para agentes IA en plugins WordPress personalizados.
 
 Usar este documento como base para crear un `AGENTS.md` inicial en cualquier plugin nuevo. La guia prioriza arquitectura clara, seguridad WordPress, bootstrap liviano, separacion por capas, convenciones mantenibles y documentacion viva.
 
+La estructura propuesta es una referencia maxima, no una obligacion. Para plugins pequenos, priorizar claridad, seguridad WordPress y bajo costo de mantenimiento. Escalar hacia capas de dominio, aplicacion e infraestructura cuando exista logica de negocio real, integraciones externas, workflows complejos o necesidad de testing aislado.
+
 ## Proyecto
 
 Completar esta seccion al iniciar un plugin nuevo:
@@ -114,6 +116,25 @@ plugin-name/
 
 No todas las carpetas son obligatorias. Crear solo lo que el plugin necesite.
 
+Para plugins pequenos se puede iniciar con una estructura mas simple:
+
+```text
+plugin-name/
+|-- plugin-name.php
+|-- AGENTS.md
+|-- README.md
+|-- autoload.php
+|-- src/
+|   |-- Bootstrap/
+|   |-- Admin/
+|   |-- Frontend/
+|   `-- Support/
+|-- assets/
+`-- logs/
+```
+
+El objetivo no es demostrar arquitectura, sino construir plugins mantenibles, seguros y faciles de evolucionar. La arquitectura debe justificar su costo: separar capas cuando reduzca acoplamiento real, facilite testing o permita cambiar infraestructura sin tocar reglas de negocio.
+
 ## Archivo principal del plugin
 
 El archivo principal debe ser liviano.
@@ -145,16 +166,20 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('PLUGIN_NAME_VERSION', '1.0.0');
-define('PLUGIN_NAME_PATH', plugin_dir_path(__FILE__));
-define('PLUGIN_NAME_URL', plugin_dir_url(__FILE__));
+define('MY_PLUGIN_VERSION', '1.0.0');
+define('MY_PLUGIN_PATH', plugin_dir_path(__FILE__));
+define('MY_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('MY_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('MY_PLUGIN_TEXT_DOMAIN', 'my-plugin');
 
-require_once PLUGIN_NAME_PATH . 'autoload.php';
+require_once MY_PLUGIN_PATH . 'autoload.php';
 
 PluginVendor\PluginName\Bootstrap\Plugin::boot();
 ```
 
 No poner logica de negocio pesada en este archivo.
+
+Reemplazar `MY_PLUGIN` por un prefijo real del plugin. Evitar copiar nombres genericos como constantes finales del proyecto.
 
 ## Namespaces y nombres
 
@@ -205,7 +230,7 @@ No mezclar includes manuales por todos lados. Centralizar carga en `autoload.php
 
 Contiene reglas de negocio y modelos simples.
 
-Debe evitar llamadas directas a WordPress cuando sea posible.
+Debe evitar dependencias directas de WordPress cuando sea razonable. Si el plugin es pequeno, priorizar claridad sobre abstraccion excesiva.
 
 Puede contener:
 
@@ -250,6 +275,51 @@ Ejemplos:
 - Registro de CPTs.
 - Registro de ACF.
 - Migraciones o instalacion de tablas.
+
+## Ciclo de vida
+
+Usar hooks de ciclo de vida solo para tareas propias de instalacion, limpieza o compatibilidad.
+
+Activation:
+
+- Crear tablas personalizadas si aplica.
+- Guardar defaults iniciales.
+- Registrar roles o capabilities si el plugin los necesita.
+- Hacer `flush_rewrite_rules()` solo si hay CPTs, taxonomias o rewrite rules.
+
+Deactivation:
+
+- Limpiar cron jobs registrados por el plugin.
+- Hacer `flush_rewrite_rules()` si el plugin registro CPTs, taxonomias o rewrite rules.
+- No borrar datos persistentes del usuario.
+
+Uninstall:
+
+- Borrar opciones, tablas o archivos solo si el comportamiento esta documentado.
+- Nunca borrar datos del usuario sin confirmacion clara o setting explicito.
+- Preferir `uninstall.php` o `register_uninstall_hook()` segun la complejidad.
+
+## WP-Cron
+
+Si el plugin usa cron jobs:
+
+- Registrar eventos solo si no existen.
+- Usar action names con prefijo unico del plugin.
+- Limpiar eventos en deactivation.
+- No ejecutar tareas pesadas en cada request.
+- Delegar la tarea programada a un servicio o caso de uso.
+- Loguear errores relevantes sin exponer datos sensibles.
+
+## Settings y options
+
+Para pantallas de configuracion:
+
+- Usar Settings API cuando sea razonable.
+- Sanitizar opciones con callbacks especificos.
+- Definir defaults centralizados.
+- No leer `get_option()` disperso por todo el codigo.
+- Encapsular acceso a opciones en una clase de settings/configuracion.
+- Evitar guardar secretos en texto plano cuando exista una alternativa segura en el entorno.
 
 ### UI/Admin
 
@@ -418,9 +488,9 @@ Usar handles con prefijo del plugin.
 ```php
 wp_enqueue_script(
     'plugin-name-admin',
-    PLUGIN_NAME_URL . 'assets/js/admin.js',
+    MY_PLUGIN_URL . 'assets/js/admin.js',
     ['jquery'],
-    PLUGIN_NAME_VERSION,
+    MY_PLUGIN_VERSION,
     true
 );
 ```
@@ -438,6 +508,9 @@ Si el plugin usa logs:
 
 - Guardarlos en `logs/`.
 - No commitear `.log`.
+- Proteger la carpeta con `index.php` y, si el hosting lo permite, `.htaccess` o reglas equivalentes.
+- Evitar exponer logs por URL publica.
+- Documentar politica de rotacion o limpieza si el volumen puede crecer.
 - No loguear secretos, tokens, passwords ni payloads sensibles.
 - Incluir contexto util: `post_id`, `user_id`, `status`, `http_code`, `action`.
 - Usar niveles: `info`, `warning`, `error`, `exception`.
@@ -446,11 +519,11 @@ Si el plugin usa logs:
 
 Preferir constantes para:
 
-- `PLUGIN_NAME_VERSION`
-- `PLUGIN_NAME_PATH`
-- `PLUGIN_NAME_URL`
-- `PLUGIN_NAME_BASENAME`
-- `PLUGIN_NAME_TEXT_DOMAIN`
+- `MY_PLUGIN_VERSION`
+- `MY_PLUGIN_PATH`
+- `MY_PLUGIN_URL`
+- `MY_PLUGIN_BASENAME`
+- `MY_PLUGIN_TEXT_DOMAIN`
 
 Para opciones:
 
@@ -459,6 +532,16 @@ Para opciones:
 - `plugin_name_enabled`
 
 Encapsular defaults en una clase de settings.
+
+## Tipado PHP
+
+En archivos propios:
+
+- Usar `declare(strict_types=1);`.
+- Tipar parametros y retornos cuando sea posible.
+- Evitar arrays magicos en logica de negocio.
+- Preferir DTOs, Value Objects o clases simples cuando el dato crece o cruza varias capas.
+- Mantener compatibilidad con la version de PHP soportada por el sitio.
 
 ## Internacionalizacion
 
@@ -486,6 +569,25 @@ composer install
 ```
 
 Si hay JavaScript o CSS, validar manualmente o con herramientas disponibles.
+
+## Testing
+
+La cobertura debe escalar con el riesgo del cambio.
+
+Opciones recomendadas:
+
+- `php -l` para validacion sintactica minima.
+- Tests manuales documentados cuando no exista suite automatica.
+- PHPUnit o Brain Monkey para logica desacoplada de WordPress.
+- Tests de integracion en un WordPress local cuando el cambio toque hooks, AJAX, admin-post, CPTs, tablas o migraciones.
+
+Priorizar tests en:
+
+- Servicios de dominio.
+- Reglas de acceso.
+- Sanitizacion y validacion de inputs.
+- Repositorios con queries complejas.
+- Integraciones externas con errores o timeouts.
 
 ## README.md
 
@@ -576,7 +678,7 @@ Crear `.vscode/settings.json`:
 
 - El archivo principal coordina, no implementa.
 - Las clases deben tener una responsabilidad clara.
-- El dominio no debe saber demasiado de WordPress.
+- El dominio debe evitar saber demasiado de WordPress cuando esa separacion aporte claridad real.
 - WordPress debe quedar encapsulado en infraestructura, admin o frontend.
 - La seguridad no es opcional.
 - No repetir strings criticos.
