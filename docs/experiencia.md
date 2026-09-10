@@ -82,7 +82,7 @@ Responsabilidades:
 - Desarrollo de WP2LinkedIn para publicacion controlada de posts en pagina de empresa de LinkedIn.
 - Desarrollo de Welcome Popup Manager para popups configurables desde WP Admin.
 - Desarrollo de WP Admin Posts Extended para filtros avanzados y exportacion editorial a Excel.
-- Desarrollo en progreso de un workflow editorial asistido por IA para convertir emails y adjuntos en borradores de posts.
+- Desarrollo en progreso de Insider Editorial Automation Workflow, un workflow editorial asistido por IA para convertir emails y adjuntos en borradores de posts.
 - Diseño del flujo Gmail -> Zapier -> Gemini -> borrador WordPress/Gmail, con salida JSON estructurada, analisis multimodal de imagenes y revision humana antes de publicar.
 
 ## Freelance / Growth Period

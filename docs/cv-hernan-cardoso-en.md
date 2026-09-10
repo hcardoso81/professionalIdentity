@@ -82,7 +82,7 @@ insiderlatam.com
 - Built WP2LinkedIn, a plugin to manually publish WordPress posts to LinkedIn company pages using OAuth, ACF custom content, featured images and admin status indicators.
 - Built Welcome Popup Manager, a configurable welcome popup plugin with media library integration, delay settings and cookie-based display rules.
 - Built WP Admin Posts Extended, a backend productivity plugin adding advanced tag filters, native WordPress filter compatibility and Excel export using PhpSpreadsheet.
-- Designed an in-progress AI-assisted editorial workflow using Gmail, Zapier and Gemini to analyze emails and available attachments, prepare structured post drafts, suggest featured images and keep human review before publication.
+- Insider Editorial Automation Workflow (in progress): designed an AI-assisted editorial workflow using Gmail, Zapier and Gemini to analyze emails and available attachments, prepare structured post drafts, suggest featured images and keep human review before publication.
 
 ### Freelance / Professional Growth Period - Mobile and React Developer
 
