@@ -128,7 +128,7 @@ Designed an in-progress editorial automation workflow for Insider Latam. It rece
 
 ### WhatsApp AI Tournament Assistant
 
-Built an AI WhatsApp assistant for amateur football tournaments using NestJS, TypeScript, Twilio WhatsApp API, Groq/OpenAI-compatible APIs, Google Docs and CopaFacil API. The assistant answers natural language questions about registrations, rules, venues, fixtures, results, standings, players and rankings, combining editable knowledge base content with live tournament data.
+Built a conversational WhatsApp assistant for amateur football tournaments using NestJS, strict TypeScript, Node.js, Twilio WhatsApp API, OpenAI (`gpt-4.1-mini`), PostgreSQL, Google Docs and CopaFacil API. The system manages multiple tournaments, routes questions through seven strict function-calling tools, combines editable FAQ content with synchronized and live tournament data, and uses fallback logic plus a hallucination guard to keep responses grounded. The project also includes protected admin tools for tournament configuration, synchronization, conversation review and in-process testing against the same pipeline used by production.
 
 ### POC Cartas - Spanish Deck Mobile App
 

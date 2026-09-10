@@ -47,7 +47,7 @@ Experiencia destacada:
 - SEO Content Locker: plugin WordPress para bloqueo de contenido premium, captacion de leads, Mailchimp y Google reCAPTCHA.
 - Insider Editorial Automation Workflow: workflow con Gmail, Zapier y Gemini para transformar emails y adjuntos en borradores editoriales estructurados, con analisis de imagen y revision humana.
 - CUTI: app mobile React Native para conference calls corporativas con Agora RTC y Socket.IO.
-- WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
+- WhatsApp AI Tournament Assistant: asistente conversacional por WhatsApp para torneos amateur, con NestJS, OpenAI, PostgreSQL, Twilio, Google Docs, CopaFacil, function calling estricto, fallback y guarda anti-alucinacion.
 
 ## GitHub Pages
 

@@ -266,14 +266,14 @@ Resumen de proyectos principales:
 - Insider Editorial Automation Workflow: workflow asistido por IA para transformar emails y adjuntos en borradores editoriales estructurados, con seleccion de imagen y human-in-the-loop.
 - Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
 - News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
-- WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
+- WhatsApp AI Tournament Assistant: asistente conversacional por WhatsApp para torneos amateur con NestJS, OpenAI, PostgreSQL, Twilio, Google Docs, CopaFacil, siete tools estrictas, fallback, guarda anti-alucinacion y plataforma de testing.
 - CUTI: aplicacion mobile React Native para conference calls corporativas con audio en vivo, Agora RTC, Socket.IO, PDFs y grabaciones.
 - POC Cartas: aplicacion mobile con React Native y Expo para manipulacion interactiva de una baraja espanola.
 - Portal de Aliados: portal B2B React + TypeScript para gestion de eventos, ventas, pagos, dashboards y reportes.
 
 ## Keywords Para LinkedIn / ATS
 
-React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, JWT, WordPress Plugin Development, PHP, Laravel, MySQL, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, Multimodal AI, Gemini, AI Assistant, Workflow Automation, Zapier, Gmail, Structured JSON, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
+React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, Multimodal AI, Gemini, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
 
 ## Tono Profesional Deseado
 

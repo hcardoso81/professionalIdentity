@@ -416,38 +416,61 @@ Plataforma full stack para analisis, busqueda y gestion de noticias. Frontend en
 
 ### WhatsApp AI Tournament Assistant
 
-Asistente inteligente para torneos amateur de futbol que permite a participantes y organizadores consultar informacion en lenguaje natural directamente desde WhatsApp.
+Asistente conversacional por WhatsApp para torneos amateur que permite a participantes y organizadores consultar informacion operativa en lenguaje natural, sin instalar una aplicacion ni iniciar sesion.
+
+Contexto:
+
+- Tipo: proyecto personal / producto en desarrollo.
+- Objetivo: reducir consultas manuales a organizadores y ofrecer respuestas rapidas, consistentes y auditables.
+- Canal: WhatsApp mediante webhook de Twilio.
+- Estado: arquitectura v2 implementada en NestJS, con camino documentado hacia WhatsApp Business productivo.
 
 Resumen:
 
-El sistema responde sobre inscripciones, reglas, sedes, fixture, resultados, tablas de posiciones, planteles, estadisticas de jugadores y rankings, combinando una base de conocimiento editable con datos en vivo de la API de CopaFacil.
+El sistema responde sobre inscripciones, reglas, sedes, fixture, resultados, tablas de posiciones, equipos, planteles, estadisticas de jugadores y rankings. Combina una base de conocimiento editable en Google Docs con datos de torneos sincronizados y consultas acotadas a datos vivos de CopaFacil.
 
 Arquitectura:
 
-La solucion esta construida con NestJS, TypeScript estricto, Node.js, Twilio WhatsApp API, Groq/OpenAI-compatible LLM API, Google Docs como CMS no-code y CopaFacil API.
+La solucion esta construida con NestJS 10, TypeScript estricto y Node.js 20+. La arquitectura separa cuatro contextos: `data`, `assistant`, `shared` y `admin`, con una direccion de dependencias clara. La capa `data` no conoce al LLM; el motor conversacional consume casos de uso y servicios de lectura desacoplados.
 
-La arquitectura modular separa canal de mensajeria, orquestacion conversacional, integracion con LLM, dominio de torneos, base documental y logging operativo.
+El flujo conversacional utiliza una maquina de estados para saludo, despedida, seleccion y cambio de torneo. Para una consulta normal, un pipeline de dos llamadas al LLM realiza routing mediante tools, ejecuta las consultas necesarias y genera la respuesta final usando el historial y los resultados obtenidos.
+
+El proyecto evoluciono desde un enfoque monolitico hacia una arquitectura donde la lectura de datos, el motor conversacional, las herramientas administrativas y las integraciones externas quedan separadas. Esto permite cambiar fuentes de datos, reglas de negocio o proveedor de LLM sin acoplar toda la aplicacion.
 
 Funcionalidades:
 
-- Seleccion multi-torneo.
-- Memoria de sesion.
-- Normalizacion de consultas.
-- Tolerancia a errores de escritura.
-- Function calling/tools para consultar solo los datos necesarios.
-- Auditoria de conversaciones en JSONL.
-- Endpoints administrativos protegidos.
-- Validacion de configuracion con Joi.
-- Manejo global de errores.
-- Seguridad HTTP basica con Helmet.
+- Recepcion de mensajes entrantes mediante webhook de Twilio y respuesta en TwiML.
+- Validacion manual de la firma HMAC-SHA1 de Twilio con fail-closed cuando la configuracion es invalida.
+- Seleccion multi-torneo y multi-categoria, con cambio de torneo durante la conversacion.
+- Memoria de sesion en RAM con TTL de 10 minutos para mantener el contexto conversacional.
+- Normalizacion de consultas y tolerancia a errores de escritura en nombres de equipos.
+- Siete tools con `strict: true` para fixture, resultados, posiciones, equipos, jugadores, estructura y rankings.
+- Function calling para consultar unicamente los datos necesarios para cada pregunta.
+- Dos perfiles de datos: Postgres para estructura y lecturas sincronizadas; CopaFacil para resultados y rankings vivos, con fallback a Postgres.
+- Cliente HTTP centralizado con retry/backoff y reparacion de JSON malformado proveniente de CopaFacil.
+- Guarda anti-alucinacion que compara la respuesta generada contra los datos crudos devueltos por las tools y degrada a una respuesta segura si detecta informacion no sustentada.
+- Google Docs como CMS no-code para FAQ y lista de torneos.
+- Panel administrativo protegido por `AdminKeyGuard` para configurar torneos, ejecutar sincronizaciones y probar consultas.
+- Plataforma de testing in-process para curar preguntas, convertirlas en casos y ejecutar el mismo motor que usa produccion.
+- Visor de solo lectura de conversaciones reales recibidas por WhatsApp.
+- Persistencia en PostgreSQL para configuracion, datos sincronizados, testing y conversaciones reales.
+- Validacion de variables de entorno con Joi, manejo global de excepciones y headers de seguridad con Helmet.
 
 Stack:
 
-NestJS, TypeScript, Node.js, Twilio WhatsApp API, Groq, OpenAI-compatible APIs, Google Docs, CopaFacil API, Joi, Helmet, JSONL logging.
+NestJS 10, TypeScript strict, Node.js 20+, OpenAI SDK, `gpt-4.1-mini`, function calling, structured outputs, Twilio WhatsApp API, TwiML, PostgreSQL, CopaFacil API, Google Docs, Joi, Helmet, retry/backoff, AdminKeyGuard.
+
+Valor profesional y comercial:
+
+- Es un caso de IA aplicada a una operacion concreta: responder consultas frecuentes y acceder a datos deportivos desde el canal que ya utilizan los usuarios.
+- Demuestra integracion entre mensajeria, LLMs, APIs externas, persistencia, herramientas internas y reglas de negocio.
+- Es especialmente valioso para entrevistas por el tratamiento de confiabilidad: tool calling estricto, separacion de fuentes, fallback, control de alucinaciones, validacion de firmas y testing del mismo pipeline de produccion.
+- Puede presentarse comercialmente como un patron adaptable a soporte, reservas, consultas operativas, eventos, clubes, turismo o servicios con informacion estructurada.
+- Conviene describirlo como producto en desarrollo o arquitectura preparada para productizacion, sin afirmar volumen de usuarios o disponibilidad productiva si no existen metricas verificadas.
 
 Version corta:
 
-Construi un asistente de IA por WhatsApp para torneos de futbol amateur, desarrollado con NestJS, TypeScript, Twilio, Groq/OpenAI-compatible APIs, Google Docs y CopaFacil API. El bot entiende consultas en lenguaje natural, gestiona multiples torneos, responde FAQs desde una base editable y consulta datos en vivo para fixture, resultados, posiciones, jugadores y rankings.
+Construi un asistente conversacional por WhatsApp para torneos amateur con NestJS, TypeScript, Twilio, OpenAI, PostgreSQL, Google Docs y CopaFacil API. El sistema gestiona multiples torneos, utiliza siete tools con function calling estricto, consulta datos estructurados y vivos, aplica fallback y valida las respuestas para evitar informacion no sustentada.
 
 ### CUTI - Corporate Conference Calls
 
