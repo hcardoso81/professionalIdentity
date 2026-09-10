@@ -83,6 +83,24 @@ Responsabilidades:
 - Desarrollo de Welcome Popup Manager para popups configurables desde WP Admin.
 - Desarrollo de WP Admin Posts Extended para filtros avanzados y exportacion editorial a Excel.
 - Desarrollo en progreso de Insider Editorial Automation Workflow, un workflow editorial asistido por IA para convertir emails y adjuntos en borradores de posts.
+
+## Mundialito Senior
+
+Periodo: 2025.
+
+Rol sugerido: AI / Full Stack Developer.
+
+Proyecto principal: WhatsApp AI Tournament Assistant.
+
+Responsabilidades:
+
+- Diseño y desarrollo de un asistente conversacional para que participantes y organizadores consulten informacion del torneo directamente desde WhatsApp.
+- Integracion del webhook de Twilio con validacion de firma HMAC-SHA1 y respuestas en TwiML.
+- Implementacion de seleccion multi-torneo, memoria de sesion, normalizacion de consultas y tolerancia a errores de escritura.
+- Diseño de un pipeline conversacional con routing por LLM, siete tools con function calling estricto y generacion de respuestas basada en resultados reales.
+- Integracion de OpenAI, PostgreSQL, Google Docs como CMS de FAQ y CopaFacil API para datos sincronizados y consultas vivas.
+- Implementacion de fallback ante fallas de CopaFacil y guarda anti-alucinacion para evitar respuestas no sustentadas.
+- Desarrollo de herramientas administrativas para configurar torneos, sincronizar datos, revisar conversaciones y curar/ejecutar casos de testing.
 - Diseño del flujo Gmail -> Zapier -> Gemini -> borrador WordPress/Gmail, con salida JSON estructurada, analisis multimodal de imagenes y revision humana antes de publicar.
 
 ## Freelance / Growth Period

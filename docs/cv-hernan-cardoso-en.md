@@ -84,6 +84,16 @@ insiderlatam.com
 - Built WP Admin Posts Extended, a backend productivity plugin adding advanced tag filters, native WordPress filter compatibility and Excel export using PhpSpreadsheet.
 - Insider Editorial Automation Workflow (in progress): designed an AI-assisted editorial workflow using Gmail, Zapier and Gemini to analyze emails and available attachments, prepare structured post drafts, suggest featured images and keep human review before publication.
 
+### Mundialito Senior - AI / Full Stack Developer
+
+2025
+
+- Designed and built the WhatsApp AI Tournament Assistant so participants and organizers could query tournament information directly from WhatsApp.
+- Integrated a Twilio webhook with HMAC-SHA1 signature validation and TwiML responses.
+- Implemented multi-tournament selection, session memory, query normalization and typo-tolerant team matching.
+- Built a two-step LLM pipeline with seven strict function-calling tools, PostgreSQL, Google Docs FAQ content and CopaFacil tournament data.
+- Added retry/fallback behavior for external API failures, a hallucination guard grounded in tool results and protected admin tools for configuration, synchronization, conversation review and testing.
+
 ### Freelance / Professional Growth Period - Mobile and React Developer
 
 February 2023 - November 2023

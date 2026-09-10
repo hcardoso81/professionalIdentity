@@ -420,7 +420,9 @@ Asistente conversacional por WhatsApp para torneos amateur que permite a partici
 
 Contexto:
 
-- Tipo: proyecto personal / producto en desarrollo.
+- Cliente/organizacion: Mundialito Senior.
+- Periodo: 2025.
+- Tipo: proyecto de producto en desarrollo.
 - Objetivo: reducir consultas manuales a organizadores y ofrecer respuestas rapidas, consistentes y auditables.
 - Canal: WhatsApp mediante webhook de Twilio.
 - Estado: arquitectura v2 implementada en NestJS, con camino documentado hacia WhatsApp Business productivo.
