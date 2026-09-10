@@ -19,8 +19,9 @@ Experiencia destacada:
 - Arquitectura frontend con Clean Architecture, Hexagonal Architecture, CQRS y Presenter Pattern.
 - Desarrollo full stack con Node.js, Express, REST APIs, GraphQL, MongoDB y MySQL.
 - Desarrollo de plugins WordPress personalizados para flujos editoriales, marketing, leads, newsletters e integraciones.
+- Diseño de workflows editoriales asistidos por IA para automatizar la preparacion de contenidos con revision humana.
 - Experiencia mobile con React Native, Expo, Agora RTC y Socket.IO.
-- Integraciones con APIs externas, LLMs, Twilio WhatsApp API, Mailchimp, LinkedIn OAuth y Google reCAPTCHA.
+- Integraciones con APIs externas, LLMs, Gemini, Zapier, Gmail, Twilio WhatsApp API, Mailchimp, LinkedIn OAuth y Google reCAPTCHA.
 
 ## Estructura
 
@@ -44,6 +45,7 @@ Experiencia destacada:
 - Portal de Aliados: portal B2B para eventos, ventas, pagos, reportes y business intelligence.
 - News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
 - SEO Content Locker: plugin WordPress para bloqueo de contenido premium, captacion de leads, Mailchimp y Google reCAPTCHA.
+- Insider Editorial Automation Workflow: workflow con Gmail, Zapier y Gemini para transformar emails y adjuntos en borradores editoriales estructurados, con analisis de imagen y revision humana.
 - CUTI: app mobile React Native para conference calls corporativas con Agora RTC y Socket.IO.
 - WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
 

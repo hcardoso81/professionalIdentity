@@ -147,6 +147,10 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - LLM integrations
 - OpenAI-compatible APIs
 - Groq
+- Gemini / multimodal content analysis
+- Workflow automation with Zapier
+- Gmail-to-content editorial workflows
+- Structured JSON outputs and human-in-the-loop review
 - Twilio WhatsApp API
 - Agora RTC
 - Socket.IO
@@ -219,6 +223,8 @@ Periodo: 2023 - actualidad
 - Migracion del sitio WordPress a PHP 8.
 - Desarrollo de plugins WordPress internos como newsletters, publicacion en LinkedIn, popups y mejoras del admin editorial.
 - Trabajo sobre necesidades editoriales, marketing, exportacion de contenido y automatizacion de flujos.
+- Desarrollo en progreso de un workflow editorial asistido por IA para revisar emails, analizar cuerpo y adjuntos, preparar borradores de posts y sugerir imagenes destacadas.
+- Diseño del flujo Gmail -> Zapier -> Gemini -> borrador para WordPress/Gmail, con salida JSON estructurada, reglas editoriales, seleccion multimodal de imagen y revision humana antes de publicar.
 
 ### Intercomgi - Scrum Master / Frontend Developer
 
@@ -257,6 +263,7 @@ Resumen de proyectos principales:
 - Welcome Popup Manager: plugin WordPress para gestionar popups configurables desde WP Admin.
 - Insider Newsletters: plugin WordPress para creacion, renderizado y exportacion de newsletters HTML responsive.
 - WP Admin Posts Extended: plugin WordPress para filtros editoriales avanzados y exportacion Excel.
+- Insider Editorial Automation Workflow: workflow asistido por IA para transformar emails y adjuntos en borradores editoriales estructurados, con seleccion de imagen y human-in-the-loop.
 - Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
 - News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
 - WhatsApp AI Tournament Assistant: asistente de IA por WhatsApp para torneos amateur de futbol.
@@ -266,7 +273,7 @@ Resumen de proyectos principales:
 
 ## Keywords Para LinkedIn / ATS
 
-React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, JWT, WordPress Plugin Development, PHP, Laravel, MySQL, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, AI Assistant, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
+React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, JWT, WordPress Plugin Development, PHP, Laravel, MySQL, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, Multimodal AI, Gemini, AI Assistant, Workflow Automation, Zapier, Gmail, Structured JSON, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
 
 ## Tono Profesional Deseado
 

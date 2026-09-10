@@ -2,6 +2,78 @@
 
 Este documento contiene el detalle de proyectos para usar como fuente de verdad en CV, LinkedIn, portfolio, entrevistas y prompts de IA.
 
+## Automatizacion editorial / IA
+
+### Insider Editorial Automation Workflow
+
+Workflow en progreso para asistir el proceso editorial de Insider Latam, transformando emails con informacion periodistica y sus adjuntos en borradores de posts listos para revision humana.
+
+Contexto:
+
+- Cliente/proyecto: Insider.
+- Sitio relacionado: insiderlatam.com.
+- Estado: POC / desarrollo en progreso.
+- Objetivo: reducir el trabajo manual de lectura, resumen, contextualizacion y preparacion inicial de contenidos editoriales.
+
+Resumen:
+
+El workflow parte de emails recibidos en Gmail, analiza el cuerpo del mensaje y los adjuntos disponibles con Gemini y devuelve una propuesta editorial estructurada en espanol. La salida puede utilizarse para crear un borrador en WordPress o, durante la etapa de validacion, un borrador en Gmail.
+
+La solucion mantiene una persona dentro del circuito: la IA prepara el material, pero la publicacion no es automatica. Esto permite validar la calidad editorial, detectar informacion faltante y revisar la imagen antes de que el contenido llegue al sitio.
+
+Flujo principal:
+
+```text
+Gmail -> Zapier -> Gemini -> JSON estructurado -> Borrador WordPress/Gmail -> Revision editorial humana
+```
+
+Responsabilidades y funcionalidades:
+
+- Diseño de un POC rapido y de bajo costo utilizando Zapier como orquestador.
+- Busqueda de emails por remitente y ventana temporal para controlar el alcance de las pruebas.
+- Extraccion del asunto, remitente, cuerpo y adjuntos disponibles.
+- Analisis multimodal con Gemini para resumir, ordenar y contextualizar la informacion sin transcribir el email literalmente.
+- Generacion de titulo, bajada, cuerpo del post, categoria, tags, fuentes utilizadas y notas editoriales.
+- Salida JSON validable para conectar la respuesta de la IA con pasos posteriores del workflow.
+- Deteccion explicita de faltantes, dudas y datos que requieren confirmacion humana.
+- Analisis de imagenes para sugerir una imagen destacada, priorizando rostros humanos, nitidez y orientacion horizontal.
+- Devolucion de instrucciones de recorte y resize para el formato editorial objetivo de `702x460` px y hasta `500 KB`.
+- Creacion de un borrador para revision, manteniendo el control editorial antes de publicar.
+- Definicion de una alternativa futura con Google Apps Script, Gmail y Gemini API si se necesita mayor control o menor costo operativo.
+
+Reglas de calidad y seguridad editorial:
+
+- No inventar informacion ni completar datos no presentes en las fuentes.
+- Marcar en `notas_editoriales` cualquier duda, faltante o adjunto no legible.
+- Usar `requiere_revision` para indicar cuando es necesaria una validacion humana.
+- No publicar automaticamente en la primera version.
+- Evitar seleccionar logos, flyers o placas con texto cuando exista una imagen editorial con personas.
+- Mantener rostros y elementos relevantes dentro del area segura de la imagen.
+
+Salida estructurada:
+
+El contrato de salida incluye campos editoriales (`titulo`, `bajada`, `cuerpo_post`, `categoria_sugerida`, `tags_sugeridos`, `fuentes_usadas`), indicadores de revision y metadatos de imagen (`imagen_destacada_indice`, presencia y cantidad de rostros, motivo de seleccion e instrucciones de recorte). Esta estructura permite auditar el resultado y mantener desacopladas la generacion del contenido y su posterior publicacion.
+
+Stack:
+
+Gmail, Zapier, Gemini, WordPress, JSON estructurado, analisis multimodal de imagenes, automatizacion de workflows y human-in-the-loop editorial.
+
+Version para LinkedIn/CV:
+
+Diseñe un workflow editorial asistido por IA para Insider Latam que toma emails y adjuntos desde Gmail, utiliza Gemini para resumir y contextualizar la informacion, analiza imagenes para sugerir una portada y genera un borrador estructurado para WordPress o Gmail. Defini reglas editoriales, salida JSON, deteccion de faltantes, instrucciones de recorte y revision humana antes de publicar, utilizando Zapier como orquestador de una POC de bajo costo.
+
+Version corta:
+
+Workflow editorial con Gmail, Zapier y Gemini que transforma emails y adjuntos en borradores de posts estructurados, incluyendo analisis de imagen, reglas editoriales y revision humana antes de publicar.
+
+Valor profesional y comercial:
+
+- Demuestra capacidad para detectar tareas repetitivas de negocio y convertirlas en un flujo concreto, validable y de bajo costo.
+- Combina integraciones, prompting, analisis multimodal, contratos de salida y criterios de calidad editorial en una solucion orientada a un proceso real.
+- Es un buen caso para entrevistas sobre IA aplicada, automatizacion, manejo de incertidumbre, human-in-the-loop y diseño de POCs.
+- Puede presentarse comercialmente como un ejemplo de automatizacion de operaciones de contenido, adaptable a equipos de marketing, medios, agencias y organizaciones con alto volumen de emails o documentos.
+- Hasta contar con mediciones y uso productivo, no afirmar porcentajes de ahorro, publicacion autonoma ni resultados editoriales cuantificados.
+
 ## WordPress
 
 ### SEO Content Locker

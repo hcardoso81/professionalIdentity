@@ -9,7 +9,7 @@ LinkedIn: https://www.linkedin.com/in/cardosohernan/
 
 ## Professional Summary
 
-Senior Full Stack Engineer with 18+ years of experience building, maintaining and modernizing web applications, administrative platforms and custom integrations.
+Senior Full Stack Engineer with 18+ years of experience building, maintaining and modernizing web applications, administrative platforms, custom integrations and AI-assisted workflows.
 
 In recent years, I have focused on React, TypeScript and frontend architecture, working on complex dashboards, B2B portals and business workflows using Clean Architecture, Hexagonal Architecture, CQRS and Presenter Pattern.
 
@@ -33,7 +33,7 @@ DevOps and Tools: Docker, Docker Compose, GitLab CI/CD, GitHub Actions, Vercel, 
 
 Mobile and Realtime: Agora RTC, React Navigation, AsyncStorage, React Native WebView.
 
-AI and Integrations: LLM integrations, OpenAI-compatible APIs, Groq, Twilio WhatsApp API, function calling/tools, Mailchimp API, LinkedIn OAuth, Google reCAPTCHA.
+AI and Integrations: LLM integrations, multimodal AI, Gemini, OpenAI-compatible APIs, Groq, workflow automation with Zapier, Gmail, Twilio WhatsApp API, function calling/tools, structured JSON outputs, human-in-the-loop workflows, Mailchimp API, LinkedIn OAuth, Google reCAPTCHA.
 
 ## Professional Strengths
 
@@ -82,6 +82,7 @@ insiderlatam.com
 - Built WP2LinkedIn, a plugin to manually publish WordPress posts to LinkedIn company pages using OAuth, ACF custom content, featured images and admin status indicators.
 - Built Welcome Popup Manager, a configurable welcome popup plugin with media library integration, delay settings and cookie-based display rules.
 - Built WP Admin Posts Extended, a backend productivity plugin adding advanced tag filters, native WordPress filter compatibility and Excel export using PhpSpreadsheet.
+- Designed an in-progress AI-assisted editorial workflow using Gmail, Zapier and Gemini to analyze emails and available attachments, prepare structured post drafts, suggest featured images and keep human review before publication.
 
 ### Freelance / Professional Growth Period - Mobile and React Developer
 
@@ -120,6 +121,10 @@ March 2008 - June 2012
 - Worked on web projects for organizations and brands including Greenpeace Latin America, Mastercard, Banco Nacion Argentina, Fashion TV Project Runway Latin America, Disney Highway Zapping Zone Latin America, Coca-Cola, Sherwin Williams and Telcosur.
 
 ## Selected Projects
+
+### Insider Editorial Automation Workflow
+
+Designed an in-progress editorial automation workflow for Insider Latam. It receives emails and available attachments from Gmail, uses Gemini for multimodal analysis and editorial drafting, returns structured JSON for downstream steps, suggests a featured image and creates a WordPress or Gmail draft for human review before publication. The POC uses Zapier as the workflow orchestrator and includes explicit rules for missing information, editorial review and image cropping.
 
 ### WhatsApp AI Tournament Assistant
 
