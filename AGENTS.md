@@ -8,13 +8,15 @@ Hernan Federico Cardoso es un Senior Full Stack Engineer con orientacion fuerte 
 
 En los ultimos anos su foco principal estuvo puesto en React, TypeScript, arquitectura frontend, integracion con APIs, dashboards administrativos, sistemas B2B y soluciones con separacion clara entre dominio, infraestructura y UI.
 
+Desde 2026 suma experiencia concreta en IA aplicada: un pipeline de automatizacion editorial con Google Apps Script y Gemini API validado con datos reales del cliente, y un asistente de WhatsApp con function calling estricto y guarda anti-alucinacion. Trabaja de forma habitual con agentes de codigo (Claude Code, Codex) guiados por `AGENTS.md` y ADRs.
+
 Tambien posee una base solida en PHP, WordPress, Laravel, Node.js, GraphQL, Docker, CI/CD y despliegues cloud. Su experiencia combina desarrollo moderno, mantenimiento de sistemas legacy, integraciones externas, automatizacion de procesos y participacion en equipos internacionales.
 
 ## Posicionamiento Profesional
 
 Perfil sugerido:
 
-Senior Full Stack Engineer | Frontend-Oriented | React & TypeScript | Clean Architecture
+Senior Full Stack Engineer | React & TypeScript | Clean Architecture | Applied AI & Automation
 
 Version alternativa:
 
@@ -28,7 +30,8 @@ Fortalezas diferenciales:
 - Capacidad para modernizar sistemas, mantener codigo legacy y crear soluciones nuevas.
 - Integracion con APIs REST, GraphQL, Mailchimp, LinkedIn, Twilio, LLM APIs y servicios externos.
 - Experiencia en dashboards, paneles administrativos, reportes, exportaciones y flujos operativos.
-- Exposicion a AI/LLM aplicada a productos conversacionales.
+- IA aplicada con resultados verificables: pipelines con Gemini API y OpenAI, function calling estricto, salidas estructuradas, guardas anti-alucinacion, orquestacion reanudable e idempotencia, siempre con revision humana.
+- Desarrollo asistido por agentes de IA con reglas explicitas (`AGENTS.md`, ADRs, tests) para mantener calidad y control.
 - Experiencia colaborando con equipos y clientes internacionales.
 - Liderazgo, ownership tecnico y capacidad para coordinar equipos y remover bloqueos.
 - Comunicacion clara con perfiles tecnicos, producto, clientes y audiencias no tecnicas.
@@ -38,7 +41,7 @@ Fortalezas diferenciales:
 
 ## Headline Base
 
-Senior Full Stack Engineer | React & TypeScript | Clean Architecture | WordPress & Node.js
+Senior Full Stack Engineer | React & TypeScript | Clean Architecture | Applied AI & Automation
 
 ## Summary Base
 
@@ -46,9 +49,9 @@ Senior Full Stack Engineer with 18+ years of experience building scalable web ap
 
 In recent years, focused on React and TypeScript, designing frontend architectures for dashboards, B2B portals and business workflows using Clean Architecture, Hexagonal Architecture, CQRS and Presenter Pattern.
 
-Strong background in PHP, WordPress plugin development, Laravel, Node.js, REST and GraphQL APIs. Experienced in legacy modernization, API integrations, CI/CD workflows, Docker-based deployments and international collaboration.
+Strong background in PHP, WordPress plugin development, Node.js, REST and GraphQL APIs. Experienced in legacy modernization, API integrations, CI/CD workflows with GitHub Actions, Docker-based deployments on AWS and international collaboration.
 
-Currently expanding experience in AI integrations, LLM-based assistants and conversational interfaces.
+In 2026, designed and shipped applied AI systems: an editorial automation pipeline on Google Apps Script and Gemini API validated with real client data, and a WhatsApp assistant with strict function calling and hallucination guardrails.
 
 ## Skills
 
@@ -68,10 +71,8 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - Zod
 - Yup
 - i18next
-- Framer Motion
-- React PDF
-- React Quill
-- Draft.js
+- Apollo Client
+- GraphQL subscriptions (graphql-ws)
 - JavaScript
 - HTML
 - CSS
@@ -111,6 +112,9 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 ### WordPress
 
 - Plugin development
+- WordPress REST API
+- WP-Cron
+- Rate limiting and anti-bot protection
 - Shortcodes
 - Hooks
 - AJAX handlers
@@ -121,6 +125,8 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 - Custom database tables
 - wp_remote_request
 - wp_mail
+- PhpSpreadsheet (import/export Excel)
+- YouTube Data API v3, API-Football, Mailchimp, LinkedIn OAuth
 - Admin pages
 - CSV/XLSX export
 - WordPress migrations
@@ -130,12 +136,14 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 
 - Docker
 - Docker multi-stage builds
-- GitLab CI/CD
 - GitHub Actions
+- GitHub Container Registry (GHCR)
+- GitLab CI/CD
 - Vercel
 - AWS
+- AWS Lightsail
 - AWS S3
-- AWS SDK
+- Traefik
 - NGINX
 - PM2
 - Helm/Kubernetes
@@ -145,12 +153,16 @@ Currently expanding experience in AI integrations, LLM-based assistants and conv
 ### AI / Integraciones
 
 - LLM integrations
-- OpenAI-compatible APIs
-- Groq
-- Gemini / multimodal content analysis
-- Workflow automation with Zapier
+- Gemini API (gemini-3.5-flash-lite) / multimodal content analysis
+- OpenAI API / OpenAI-compatible APIs
+- Google Apps Script + clasp
+- Gmail, Google Drive, Google Docs y Google Sheets APIs
+- Resumable batch orchestration and idempotency
+- Prompts versionados fuera del codigo (Google Sheets)
+- Workflow automation with Zapier (POCs)
 - Gmail-to-content editorial workflows
 - Structured JSON outputs and human-in-the-loop review
+- AI-assisted development with coding agents (Claude Code, Codex, AGENTS.md)
 - Twilio WhatsApp API
 - Agora RTC
 - Socket.IO
@@ -180,13 +192,16 @@ Periodo: noviembre 2023 - actualidad
 - Participacion en productos B2B, dashboards, reportes, gestion de usuarios, eventos, pagos, noticias y expensas.
 - Definicion y construccion de UI tomando como referencia patrones del dashboard de Material UI.
 - Colaboracion con clientes y equipos internacionales en contextos de comunicacion tecnica en ingles.
-- Participacion en flujos de CI/CD, despliegues Dockerizados y configuraciones cloud.
+- Pipeline de despliegue de Portal Expensas con GitHub Actions, Docker, GHCR, AWS Lightsail y Traefik.
+- Tickets en tiempo real con GraphQL subscriptions sobre WebSocket.
 
 Proyectos asociados:
 
-- News Kiosk: noviembre 2023 - noviembre 2024.
-- Portal de Aliados: enero 2025 - noviembre 2025.
-- Portal Expensas Admins: noviembre 2025 - actualidad.
+- News Kiosk: noviembre 2023 - marzo 2025.
+- Portal de Aliados: agosto 2024 - abril 2025.
+- Portal Expensas Admins: mayo 2025 - actualidad.
+
+Fechas reconstruidas a partir del historial de commits; hay solapamientos en las transiciones.
 
 ### Doppler - Senior WordPress Developer
 
@@ -213,6 +228,7 @@ Periodo: 2024 - actualidad
 
 - Trabajo freelance en intermarketflow.com, sitio orientado a analisis intermarket, tecnico y macroeconomico aplicado a mercados financieros.
 - Desarrollo del plugin SEO Content Locker para monetizacion, captacion de leads y control de acceso a contenido premium.
+- 2026: refactor a servicios y repositorios, proteccion anti-bot por capas (reCAPTCHA v3 y rate limiting) y reporte diario por WP-Cron.
 - Mantenimiento y tareas evolutivas sobre el sitio WordPress.
 
 ### Insider Latam / Insider
@@ -223,8 +239,22 @@ Periodo: 2023 - actualidad
 - Migracion del sitio WordPress a PHP 8.
 - Desarrollo de plugins WordPress internos como newsletters, publicacion en LinkedIn, popups y mejoras del admin editorial.
 - Trabajo sobre necesidades editoriales, marketing, exportacion de contenido y automatizacion de flujos.
-- Desarrollo en progreso de un workflow editorial asistido por IA para revisar emails, analizar cuerpo y adjuntos, preparar borradores de posts y sugerir imagenes destacadas.
-- Diseño del flujo Gmail -> Zapier -> Gemini -> borrador para WordPress/Gmail, con salida JSON estructurada, reglas editoriales, seleccion multimodal de imagen y revision humana antes de publicar.
+- Insider Automation (2026): POC Gmail -> Zapier -> Gemini y luego reescritura sobre Google Apps Script + Gemini API + Drive/Docs/Sheets + WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados, seleccion de imagen verificada con SHA-256 y plugin WordPress de control. Validado con muestra real del cliente: 20 casos, 16 OK, 4 warnings, 0 errores.
+- Plugins 2026: Insider Shorts (YouTube Data API v3), World Cup 2026 Widget (API-Football) y Cannes Festival Medal Tracker (PhpSpreadsheet).
+
+### Mundialito Senior - AI / Full Stack Developer
+
+Periodo: marzo 2026 - julio 2026
+
+- WhatsApp AI Tournament Assistant con NestJS, OpenAI, Twilio, PostgreSQL, Google Docs y CopaFacil API.
+- Siete tools con function calling estricto, fallback y guarda anti-alucinacion.
+
+### Prostagma - iniciativa propia (en desarrollo)
+
+Periodo: julio 2026 - actualidad
+
+- Celula de desarrollo senior propia (software, IA, chatbots, automatizacion). Sin presencia publica todavia: no incluir en CV/LinkedIn como empresa hasta su lanzamiento.
+- Copa Prostagma: SaaS multi-tenant de torneos (monorepo pnpm/Turborepo, NestJS, React, Next.js, PostgreSQL, Prisma) en etapa de bootstrap.
 
 ### Intercomgi - Scrum Master / Frontend Developer
 
@@ -263,17 +293,21 @@ Resumen de proyectos principales:
 - Welcome Popup Manager: plugin WordPress para gestionar popups configurables desde WP Admin.
 - Insider Newsletters: plugin WordPress para creacion, renderizado y exportacion de newsletters HTML responsive.
 - WP Admin Posts Extended: plugin WordPress para filtros editoriales avanzados y exportacion Excel.
-- Insider Editorial Automation Workflow: workflow asistido por IA para transformar emails y adjuntos en borradores editoriales estructurados, con seleccion de imagen y human-in-the-loop.
-- Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
+- Insider Automation: pipeline editorial con IA (Google Apps Script, Gemini API, Gmail, Drive, Sheets, WordPress REST API) con orquestacion reanudable, idempotencia, prompts versionados, seleccion de imagen y human-in-the-loop. Proyecto estrella de 2026.
+- Insider Shorts: plugin WordPress de carrusel de shorts desde playlists de YouTube.
+- World Cup 2026 Widget: plugin WordPress de partidos del Mundial via API-Football.
+- Cannes Festival Medal Tracker: plugin WordPress de medallero de Cannes Lions importado desde Excel.
+- Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones, sueldos y tickets internos en tiempo real, con despliegue en GitHub Actions + AWS Lightsail.
 - News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
 - WhatsApp AI Tournament Assistant: asistente conversacional por WhatsApp para torneos amateur con NestJS, OpenAI, PostgreSQL, Twilio, Google Docs, CopaFacil, siete tools estrictas, fallback, guarda anti-alucinacion y plataforma de testing.
 - CUTI: aplicacion mobile React Native para conference calls corporativas con audio en vivo, Agora RTC, Socket.IO, PDFs y grabaciones.
-- POC Cartas: aplicacion mobile con React Native y Expo para manipulacion interactiva de una baraja espanola.
+- POC Cartas: aplicacion mobile con React Native y Expo para manipulacion interactiva de una baraja espanola (solo documentacion, fuera del CV).
+- Copa Prostagma: SaaS multi-tenant de torneos en etapa inicial (solo documentacion, fuera del CV por ahora).
 - Portal de Aliados: portal B2B React + TypeScript para gestion de eventos, ventas, pagos, dashboards y reportes.
 
 ## Keywords Para LinkedIn / ATS
 
-React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, AWS, Vercel, Kubernetes, Helm, LLM Integration, Multimodal AI, Gemini, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
+React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, GHCR, AWS, AWS Lightsail, Traefik, Vercel, GraphQL Subscriptions, WebSockets, Kubernetes, Helm, LLM Integration, Applied AI, Multimodal AI, Gemini API, Google Apps Script, Google Workspace APIs, AI Automation, AI-assisted Development, Claude Code, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
 
 ## Tono Profesional Deseado
 

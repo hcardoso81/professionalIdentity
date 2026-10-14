@@ -10,7 +10,9 @@ Periodo: noviembre 2023 - actualidad.
 
 Rol sugerido: Senior Frontend Engineer / Full Stack Engineer.
 
-### Noviembre 2025 - actualidad
+Nota sobre fechas: los periodos por proyecto se reconstruyeron a partir del historial de commits. Hubo solapamientos durante las transiciones entre proyectos.
+
+### Mayo 2025 - actualidad
 
 Proyecto principal: Portal Expensas Admins.
 
@@ -18,23 +20,25 @@ Responsabilidades:
 
 - Desarrollo de una aplicacion administrativa React + TypeScript para gestion de consorcios y expensas.
 - Definicion general de UI tomando como guia patrones del dashboard de Material UI.
-- Trabajo sobre modulos administrativos, vistas tabulares, filtros, formularios y flujos operativos.
-- Aplicacion de Clean Architecture, CQRS y Presenter Pattern.
+- Segundo contribuidor del repositorio, con foco en sueldos/liquidaciones, unidades, recibos, amenities, juicios, polizas y el sistema de tickets Rocket.
+- Tickets y conversaciones en tiempo real con GraphQL subscriptions sobre WebSocket, con reconexion y resincronizacion.
+- Aplicacion de Clean Architecture, CQRS y Presenter Pattern; desde 2026 el repositorio compila varios portales desde un core compartido.
+- Pipeline de despliegue con GitHub Actions, Docker, GitHub Container Registry, AWS Lightsail y Traefik, incluyendo flujo de hotfixes por tags.
 - Integracion con GraphQL, Apollo, Material UI, MUI X DataGrid, React Router e i18next.
 
-### Enero 2025 - noviembre 2025
+### Agosto 2024 - abril 2025
 
 Proyecto principal: Portal de Aliados.
 
 Responsabilidades:
 
-- Desarrollo de portal B2B para aliados de Fanki.
+- Desarrollo de portal B2B para aliados de Fanki; principal contribuidor de la primera version del portal.
 - Definicion general de UI y experiencia administrativa.
 - Trabajo sobre dashboards, metricas, ventas, pagos, asistencias, eventos, comercios y reportes.
 - Integracion de React, TypeScript, Vite, Material UI, MUI X, ApexCharts, React Hook Form, Zod e i18next.
 - Participacion en flujos de despliegue con Node/Express, Docker, GitLab CI/CD, Vercel y Helm/Kubernetes.
 
-### Noviembre 2023 - noviembre 2024
+### Noviembre 2023 - marzo 2025
 
 Proyecto principal: News Kiosk.
 
@@ -45,7 +49,7 @@ Contexto:
 
 Responsabilidades:
 
-- Desarrollo y mantenimiento de plataforma full stack para busqueda, analisis y gestion de noticias.
+- Desarrollo y mantenimiento de plataforma full stack para busqueda, analisis y gestion de noticias; principal contribuidor del repositorio en ese periodo.
 - Frontend en React + TypeScript con arquitectura por capas: Presentation, Domain y Data.
 - Integracion de React Query, Axios, Material UI, rutas protegidas, dashboards, lectura de PDFs y busquedas guardadas.
 - Backend con Node.js, Express, MongoDB, Mongoose, JWT, Nodemailer, Winston/CloudWatch y PM2.
@@ -66,6 +70,7 @@ Responsabilidades:
 - Desarrollo del plugin SEO Content Locker para WordPress.
 - Mantenimiento del sitio y tareas evolutivas.
 - Trabajo sobre monetizacion, captacion de leads, control de acceso a contenido premium e integracion con Mailchimp/reCAPTCHA.
+- 2026: refactor del plugin hacia servicios, repositorios y namespaces; proteccion anti-bot por capas (reCAPTCHA v3 y rate limiting por IP, formulario y email); reporte diario de leads por WP-Cron; integracion con Elementor y landings.
 
 ## Insider Latam / Insider
 
@@ -82,11 +87,14 @@ Responsabilidades:
 - Desarrollo de WP2LinkedIn para publicacion controlada de posts en pagina de empresa de LinkedIn.
 - Desarrollo de Welcome Popup Manager para popups configurables desde WP Admin.
 - Desarrollo de WP Admin Posts Extended para filtros avanzados y exportacion editorial a Excel.
-- Desarrollo en progreso de Insider Editorial Automation Workflow, un workflow editorial asistido por IA para convertir emails y adjuntos en borradores de posts.
+- Mantenimiento continuo del sitio: actualizacion de plugins, limpieza de logs de errores (mu-plugin para silenciar avisos inofensivos) y correcciones de rendimiento y scripts.
+- 2026: Insider Automation, sistema de automatizacion editorial con IA. Primero un POC con Gmail, Zapier y Gemini (mayo 2026); luego reescritura sobre Google Apps Script, Gemini API, Drive, Sheets y WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados y plugin WordPress de control (agosto 2026 - actualidad). Validado en staging con una muestra real del cliente: 20 casos, 16 OK, 4 con advertencias, 0 errores.
+- 2026: plugins Insider Shorts (carrusel de shorts desde playlists de YouTube), World Cup 2026 Widget (partidos del Mundial via API-Football) y Cannes Festival Medal Tracker (medallero de Cannes Lions importado desde Excel).
+- 2026: evolucion de WP2LinkedIn (estados editables, reconexion de token), WP Admin Posts Extended (filtros por autor/ano, campo hasVideo) y plugins chicos de Edicion rapida.
 
 ## Mundialito Senior
 
-Periodo: 2025.
+Periodo: marzo 2026 - julio 2026.
 
 Rol sugerido: AI / Full Stack Developer.
 
@@ -101,7 +109,15 @@ Responsabilidades:
 - Integracion de OpenAI, PostgreSQL, Google Docs como CMS de FAQ y CopaFacil API para datos sincronizados y consultas vivas.
 - Implementacion de fallback ante fallas de CopaFacil y guarda anti-alucinacion para evitar respuestas no sustentadas.
 - Desarrollo de herramientas administrativas para configurar torneos, sincronizar datos, revisar conversaciones y curar/ejecutar casos de testing.
-- Diseño del flujo Gmail -> Zapier -> Gemini -> borrador WordPress/Gmail, con salida JSON estructurada, analisis multimodal de imagenes y revision humana antes de publicar.
+
+## Prostagma - iniciativa propia (en desarrollo)
+
+Periodo: julio 2026 - actualidad.
+
+- Armado de una celula de desarrollo senior orientada a software a medida, IA, chatbots y automatizaciones.
+- Copa Prostagma: SaaS multi-tenant para torneos de futbol (monorepo pnpm/Turborepo, NestJS, React, Next.js, PostgreSQL, Prisma), en etapa de bootstrap con ADRs.
+- Prostagma AI Reports: plugin WordPress de reportes con adaptador opcional al WordPress AI Client.
+- Todavia sin presencia publica: no incluir como empresa en CV/LinkedIn hasta que se lance.
 
 ## Freelance / Growth Period
 
@@ -161,6 +177,7 @@ Responsabilidades:
 
 ## Formacion Continua
 
-- Cursos de ingles iniciados en 2023 y continuados durante 2024/2025.
+- Cursos de ingles iniciados en 2023 y continuados durante 2024-2026.
 - Ingles en progreso hacia B2.
 - Aprendizaje autodidacta continuo en React, TypeScript, React Native, arquitectura hexagonal, Clean Architecture y mobile development.
+- Desarrollo asistido por agentes de IA (Claude Code, Codex): cada proyecto propio incluye un `AGENTS.md` con reglas de arquitectura, seguridad y validacion, y documentacion de decisiones (ADRs) para trabajar con agentes de forma controlada.

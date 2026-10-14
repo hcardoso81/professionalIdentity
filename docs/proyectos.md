@@ -4,75 +4,77 @@ Este documento contiene el detalle de proyectos para usar como fuente de verdad 
 
 ## Automatizacion editorial / IA
 
-### Insider Editorial Automation Workflow
+### Insider Automation - Editorial AI Workflow
 
-Workflow en progreso para asistir el proceso editorial de Insider Latam, transformando emails con informacion periodistica y sus adjuntos en borradores de posts listos para revision humana.
+Sistema de automatizacion editorial para Insider Latam que convierte comunicados y notas de prensa recibidos por Gmail (cuerpo, adjuntos, documentos de Google Docs, imagenes y videos) en borradores periodisticos de WordPress listos para revision humana.
 
 Contexto:
 
-- Cliente/proyecto: Insider.
+- Cliente/proyecto: Insider Latam.
 - Sitio relacionado: insiderlatam.com.
-- Estado: POC / desarrollo en progreso.
-- Objetivo: reducir el trabajo manual de lectura, resumen, contextualizacion y preparacion inicial de contenidos editoriales.
+- Periodo: mayo 2026 - actualidad.
+- Estado: POC funcional en staging, validado con una muestra real del cliente. La publicacion definitiva no se automatiza.
+- Objetivo: reducir el trabajo manual de lectura, resumen, contextualizacion y preparacion inicial de contenidos editoriales, sin perder control editorial.
 
-Resumen:
+Evolucion:
 
-El workflow parte de emails recibidos en Gmail, analiza el cuerpo del mensaje y los adjuntos disponibles con Gemini y devuelve una propuesta editorial estructurada en espanol. La salida puede utilizarse para crear un borrador en WordPress o, durante la etapa de validacion, un borrador en Gmail.
-
-La solucion mantiene una persona dentro del circuito: la IA prepara el material, pero la publicacion no es automatica. Esto permite validar la calidad editorial, detectar informacion faltante y revisar la imagen antes de que el contenido llegue al sitio.
+1. Mayo 2026 - POC con Zapier: Gmail -> Zapier -> Gemini -> borrador. Sirvio para validar calidad editorial, seleccion de imagen y el contrato de salida JSON con bajo costo.
+2. Agosto 2026 - actualidad: reescritura sobre Google Apps Script + Gemini API, siguiendo la alternativa prevista en el POC para ganar control, trazabilidad y menor costo operativo. Mas de 260 commits, 71 servicios `.gs`, 71 suites de tests locales y 8 ADRs.
 
 Flujo principal:
 
 ```text
-Gmail -> Zapier -> Gemini -> JSON estructurado -> Borrador WordPress/Gmail -> Revision editorial humana
+Gmail (etiqueta PUBLICAR_TEST) -> Apps Script -> Drive/Docs (fuentes) -> Gemini API -> validaciones editoriales -> WordPress REST API (draft) -> Revision humana
+                                          \-> Google Sheets (configuracion, prompts versionados, log y trazabilidad por lote)
+WordPress plugin "Insider Automation Control" -> ControlApi (Apps Script Web App) -> corridas, reintentos, historial y diagnostico
 ```
 
 Responsabilidades y funcionalidades:
 
-- Diseño de un POC rapido y de bajo costo utilizando Zapier como orquestador.
-- Busqueda de emails por remitente y ventana temporal para controlar el alcance de las pruebas.
-- Extraccion del asunto, remitente, cuerpo y adjuntos disponibles.
-- Analisis multimodal con Gemini para resumir, ordenar y contextualizar la informacion sin transcribir el email literalmente.
-- Generacion de titulo, bajada, cuerpo del post, categoria, tags, fuentes utilizadas y notas editoriales.
-- Salida JSON validable para conectar la respuesta de la IA con pasos posteriores del workflow.
-- Deteccion explicita de faltantes, dudas y datos que requieren confirmacion humana.
-- Analisis de imagenes para sugerir una imagen destacada, priorizando rostros humanos, nitidez y orientacion horizontal.
-- Devolucion de instrucciones de recorte y resize para el formato editorial objetivo de `702x460` px y hasta `500 KB`.
-- Creacion de un borrador para revision, manteniendo el control editorial antes de publicar.
-- Definicion de una alternativa futura con Google Apps Script, Gmail y Gemini API si se necesita mayor control o menor costo operativo.
+- Arquitectura modular en Apps Script con servicios separados para Gmail, adjuntos, Drive/Docs, fuentes, prompts, Gemini, validacion editorial, imagenes, WordPress, logging y orquestacion.
+- Orquestacion reanudable por lotes: la cola se congela al inicio, se procesan hasta 5 casos por invocacion, el avance se persiste en Google Sheets (`BATCH_RUNS`, `BATCH_QUEUE`) y las continuaciones se programan con triggers temporales y watchdog para superar los limites de ejecucion de Apps Script.
+- Idempotencia por intento (`attemptKey`): cada intento autorizado crea como maximo un borrador; una reanudacion recupera el draft existente en lugar de duplicarlo.
+- Procesamiento multifuente: cuerpo del email, hilo conversacional hasta el mensaje ancla, adjuntos PDF/DOCX, Google Docs enlazados, articulos HTTPS aprobados y medios audiovisuales en Drive/YouTube.
+- Separacion entre fuentes factuales y candidatas visuales: una imagen no se convierte en fuente de hechos por estar embebida en el correo.
+- Seleccion de imagen destacada multiorigen, con huella SHA-256 para garantizar que el archivo enviado a WordPress sea el mismo que evaluo Gemini.
+- Prompts editoriales y terminologia mantenidos en Google Sheets, versionados y modificables sin desplegar codigo.
+- Reglas editoriales y de estilo de la casa (manual de estilo Insider) aplicadas mediante servicios de validacion, reparacion de estructura, fidelidad de citas y auditoria final.
+- Deteccion de contenido duplicado y fuentes repetidas.
+- Metricas de consumo de Gemini y trazabilidad completa por lote.
+- Plugin WordPress de control (v0.2.0): panel para iniciar o reanudar corridas, autorizar reintentos, revisar historial sanitizado y diagnosticar la conexion. Las llamadas salen desde PHP con secreto compartido, capability y nonce; el panel nunca recibe secretos, cuerpos de correos ni IDs de Gmail.
+- Tests locales en Node que cargan el codigo de Apps Script con dobles de los servicios de Google, ejecutados antes de cada `clasp push`.
+
+Resultados verificables:
+
+- Validacion editorial sobre una muestra del cliente (15 de septiembre de 2026, `gemini-3.5-flash-lite`): 20 casos, 16 `SUCCESS`, 4 `WARNING`, 0 `ERROR`.
+- Primera corrida reanudable real (16 de septiembre de 2026): 22 casos terminales, 22 `SUCCESS`, sin intervencion adicional del operador.
 
 Reglas de calidad y seguridad editorial:
 
-- No inventar informacion ni completar datos no presentes en las fuentes.
-- Marcar en `notas_editoriales` cualquier duda, faltante o adjunto no legible.
-- Usar `requiere_revision` para indicar cuando es necesaria una validacion humana.
-- No publicar automaticamente en la primera version.
-- Evitar seleccionar logos, flyers o placas con texto cuando exista una imagen editorial con personas.
-- Mantener rostros y elementos relevantes dentro del area segura de la imagen.
-
-Salida estructurada:
-
-El contrato de salida incluye campos editoriales (`titulo`, `bajada`, `cuerpo_post`, `categoria_sugerida`, `tags_sugeridos`, `fuentes_usadas`), indicadores de revision y metadatos de imagen (`imagen_destacada_indice`, presencia y cantidad de rostros, motivo de seleccion e instrucciones de recorte). Esta estructura permite auditar el resultado y mantener desacopladas la generacion del contenido y su posterior publicacion.
+- La automatizacion crea borradores, nunca publicaciones definitivas.
+- No inventar informacion ni completar datos ausentes en las fuentes; los faltantes se informan como advertencias.
+- Los errores editoriales generan warnings; los errores tecnicos quedan registrados.
+- Ninguna credencial se almacena en Git; las reglas de seguridad quedan separadas del prompt editorial.
 
 Stack:
 
-Gmail, Zapier, Gemini, WordPress, JSON estructurado, analisis multimodal de imagenes, automatizacion de workflows y human-in-the-loop editorial.
+Google Apps Script, clasp, Gemini API (`gemini-3.5-flash-lite`), Gmail API, Google Drive, Google Docs, Google Sheets, WordPress REST API, plugin WordPress (PHP), Node.js para tests, analisis multimodal, salidas JSON estructuradas, ADRs y human-in-the-loop editorial. POC inicial con Zapier.
 
 Version para LinkedIn/CV:
 
-Diseñe un workflow editorial asistido por IA para Insider Latam que toma emails y adjuntos desde Gmail, utiliza Gemini para resumir y contextualizar la informacion, analiza imagenes para sugerir una portada y genera un borrador estructurado para WordPress o Gmail. Defini reglas editoriales, salida JSON, deteccion de faltantes, instrucciones de recorte y revision humana antes de publicar, utilizando Zapier como orquestador de una POC de bajo costo.
+Disene y construi un sistema de automatizacion editorial con IA para Insider Latam que transforma comunicados recibidos por Gmail, con sus adjuntos, Google Docs, imagenes y videos, en borradores de WordPress listos para revision humana. Tras validar el concepto con un POC en Zapier, lo reescribi sobre Google Apps Script y Gemini API con orquestacion reanudable por lotes, idempotencia por intento, prompts versionados en Google Sheets, seleccion de imagen destacada con verificacion SHA-256, reglas de estilo editorial y un plugin WordPress de control. En la validacion con una muestra real del cliente, 20 de 20 casos terminaron sin errores (16 OK y 4 con advertencias editoriales).
 
 Version corta:
 
-Workflow editorial con Gmail, Zapier y Gemini que transforma emails y adjuntos en borradores de posts estructurados, incluyendo analisis de imagen, reglas editoriales y revision humana antes de publicar.
+Workflow editorial con IA (Google Apps Script, Gemini API, Gmail, Drive, Sheets y WordPress REST API) que convierte comunicados y adjuntos en borradores revisables, con orquestacion reanudable, idempotencia, prompts versionados, seleccion de imagen y revision humana obligatoria.
 
 Valor profesional y comercial:
 
-- Demuestra capacidad para detectar tareas repetitivas de negocio y convertirlas en un flujo concreto, validable y de bajo costo.
-- Combina integraciones, prompting, analisis multimodal, contratos de salida y criterios de calidad editorial en una solucion orientada a un proceso real.
-- Es un buen caso para entrevistas sobre IA aplicada, automatizacion, manejo de incertidumbre, human-in-the-loop y diseño de POCs.
-- Puede presentarse comercialmente como un ejemplo de automatizacion de operaciones de contenido, adaptable a equipos de marketing, medios, agencias y organizaciones con alto volumen de emails o documentos.
-- Hasta contar con mediciones y uso productivo, no afirmar porcentajes de ahorro, publicacion autonoma ni resultados editoriales cuantificados.
+- Demuestra el camino completo de una idea de IA aplicada: POC barato para validar, decision explicita de rearquitectura y sistema con contratos, tests, ADRs y evidencia de resultados.
+- Combina integraciones, prompting, analisis multimodal, contratos de salida, confiabilidad (reanudacion, idempotencia) y criterio editorial.
+- Es un muy buen caso para entrevistas sobre IA aplicada, manejo de limites de plataforma, human-in-the-loop y diseno incremental.
+- Puede presentarse comercialmente como automatizacion de operaciones de contenido para medios, agencias y equipos de marketing.
+- Hasta contar con uso productivo y mediciones, no afirmar porcentajes de ahorro de tiempo ni publicacion autonoma.
 
 ## WordPress
 
@@ -117,6 +119,16 @@ Responsabilidades y funcionalidades:
 - Notificaciones por email usando `wp_mail`.
 - Arquitectura modular con namespaces, autoload manual, servicios y repositorios.
 
+Evolucion 2026 (v1.1.x):
+
+- Refactor incremental hacia namespaces, autoload por classmap, servicios (`MailchimpService`, `LeadRegistrationService`, `LeadAccessService`), repositorios y un `Notifier` en capa de aplicacion, eliminando helpers procedurales.
+- Proteccion anti-bot por capas: Google reCAPTCHA v3 en todos los formularios publicos y rate limiting separado por IP/formulario, IP global y email.
+- Validacion de nonces en todos los endpoints AJAX y acciones administrativas.
+- Campo First Name, atributo de landing y tags de origen en Mailchimp para segmentar leads.
+- Shortcode para landings, integracion visual con Elementor y redireccion a pagina de agradecimiento.
+- Reporte diario por WP-Cron (`seocontentlocker_day_13_report`) con los leads ingresados 13 dias antes, en horario fijo de Argentina e independiente de la zona horaria de WordPress.
+- Correccion de fallos de formularios en paginas cacheadas y logging endurecido.
+
 Detalles tecnicos:
 
 El plugin esta organizado con una arquitectura cercana a capas. Los controladores AJAX delegan la logica a servicios como `LeadRegistrationService` y `LeadAccessService`, mientras que el acceso a base de datos queda encapsulado en repositorios como `LeadRepository` y `SameIpRepository`.
@@ -125,11 +137,11 @@ El flujo principal registra un lead, valida reCAPTCHA, verifica si el email ya t
 
 Stack:
 
-PHP, WordPress Plugin API, MySQL, JavaScript vanilla, AJAX, Mailchimp API v3, Google reCAPTCHA, WP_List_Table, wp_remote_request, wp_mail, shortcodes, hooks, nonces, custom database tables, CSV export.
+PHP, WordPress Plugin API, MySQL, JavaScript vanilla, AJAX, Mailchimp API v3, Google reCAPTCHA v3, rate limiting, WP-Cron, WP_List_Table, wp_remote_request, wp_mail, shortcodes, hooks, nonces, custom database tables, CSV export, Elementor.
 
 Version corta:
 
-Desarrolle un plugin WordPress personalizado para bloquear contenido SEO-friendly y capturar leads mediante email, con prueba gratuita temporal, control por IP, restauracion de sesiones, Google reCAPTCHA, integracion con Mailchimp, panel administrativo, exportacion CSV, logs y notificaciones automaticas.
+Desarrolle y evolucione un plugin WordPress para bloquear contenido SEO-friendly y capturar leads mediante email, con prueba gratuita temporal, control por IP, proteccion anti-bot por capas (reCAPTCHA v3 y rate limiting), restauracion de sesiones, integracion con Mailchimp, panel administrativo, exportacion CSV, reporte diario por WP-Cron, logs y notificaciones automaticas.
 
 ### WP2LinkedIn
 
@@ -139,7 +151,8 @@ Contexto:
 
 - Cliente/proyecto: Insider.
 - Sitio relacionado: insiderlatam.com.
-- Periodo: 2024 - 2025.
+- Periodo: 2024 - 2026.
+- Version actual: 3.1.
 
 Resumen:
 
@@ -183,6 +196,14 @@ Mejoras administrativas:
 - Indicador para saber si el campo de LinkedIn tiene contenido pendiente de publicar.
 - Publicacion de contenido junto con la featured image del post.
 
+Evolucion 2026 (v3.x):
+
+- Reestructuracion con autoload PSR-4 y reorganizacion por responsabilidades.
+- Pantalla y aviso de reconexion cuando el token de LinkedIn expira.
+- Estados editables de publicacion (`pending`, `manual_published`, `scheduled`) para reflejar publicaciones hechas fuera del plugin.
+- Columna de estado de LinkedIn en el listado de posts, con tooltips.
+- Plugin complementario WP2LinkedIn Status Quick Access para cambiar el estado desde la Edicion rapida.
+
 Version corta:
 
 Plugin administrativo liviano y especifico para conectar WordPress con una pagina de empresa de LinkedIn y publicar posts de forma controlada usando contenido personalizado desde ACF, OAuth, validacion de token, featured image e indicadores editoriales en el listado de posts.
@@ -195,7 +216,7 @@ Contexto:
 
 - Cliente/proyecto: Insider.
 - Sitio relacionado: insiderlatam.com.
-- Periodo: 2024 - 2025.
+- Periodo: 2024 - 2026.
 
 Resumen:
 
@@ -237,7 +258,7 @@ Contexto:
 
 - Cliente/proyecto: Insider.
 - Sitio relacionado: insiderlatam.com.
-- Periodo: 2024 - 2025.
+- Periodo: 2024 - 2026.
 
 Resumen:
 
@@ -280,7 +301,8 @@ Contexto:
 
 - Cliente/proyecto: Insider.
 - Sitio relacionado: insiderlatam.com.
-- Periodo: 2024 - 2025.
+- Periodo: 2024 - 2026.
+- Version actual: 2.5.7.
 
 Resumen:
 
@@ -300,6 +322,9 @@ Funcionalidades:
 - Exportacion de resultados filtrados a Excel.
 - Reportes con fecha, titulo, enlace, estado de publicacion en LinkedIn, fuente, categorias y etiquetas.
 - Campo personalizado con ACF para clasificar la fuente del contenido como "Nota original" o "Comunicado de prensa".
+- Filtros por autor y por ano (desde 2016 hasta el ano actual).
+- Campo ACF `hasVideo` y columna compacta con indicadores visuales para posts con videos de YouTube embebidos.
+- Estados de LinkedIn en el Excel (`Pendiente`, `Publicado`, `Publicado manualmente`, `Programado`), alineados con WP2LinkedIn.
 
 Stack:
 
@@ -309,48 +334,148 @@ Version corta:
 
 Plugin WordPress personalizado para mejorar la gestion editorial del backend, agregando filtros avanzados por etiquetas, integracion con filtros nativos y exportacion de posts filtrados a Excel. Desarrollado en PHP con WordPress Plugin API, Composer, PhpSpreadsheet, ACF y Select2, bajo una arquitectura modular por capas.
 
+### Insider Shorts
+
+Plugin WordPress que toma videos de playlists de YouTube y los muestra como carrusel de shorts embebible mediante shortcode, replicando la experiencia de carruseles de shorts de medios digitales.
+
+Contexto:
+
+- Cliente/proyecto: Insider Latam.
+- Periodo: octubre 2026 - actualidad.
+- Estado: en desarrollo (etapas de configuracion, sincronizacion de playlists y carrusel frontend completadas).
+
+Funcionalidades:
+
+- Alta de playlists, sincronizacion con YouTube Data API v3 e historial de sincronizaciones.
+- Fallback al RSS publico de YouTube cuando no hay API key (hasta 15 videos, sin duracion).
+- API key configurable por constante en `wp-config.php` o desde el panel; las llamadas salen del servidor.
+- Carrusel con CSS scroll snap y JavaScript vanilla, configurable por breakpoint (desktop, tablet, mobile): autoplay, loop, flechas, puntos, color de acento, vista previa al pasar el mouse y duracion.
+- Shortcode `[insider_shorts id="N"]` y desinstalacion limpia opcional.
+- Manual de usuario y casos de prueba preparados para el cliente en Google Docs, siguiendo [la guia de documentos de cliente](guia-documentos-cliente.md).
+
+Stack:
+
+PHP 8.1, WordPress 6.4+, YouTube Data API v3, RSS, JavaScript vanilla, CSS scroll snap, shortcodes, Settings API.
+
+Version corta:
+
+Plugin WordPress para mostrar playlists de YouTube como carrusel de shorts administrable, con sincronizacion via YouTube Data API v3, fallback a RSS, configuracion responsive por breakpoint y documentacion de usuario para el cliente.
+
+### World Cup 2026 Widget
+
+Plugin WordPress para mostrar cards de partidos del Mundial 2026 por fecha usando API-Football, desarrollado para insiderlatam.com.
+
+Contexto:
+
+- Cliente/proyecto: Insider Latam.
+- Periodo: mayo 2026 - julio 2026.
+
+Funcionalidades:
+
+- Cliente HTTP propio para el endpoint `/fixtures` de API-Football (API-SPORTS).
+- Sincronizacion de la temporada completa con cache comun (`FixturesSyncService` + `FixturesRepository` sobre transients), de modo que el frontend navega entre dias sin nuevas llamadas a la API.
+- Endpoint REST propio para servir los partidos al frontend.
+- Carrusel horizontal con equipos, logos, marcador, estado, fase, estadio y penales.
+- Estilos que heredan tipografia y colores del theme.
+
+Stack:
+
+PHP, WordPress Plugin API, WordPress REST API, API-Football v3, transients, shortcodes, JavaScript, CSS.
+
+Version corta:
+
+Plugin WordPress con shortcode para mostrar partidos del Mundial 2026 desde API-Football, con sincronizacion de temporada, cache, endpoint REST propio y carrusel responsive integrado al theme.
+
+### Cannes Festival Medal Tracker
+
+Plugin WordPress para importar, administrar y mostrar el medallero por pais del festival de Cannes Lions para Hispanoamerica.
+
+Contexto:
+
+- Cliente/proyecto: Insider Latam.
+- Periodo: mayo 2026 - julio 2026.
+
+Funcionalidades:
+
+- Importacion de resultados desde Excel con PhpSpreadsheet, tolerante a variaciones de encabezados y filas de titulo.
+- Normalizacion de premios (Grand Prix, Gold, Silver y Bronze Lion, incluidas variantes Campaign) y filtro de paises hispanoamericanos, incluso en celdas con varios paises.
+- Vista previa del procesamiento fila por fila con estado y motivo, y registro de filas ignoradas en logs.
+- Tabla propia (`{prefix}_fmb_country_medals`) creada en la activacion.
+- Render publico del medallero por pais.
+
+Stack:
+
+PHP, WordPress Plugin API, Composer, PhpSpreadsheet, MySQL (tabla propia), HTML, CSS.
+
+Version corta:
+
+Plugin WordPress para importar desde Excel y publicar el medallero de Cannes Lions por pais, con normalizacion de premios, filtro regional, vista previa auditable y tabla propia.
+
+### Herramientas editoriales menores (Insider Latam, 2026)
+
+Plugins chicos y especificos que resuelven fricciones del trabajo editorial diario. No se destacan individualmente en el CV, pero muestran criterio para resolver necesidades puntuales con bajo costo de mantenimiento:
+
+- BeyondWords Quick Edit: checkbox de generacion de audio de BeyondWords en la Edicion rapida, con migracion del meta legacy.
+- Has Video ACF Quick Edit: edicion del campo ACF `hasVideo` desde la Edicion rapida.
+- WP2LinkedIn Status Quick Access: edicion del estado de LinkedIn desde la Edicion rapida.
+- Remove Fields Quick Edit (Chip Tecnologia): quita campos que generaban confusion en la edicion rapida y por lotes.
+- Silence Early Translation Notices: mu-plugin que filtra del `error_log` avisos conocidos e inofensivos (por tipo, archivo y texto) para que queden visibles solo los errores reales.
+
 ## React / TypeScript / Full Stack
 
 ### Portal Expensas Admins
 
-Aplicacion web administrativa para la gestion integral de consorcios y expensas.
+Aplicacion web administrativa para la gestion integral de consorcios y expensas, usada por administraciones de edificios en su trabajo diario.
 
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: noviembre 2025 - actualidad.
+- Periodo: mayo 2025 - actualidad.
 - Rol: Senior Frontend Engineer / Full Stack Engineer.
-- Participacion: definicion general de UI tomando como guia el dashboard de Material UI, desarrollo y mantenimiento de modulos administrativos.
+- Participacion: definicion general de UI tomando como guia el dashboard de Material UI; segundo contribuidor del repositorio (mas de 1.400 commits propios en un equipo de 4 personas); pipeline de despliegue.
 
 Resumen:
 
-Permite operar modulos vinculados a administraciones, consorcios, unidades funcionales, empleados, sueldos, liquidaciones, pagos, proveedores, documentos y tickets internos de soporte mediante una interfaz orientada al trabajo diario de administracion.
+Permite operar modulos vinculados a administraciones, consorcios, unidades funcionales, propietarios, empleados, sueldos, liquidaciones, prorrateos, pagos, ordenes de pago, proveedores, polizas de seguro, juicios, asambleas, amenities, documentos y tickets internos de soporte mediante una interfaz orientada al trabajo diario de administracion.
 
 Arquitectura:
 
-El proyecto esta desarrollado con React, TypeScript y Material UI, utilizando MUI X DataGrid para vistas tabulares avanzadas, React Router para navegacion, i18next para internacionalizacion y Apollo GraphQL para comunicacion con backend.
+El proyecto esta desarrollado con React, TypeScript, Vite y Material UI, utilizando MUI X DataGrid para vistas tabulares avanzadas y editables, React Router para navegacion, i18next para internacionalizacion y Apollo GraphQL para comunicacion con backend.
 
-La aplicacion sigue una arquitectura basada en Clean Architecture, CQRS y Presenter Pattern. Los componentes React consumen ViewModels y delegan acciones en presenters, mientras que las operaciones contra backend se canalizan mediante casos de uso, handlers, mappers y entidades de dominio.
+La aplicacion sigue una arquitectura basada en Clean Architecture, CQRS y Presenter Pattern:
 
-Funcionalidades:
+```text
+Component -> Presenter.handleX() -> Core.execute(Query/Command) -> Handler -> GraphQL -> Mapper -> Domain -> Presenter.updateModel()
+```
 
-- Gestion de expensas.
-- Liquidaciones.
-- Prorrateos.
-- Empleados y recibos.
-- Cuentas corrientes.
-- Pagos.
-- Documentos.
-- Tickets tipo Rocket.
-- GraphQL subscriptions para actualizaciones en tiempo real en conversaciones y tickets.
+Desde 2026 el mismo repositorio compila varios portales (Administraciones, Proveedores y Encargados) que comparten core, cliente GraphQL, theme y libreria de componentes. La frontera entre `shared/` y cada portal se aplica con reglas de ESLint, no por convencion.
+
+Funcionalidades donde tuve participacion principal:
+
+- Sueldos y liquidaciones de empleados (payroll), recibos y prorrateos.
+- Unidades funcionales, consorcios, propietarios, cargos por unidad y vencimientos.
+- Rocket: sistema de tickets y conversaciones de soporte con GraphQL subscriptions sobre WebSocket, reconexion con resincronizacion, indicadores de accion en el header, audiencias por grupo de categoria y pegado de imagenes.
+- Amenities, asambleas, juicios, polizas de seguro, ordenes de pago, notas y datos de contacto (firmas y logos de la administracion).
+- DataGrid editable reutilizable para carga masiva de datos.
+- Ajustes mobile de tablas, filtros y resumenes.
+
+Delivery:
+
+- GitHub Actions que construye imagenes Docker por portal, las publica en GitHub Container Registry y despliega en AWS Lightsail con Docker Compose, Traefik como reverse proxy y certificados de Let's Encrypt.
+- Health checks post-deploy y flujo de hotfixes a produccion desde tags `hotfix-*`.
+- Trabajo por tickets con pull requests y conventional commits.
 
 Stack:
 
-React, TypeScript, Material UI, MUI X DataGrid, React Router, i18next, Apollo GraphQL, GraphQL subscriptions, Clean Architecture, CQRS, Presenter Pattern.
+React 18, TypeScript, Vite, Material UI, MUI X DataGrid, MUI X Date Pickers, React Router, i18next, Apollo GraphQL, GraphQL subscriptions (graphql-ws), Clean Architecture, CQRS, Presenter Pattern, ESLint, Docker, GitHub Actions, GHCR, AWS Lightsail, Traefik, NGINX.
+
+Version para LinkedIn/CV:
+
+Desarrollo y mantenimiento de una plataforma administrativa React + TypeScript para la gestion de consorcios: expensas, liquidaciones, sueldos, pagos, proveedores, documentos y soporte interno. Defini la UI base y soy el segundo contribuidor del repositorio, con foco en payroll, unidades, recibos y el sistema de tickets en tiempo real sobre GraphQL subscriptions. Arquitectura Clean Architecture + CQRS + Presenter Pattern, con multiples portales compilados desde un mismo core. Construi el pipeline de despliegue con GitHub Actions, Docker, GHCR y AWS Lightsail con Traefik.
 
 Version corta:
 
-Desarrollo y mantenimiento de una aplicacion administrativa React + TypeScript para gestion de expensas, consorcios, empleados, liquidaciones, pagos y soporte interno. Implementacion de Clean Architecture, CQRS y Presenter Pattern, integracion con Apollo GraphQL, subscriptions en tiempo real, Material UI, MUI DataGrid, React Router e i18next.
+Plataforma administrativa React + TypeScript para gestion de consorcios con Clean Architecture, CQRS y Presenter Pattern, Apollo GraphQL con subscriptions en tiempo real, MUI X DataGrid, multiples portales desde un mismo core y despliegue con GitHub Actions, Docker y AWS Lightsail.
 
 ### News Kiosk
 
@@ -359,7 +484,7 @@ Plataforma web para la gestion, busqueda, analisis y visualizacion de articulos 
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: noviembre 2023 - noviembre 2024.
+- Periodo: noviembre 2023 - marzo 2025.
 - Cliente: cliente nativo de Estados Unidos.
 - Participacion: desarrollo full stack y definicion/planteo de UI.
 
@@ -421,7 +546,7 @@ Asistente conversacional por WhatsApp para torneos amateur que permite a partici
 Contexto:
 
 - Cliente/organizacion: Mundialito Senior.
-- Periodo: 2025.
+- Periodo: marzo 2026 - julio 2026.
 - Tipo: proyecto de producto en desarrollo.
 - Objetivo: reducir consultas manuales a organizadores y ofrecer respuestas rapidas, consistentes y auditables.
 - Canal: WhatsApp mediante webhook de Twilio.
@@ -537,7 +662,7 @@ Prueba de concepto mobile para la manipulacion interactiva de una baraja espanol
 Contexto:
 
 - Modalidad: proyecto autodidacta / aprendizaje continuo.
-- Periodo: 2025 - actualidad.
+- Periodo: abril 2026 - mayo 2026.
 - Foco: practica mobile con Expo, React Native, TypeScript, arquitectura hexagonal e interacciones tactiles.
 
 Resumen:
@@ -572,7 +697,7 @@ Portal web administrativo y de inteligencia de negocios para aliados de Fanki.
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: enero 2025 - noviembre 2025.
+- Periodo: agosto 2024 - abril 2025.
 - Participacion: desarrollo de producto y definicion general de UI.
 
 Resumen:
@@ -598,3 +723,28 @@ React, TypeScript, Vite, Material UI, MUI X, ApexCharts, React Router, React Hoo
 Version corta:
 
 Desarrolle un portal web B2B para aliados, enfocado en gestion de eventos e inteligencia de negocios sobre ventas, pagos, asistencias, abonos y comercios. Implementado con React, TypeScript, Vite y Material UI, con arquitectura por capas basada en dominio, casos de uso, infraestructura y UI. Incluye autenticacion, autorizacion por roles, restricciones por organizacion, dashboards, reportes exportables, feature flags y despliegue mediante Node/Express, Docker, GitLab CI/CD, Vercel y Helm/Kubernetes.
+
+## Iniciativa propia - Prostagma (en desarrollo)
+
+Prostagma es una celula de desarrollo senior con base en Tandil, orientada a acoplarse al negocio del cliente con desarrollo web y mobile, IA, chatbots, automatizaciones y cloud. A octubre 2026 esta en etapa de armado: landing sin publicar y productos en fase inicial. No incluir en el CV como empresa hasta que tenga presencia publica.
+
+### Copa Prostagma
+
+Plataforma SaaS multi-tenant para administrar torneos de futbol: organizaciones, competencias, equipos, jugadores, fixture, resultados y tablas de posiciones. Es la evolucion natural del WhatsApp AI Tournament Assistant hacia un producto propio.
+
+- Periodo: agosto 2026 - actualidad.
+- Estado: bootstrap tecnico del monorepo y vertical slices de autenticacion, Organizations y Memberships.
+- Arquitectura: monorepo con pnpm y Turborepo; API en NestJS, dashboard administrativo con React + Vite + Material UI, web publica con Next.js, paquetes compartidos de tipos y validacion con Zod.
+- Decisiones documentadas en ADRs: multi-tenancy con esquema compartido, acceso basado en memberships, abstraccion `CurrentUserProvider`, creacion atomica de organizaciones y autenticacion con password + Bearer tokens.
+- Stack planificado: TypeScript strict, PostgreSQL, Prisma, Redis, Docker Compose, Vitest, Jest y Playwright; app mobile futura con React Native y Expo.
+
+### Prostagma AI Reports
+
+Plugin WordPress de reportes de solo lectura sobre posts publicados (busqueda por palabra clave, periodo actual, agrupacion por categoria o autor y posts sin imagen destacada), con endpoint REST protegido por capability y nonce, y adaptador opcional al WordPress AI Client para generar resumenes. Si el cliente de IA no esta disponible, muestra un resumen local determinista.
+
+- Periodo: julio 2026.
+- Stack: PHP, WordPress REST API, WordPress AI Client, JavaScript vanilla.
+
+### Prostagma landing
+
+Landing estatica modular sin build: componentes ES modules, GSAP + ScrollTrigger con degradacion elegante y soporte de `prefers-reduced-motion`, canvas de particulas y demo de chatbot en vanilla JS.

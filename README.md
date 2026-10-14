@@ -11,7 +11,7 @@ Version publicada en GitHub Pages:
 
 ## Perfil
 
-Senior Full Stack Engineer con foco en React, TypeScript, arquitectura frontend, aplicaciones administrativas, dashboards, integraciones y desarrollo de soluciones web escalables.
+Senior Full Stack Engineer con foco en React, TypeScript, arquitectura frontend, aplicaciones administrativas, integraciones e IA aplicada a la automatizacion de procesos.
 
 Experiencia destacada:
 
@@ -19,7 +19,8 @@ Experiencia destacada:
 - Arquitectura frontend con Clean Architecture, Hexagonal Architecture, CQRS y Presenter Pattern.
 - Desarrollo full stack con Node.js, Express, REST APIs, GraphQL, MongoDB y MySQL.
 - Desarrollo de plugins WordPress personalizados para flujos editoriales, marketing, leads, newsletters e integraciones.
-- Diseño de workflows editoriales asistidos por IA para automatizar la preparacion de contenidos con revision humana.
+- IA aplicada: pipeline editorial con Google Apps Script y Gemini API validado con datos reales del cliente, y asistente de WhatsApp con function calling estricto.
+- Despliegues con Docker, GitHub Actions, GHCR y AWS Lightsail.
 - Experiencia mobile con React Native, Expo, Agora RTC y Socket.IO.
 - Integraciones con APIs externas, LLMs, Gemini, Zapier, Gmail, Twilio WhatsApp API, Mailchimp, LinkedIn OAuth y Google reCAPTCHA.
 
@@ -36,16 +37,17 @@ Experiencia destacada:
     |-- cv-hernan-cardoso-en.md        # Version Markdown del CV en ingles
     |-- experiencia.md                 # Timeline profesional
     |-- proyectos.md                   # Detalle de proyectos
-    `-- plugins-wordpress.md           # Prompt generico para plugins WordPress
+    |-- plugins-wordpress.md           # Prompt generico para plugins WordPress
+    `-- guia-documentos-cliente.md     # Guia de estilo para documentos entregados a clientes
 ```
 
 ## Proyectos Destacados
 
-- Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones y tickets internos.
+- Portal Expensas Admins: aplicacion React + TypeScript para gestion de consorcios, expensas, pagos, liquidaciones, sueldos y tickets en tiempo real.
 - Portal de Aliados: portal B2B para eventos, ventas, pagos, reportes y business intelligence.
 - News Kiosk: plataforma full stack React + Node.js/MongoDB para busqueda, analisis y gestion de noticias.
 - SEO Content Locker: plugin WordPress para bloqueo de contenido premium, captacion de leads, Mailchimp y Google reCAPTCHA.
-- Insider Editorial Automation Workflow: workflow con Gmail, Zapier y Gemini para transformar emails y adjuntos en borradores editoriales estructurados, con analisis de imagen y revision humana.
+- Insider Automation: pipeline editorial con IA (Google Apps Script, Gemini API, Gmail, Drive, Sheets y WordPress REST API) con orquestacion reanudable, idempotencia, prompts versionados y revision humana.
 - CUTI: app mobile React Native para conference calls corporativas con Agora RTC y Socket.IO.
 - WhatsApp AI Tournament Assistant: asistente conversacional por WhatsApp para torneos amateur, con NestJS, OpenAI, PostgreSQL, Twilio, Google Docs, CopaFacil, function calling estricto, fallback y guarda anti-alucinacion.
 

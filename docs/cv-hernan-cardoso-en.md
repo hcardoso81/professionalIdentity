@@ -1,45 +1,46 @@
 # Hernan Federico Cardoso
 
-Senior Full Stack Engineer | React & TypeScript | Clean Architecture
+Senior Full Stack Engineer | React & TypeScript | Clean Architecture | Applied AI & Automation
 
 Tandil, Argentina  
 +54 2494619638  
 hernan.f.cardoso@gmail.com  
-LinkedIn: https://www.linkedin.com/in/cardosohernan/
+LinkedIn: https://www.linkedin.com/in/cardosohernan/  
+CV online: https://hcardoso81.github.io/professionalIdentity/
 
 ## Professional Summary
 
-Senior Full Stack Engineer with 18+ years of experience building, maintaining and modernizing web applications, administrative platforms, custom integrations and AI-assisted workflows.
+Senior Full Stack Engineer with 18+ years of experience building, maintaining and modernizing production web applications.
 
-In recent years, I have focused on React, TypeScript and frontend architecture, working on complex dashboards, B2B portals and business workflows using Clean Architecture, Hexagonal Architecture, CQRS and Presenter Pattern.
+Focused on React and TypeScript for complex administrative platforms and B2B portals, using Clean Architecture, CQRS and Presenter Pattern, with GraphQL/REST integrations and Docker-based delivery on GitHub Actions and AWS.
 
-I also have a strong background in PHP, WordPress plugin development, Node.js, REST/GraphQL APIs, Docker-based deployments and legacy system modernization. I am recognized for technical ownership, clear communication, adaptability and a collaborative mindset with teams and clients.
+In the last year, designed and shipped applied AI systems: an editorial automation pipeline on Google Apps Script and Gemini API validated with real client data, and a WhatsApp assistant with strict function calling and hallucination guardrails.
+
+Strong background in PHP and WordPress plugin development, legacy modernization and AI-assisted development with coding agents. Recognized for technical ownership, clear communication and a collaborative mindset with teams and clients.
 
 ## Technical Skills
 
-Languages: TypeScript, JavaScript, PHP, HTML, CSS, SQL.
+Languages: TypeScript, JavaScript, PHP, SQL, HTML, CSS.
 
-Frameworks: React, React Native, Expo, Node.js, Express, NestJS, Laravel, WordPress.
+Frontend: React, Vite, Material UI, MUI X DataGrid, Apollo Client, React Router, React Query, React Hook Form, Zod, i18next.
 
-Frontend Libraries: Material UI, MUI X DataGrid, React Router, React Query, React Hook Form, Zod, Yup, i18next, ApexCharts, Emotion.
+Backend / Data: Node.js, NestJS, Express, REST APIs, GraphQL (Apollo, subscriptions over WebSocket), PostgreSQL, MongoDB, MySQL, JWT.
 
-APIs / Data: REST APIs, GraphQL, Apollo GraphQL, Axios, JWT, Socket.IO, MongoDB, Mongoose, MySQL, PostgreSQL.
+AI / Automation: Gemini API, OpenAI API, function calling, structured outputs, multimodal analysis, hallucination guardrails, human-in-the-loop, Google Apps Script, Gmail/Drive/Docs/Sheets APIs, Twilio WhatsApp API, Zapier, AI-assisted development (Claude Code, Codex).
 
-Architecture: Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, use cases, repositories, services, mappers, modular architecture, SOLID principles, clean code.
+Architecture: Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, use cases, repositories, mappers, ADRs, SOLID.
 
-WordPress: Plugin development, hooks, shortcodes, AJAX handlers, nonces, WP_List_Table, Custom Post Types, ACF, custom database tables, CSV/XLSX export, migrations, PHP 8 upgrades, hosting maintenance.
+WordPress: Plugin development, REST API, WP-Cron, custom tables, ACF, Custom Post Types, nonces/capabilities, rate limiting, PhpSpreadsheet, Mailchimp, LinkedIn OAuth, YouTube Data API, PHP 8 migrations.
 
-DevOps and Tools: Docker, Docker Compose, GitLab CI/CD, GitHub Actions, Vercel, AWS, AWS S3, PM2, NGINX, Winston/CloudWatch logging, ESLint, Prettier, Jest.
+DevOps: Docker, GitHub Actions, GitLab CI/CD, GitHub Container Registry, AWS (Lightsail, S3), Vercel, Traefik, NGINX, PM2.
 
-Mobile and Realtime: Agora RTC, React Navigation, AsyncStorage, React Native WebView.
-
-AI and Integrations: LLM integrations, multimodal AI, Gemini, OpenAI-compatible APIs, Groq, workflow automation with Zapier, Gmail, Twilio WhatsApp API, function calling/tools, structured JSON outputs, human-in-the-loop workflows, Mailchimp API, LinkedIn OAuth, Google reCAPTCHA.
+Mobile: React Native, Expo.
 
 ## Professional Strengths
 
 - Leadership and ownership: experienced leading teams, coordinating delivery, removing blockers and taking responsibility for product quality and technical outcomes.
-- Communication and client-facing work: comfortable explaining technical concepts, aligning with stakeholders, presenting demos and collaborating with clients and cross-functional teams.
-- Problem solving: pragmatic and adaptable approach to analyze problems, propose alternatives and balance technical quality, time and business needs.
+- Communication and client-facing work: comfortable explaining technical concepts, aligning with stakeholders, presenting demos and writing client-facing documentation.
+- Problem solving: pragmatic approach; validate ideas with low-cost POCs, then decide explicitly when to re-architect, balancing quality, time and business needs.
 - Autonomy and teamwork: proactive, reliable and able to work without close supervision while keeping a positive, collaborative and supportive team dynamic.
 
 ## Professional Experience
@@ -49,100 +50,81 @@ AI and Integrations: LLM integrations, multimodal AI, Gemini, OpenAI-compatible 
 November 2023 - Present  
 https://www.proyecto404.com/
 
-- Build and maintain modern web applications using React, TypeScript, Material UI and Node.js.
-- Define and implement UI structures for administrative dashboards, using Material UI dashboard patterns as a design and interaction reference.
-- Work on layered frontend architectures separating presentation, domain, use cases, infrastructure and data access.
-- Integrate REST and GraphQL APIs, authentication flows, protected routes, dashboards, reports and complex business workflows.
-- Collaborate with international clients, including English-speaking environments, product discussions and demo presentations.
+- Build and maintain production React + TypeScript applications for international clients, from UI definition to deployment.
+- Apply layered architectures (Clean Architecture, CQRS, Presenter Pattern) separating presentation, domain, use cases and infrastructure.
+- Integrate REST and GraphQL APIs, realtime subscriptions, authentication, role-based access, dashboards and reports.
+- Collaborate in English-speaking environments: product discussions, pull requests and demo presentations.
 
 Key projects:
 
-- Portal Expensas Admins (November 2025 - Present): administrative platform for condominium and expense management. Worked on UI definition, modules for administrations, buildings, units, employees, payments, settlements, documents and internal tickets. Built with React, TypeScript, Material UI, MUI X DataGrid, Apollo GraphQL and Clean Architecture/CQRS patterns.
-- Portal de Aliados (January 2025 - November 2025): B2B portal for events, sales, payments, attendance, subscriptions, merchants and business metrics. Worked on UI definition, dashboards, exportable reports, role-based access, organization restrictions and feature flags. Built with React, TypeScript, Vite, Material UI, MUI X, ApexCharts, Node/Express, Docker, GitLab CI/CD and Vercel.
-- News Kiosk (November 2023 - November 2024): full stack news analysis and management platform for an English-speaking client. Worked on UI planning, advanced search, dashboards, article detail views, saved searches, PDF reading, email sharing and REST APIs. Frontend built with React, TypeScript, Material UI, React Query and Axios; backend built with Node.js, Express, MongoDB, Mongoose, JWT, Nodemailer, Winston/CloudWatch, Docker and PM2.
+- Portal Expensas Admins (May 2025 - Present): administrative platform for condominium management: expenses, settlements, payroll, payments, suppliers, documents and internal support tickets. Defined the base UI and am the second-largest contributor (1,400+ commits), focused on payroll, units, receipts and a realtime ticketing system over GraphQL subscriptions with reconnect and resync. Built the delivery pipeline: GitHub Actions, Docker images on GHCR, AWS Lightsail with Traefik, health checks and tag-based hotfixes. React, TypeScript, Vite, Material UI, MUI X DataGrid, Apollo GraphQL.
+- Portal de Aliados (August 2024 - April 2025): B2B portal for events, sales, payments, attendance, subscriptions and business metrics. Main contributor to the first version: UI definition, dashboards, exportable reports, role-based access, organization restrictions and feature flags. React, TypeScript, Vite, MUI X, ApexCharts, Node/Express, Docker, GitLab CI/CD, Vercel.
+- News Kiosk (November 2023 - March 2025): full stack news analysis platform for a US client. Main contributor: advanced search, dashboards, saved searches, PDF reading, email sharing and REST APIs. React, TypeScript, React Query, Node.js, Express, MongoDB, JWT, Docker, GitLab CI/CD.
 
-### Freelance / IntermarketFlow - WordPress Plugin Developer
-
-2024 - Present  
-intermarketflow.com
-
-- Develop and maintain WordPress features for a financial markets analysis website focused on intermarket, technical and macroeconomic analysis.
-- Built SEO Content Locker, a custom WordPress plugin for premium content access, lead capture and monetization.
-- Implemented email-based access validation, temporary trial expiration, IP abuse control, Google reCAPTCHA, Mailchimp API v3 integration, dynamic tags, admin lead management, CSV export, logs and email notifications.
-- Structured the plugin with a modular PHP architecture using services, repositories, AJAX handlers, templates and custom database tables.
-
-### Insider Latam / Insider - WordPress Developer
+### Insider Latam - WordPress & AI Automation Developer
 
 2023 - Present  
 insiderlatam.com
 
-- Maintain a WordPress news portal and migrated the site to PHP 8.
-- Develop custom WordPress plugins for editorial and marketing workflows.
-- Built Insider Newsletters, a plugin to manage newsletters and banners through Custom Post Types, ACF local fields, responsive HTML email rendering and secure HTML export.
-- Built WP2LinkedIn, a plugin to manually publish WordPress posts to LinkedIn company pages using OAuth, ACF custom content, featured images and admin status indicators.
-- Built Welcome Popup Manager, a configurable welcome popup plugin with media library integration, delay settings and cookie-based display rules.
-- Built WP Admin Posts Extended, a backend productivity plugin adding advanced tag filters, native WordPress filter compatibility and Excel export using PhpSpreadsheet.
-- Insider Editorial Automation Workflow (in progress): designed an AI-assisted editorial workflow using Gmail, Zapier and Gemini to analyze emails and available attachments, prepare structured post drafts, suggest featured images and keep human review before publication.
+- Insider Automation (2026): designed and built an AI editorial pipeline that turns press releases received by email, with attachments, linked Google Docs, images and videos, into WordPress drafts for human review. Validated the idea with a Zapier + Gemini POC, then re-architected it on Google Apps Script and Gemini API with resumable batch orchestration, per-attempt idempotency, prompts versioned in Google Sheets, SHA-256-verified featured images, house-style validation, 71 local test suites and a WordPress control plugin. On a real client sample: 20/20 cases without errors (16 OK, 4 with editorial warnings).
+- Build and maintain custom plugins for editorial and marketing workflows: responsive email newsletters, LinkedIn company-page publishing (OAuth), editorial filters with Excel export, a YouTube shorts carousel (YouTube Data API v3), a World Cup 2026 match widget (API-Football) and a Cannes Lions medal tracker with Excel import.
+- Maintain the news portal: PHP 8 migration, plugin updates, error-log cleanup and performance fixes.
 
 ### Mundialito Senior - AI / Full Stack Developer
 
-2025
+March 2026 - July 2026
 
-- Designed and built the WhatsApp AI Tournament Assistant so participants and organizers could query tournament information directly from WhatsApp.
-- Integrated a Twilio webhook with HMAC-SHA1 signature validation and TwiML responses.
-- Implemented multi-tournament selection, session memory, query normalization and typo-tolerant team matching.
-- Built a two-step LLM pipeline with seven strict function-calling tools, PostgreSQL, Google Docs FAQ content and CopaFacil tournament data.
-- Added retry/fallback behavior for external API failures, a hallucination guard grounded in tool results and protected admin tools for configuration, synchronization, conversation review and testing.
+- Built a WhatsApp AI assistant so tournament participants and organizers can query fixtures, results, standings, teams and rules in natural language, with no app or login.
+- NestJS and strict TypeScript backend with a two-step LLM pipeline (OpenAI) routing through seven strict function-calling tools over PostgreSQL, Google Docs FAQ content and the CopaFacil API.
+- Reliability: Twilio HMAC-SHA1 signature validation, retry/fallback for external APIs, a hallucination guard that checks answers against tool results, and an in-process testing platform that runs the production pipeline.
+
+### IntermarketFlow - WordPress Plugin Developer (Freelance)
+
+2024 - Present  
+intermarketflow.com
+
+- Built and evolve SEO Content Locker, a plugin for premium content access and lead capture on a financial markets analysis site.
+- Email-based access with trial expiration, layered anti-bot protection (reCAPTCHA v3, rate limiting by IP, form and email), Mailchimp sync with source tags, admin lead management, CSV export and a daily WP-Cron lead report.
+- Refactored the plugin from procedural helpers to namespaced services, repositories and an event-based notifier.
 
 ### Freelance / Professional Growth Period - Mobile and React Developer
 
 February 2023 - November 2023
 
-- Took a professional growth period focused on React, TypeScript, React Native, Laravel, Hexagonal Architecture and Clean Architecture.
-- Worked on CUTI, a mobile application for corporate conference calls between companies and investors.
-- Implemented authentication, user profiles, call creation/search, live audio participation using Agora RTC, Socket.IO realtime synchronization, speaker/audience moderation, PDF viewing, profile editing, local session persistence and recording playback.
-- Continued English courses and technical self-training.
+- Transitioned to React, TypeScript, React Native, Hexagonal Architecture and Clean Architecture.
+- Worked on CUTI, a mobile app for corporate conference calls with live audio (Agora RTC), Socket.IO realtime sync, moderation, PDF viewing and recordings.
 
 ### Doppler - Senior WordPress Developer / Frontend Developer / Scrum Master
 
 April 2013 - February 2023
 
-- Led maintenance and evolution of the company's institutional WordPress websites.
-- Managed and developed features across 5 WordPress sites for marketing, internal requests and integrations.
-- Worked as a technical reference and collaborated with different company teams to research, prioritize and design new functionality.
-- Integrated external APIs and marketing services, including conference-related features and social media integrations.
-- Contributed to GOEMMS, a major marketing event in Latin America, including high-traffic website support, live streaming flows and Twitter API integration with caching.
-- Worked on hosting maintenance, migrations, performance improvements and technical updates.
+- Led maintenance and evolution of 5 institutional WordPress websites for marketing, internal requests and integrations.
+- Worked as technical reference and collaborated with company teams to research, prioritize and design new functionality.
+- Contributed to GOEMMS, a major marketing event in Latin America: high-traffic website support, live streaming flows and Twitter API integration with caching.
+- Handled hosting maintenance, migrations, performance improvements and external API integrations.
 
 ### Intercomgi - Scrum Master / Frontend Developer
 
 April 2012 - April 2013
 
-- Worked as Scrum Master and frontend developer on a web application.
-- Used Backbone.js, JavaScript, MySQL and web technologies.
-- Supported team organization, frontend development and delivery coordination.
+- Scrum Master and frontend developer for a JavaScript single-page web application.
 
 ### Avatar - Project Lead / Scrum Master / Senior PHP Developer
 
 March 2008 - June 2012
 
-- Led and developed PHP websites for major clients in Latin America.
+- Led and developed PHP websites for major clients in Latin America, including Greenpeace Latin America, Mastercard, Banco Nacion Argentina, Fashion TV, Disney, Coca-Cola, Sherwin Williams and Telcosur.
 - Coordinated development teams and ensured delivery quality.
-- Worked on web projects for organizations and brands including Greenpeace Latin America, Mastercard, Banco Nacion Argentina, Fashion TV Project Runway Latin America, Disney Highway Zapping Zone Latin America, Coca-Cola, Sherwin Williams and Telcosur.
 
 ## Selected Projects
 
-### Insider Editorial Automation Workflow
+### Insider Automation - Editorial AI Pipeline
 
-Designed an in-progress editorial automation workflow for Insider Latam. It receives emails and available attachments from Gmail, uses Gemini for multimodal analysis and editorial drafting, returns structured JSON for downstream steps, suggests a featured image and creates a WordPress or Gmail draft for human review before publication. The POC uses Zapier as the workflow orchestrator and includes explicit rules for missing information, editorial review and image cropping.
+Gmail, Drive and Docs sources processed by Google Apps Script and Gemini API into WordPress drafts. Resumable batches that work around platform execution limits, idempotent attempts, prompts editable without deploys, multi-source featured-image selection and mandatory human review. Built on documented ADRs and a local test suite with Google service doubles.
 
 ### WhatsApp AI Tournament Assistant
 
-Built a conversational WhatsApp assistant for amateur football tournaments using NestJS, strict TypeScript, Node.js, Twilio WhatsApp API, OpenAI (`gpt-4.1-mini`), PostgreSQL, Google Docs and CopaFacil API. The system manages multiple tournaments, routes questions through seven strict function-calling tools, combines editable FAQ content with synchronized and live tournament data, and uses fallback logic plus a hallucination guard to keep responses grounded. The project also includes protected admin tools for tournament configuration, synchronization, conversation review and in-process testing against the same pipeline used by production.
-
-### POC Cartas - Spanish Deck Mobile App
-
-Built a React Native and Expo proof of concept for interactive manipulation of a Spanish card deck. The app supports 40/50-card decks, drag and drop, free positioning, dynamic overlapping, card flipping, visual customization and a hexagonal architecture separating domain, use cases, infrastructure and presentation.
+Conversational assistant for amateur football tournaments using NestJS, Twilio, OpenAI, PostgreSQL, Google Docs and CopaFacil API. Multi-tournament sessions, seven strict function-calling tools, live data with fallback, and a hallucination guard that degrades to a safe answer when a response is not grounded.
 
 ## Education
 
@@ -152,4 +134,4 @@ Graduated, 2015
 ## Languages
 
 Spanish: Native  
-English: Intermediate / Upper-Intermediate in progress. Able to work with technical documentation and collaborate in written technical communication.
+English: Upper-Intermediate in progress. Able to work with technical documentation and collaborate with English-speaking teams.
