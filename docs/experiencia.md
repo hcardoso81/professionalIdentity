@@ -129,7 +129,7 @@ Periodo: julio 2026 - actualidad.
 
 ## Freelance / Growth Period
 
-Periodo: marzo 2023 - noviembre 2023 (LinkedIn todavia muestra marzo 2023 - junio 2024; pendiente de corregir alli).
+Periodo: marzo 2023 - junio 2024 (segun LinkedIn; se superpone con el inicio en 404 Crafters en noviembre 2023).
 
 Contexto:
 

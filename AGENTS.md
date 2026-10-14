@@ -215,7 +215,7 @@ Periodo: abril 2013 - febrero 2023
 
 ### Freelance / Growth Period
 
-Periodo: marzo 2023 - noviembre 2023
+Periodo: marzo 2023 - junio 2024 (segun LinkedIn)
 
 - Profundizacion en React, Node.js, React Native y Expo.
 - Desarrollo freelance en CUTI, aplicacion mobile con React Native, TypeScript, Agora RTC y Socket.IO.
@@ -359,9 +359,11 @@ Las recomendaciones de colegas, clientes y lideres destacan patrones consistente
 
 ## Ingles
 
-Nivel sugerido para CV:
+Nivel publicado en LinkedIn y usado en el CV:
 
-English: Upper-Intermediate in progress. Able to work in technical environments, read documentation, participate in written communication and collaborate with English-speaking teams.
+English: Limited working proficiency (Competencia basica profesional). Si se actualiza en LinkedIn, actualizar tambien el CV.
+
+Contexto: curso de ingles de tres anos completado en 2026; trabajo diario con clientes y equipos en ingles.
 
 ## Prompts Reutilizables
 

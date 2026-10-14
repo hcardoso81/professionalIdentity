@@ -79,12 +79,14 @@ Freelance · Remote · intermarketflow.com
 - Mailchimp integration with dynamic tags and lead-source tracking; admin tools for lead management, CSV exports and daily WP-Cron reports.
 - Refactored procedural code into modular PHP services, repositories and an event-based notification system.
 
-### Career Break - Professional Development
+### Career Break - Professional Growth
 
-Mar 2023 - Nov 2023
+Mar 2023 - Jun 2024  
+Tandil, Argentina
 
-- Transitioned to React, TypeScript, React Native and Node.js, with a focus on Hexagonal and Clean Architecture.
-- Worked on CUTI, a React Native mobile app for corporate conference calls between companies and investors, with live audio (Agora RTC), recordings stored on Amazon S3 and a Node.js REST API.
+- Self-directed upskilling in React, Node.js, React Native and Laravel 10 (Livewire, Eloquent, Sanctum), while updating WordPress and WooCommerce skills.
+- Collaborated on CUTI, a mobile app for voice calls and recordings between companies and investors: React Native frontend and Node.js backend in TypeScript, REST API, Agora integration for calls and recordings stored on Amazon S3.
+- Started a structured English program with two weekly courses to support work with international teams.
 
 ### Doppler - Senior WordPress Developer / Scrum Master
 
@@ -135,4 +137,4 @@ WordPress plugin for premium content access and lead capture: trial access by em
 ## Languages
 
 - Spanish: Native
-- English: Upper-Intermediate in progress. Able to work with technical documentation and collaborate with English-speaking teams.
+- English: Limited working proficiency
