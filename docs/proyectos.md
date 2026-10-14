@@ -12,7 +12,7 @@ Contexto:
 
 - Cliente/proyecto: Insider Latam.
 - Sitio relacionado: insiderlatam.com.
-- Periodo: mayo 2026 - actualidad.
+- Periodo: mayo 2026 - actualidad (relacion con Insider Latam desde octubre 2024).
 - Estado: POC funcional en staging, validado con una muestra real del cliente. La publicacion definitiva no se automatiza.
 - Objetivo: reducir el trabajo manual de lectura, resumen, contextualizacion y preparacion inicial de contenidos editoriales, sin perder control editorial.
 
@@ -44,7 +44,7 @@ Responsabilidades y funcionalidades:
 - Plugin WordPress de control (v0.2.0): panel para iniciar o reanudar corridas, autorizar reintentos, revisar historial sanitizado y diagnosticar la conexion. Las llamadas salen desde PHP con secreto compartido, capability y nonce; el panel nunca recibe secretos, cuerpos de correos ni IDs de Gmail.
 - Tests locales en Node que cargan el codigo de Apps Script con dobles de los servicios de Google, ejecutados antes de cada `clasp push`.
 
-Resultados verificables:
+Resultados verificables (uso interno; no publicar las cifras en CV ni LinkedIn sin acuerdo del cliente):
 
 - Validacion editorial sobre una muestra del cliente (15 de septiembre de 2026, `gemini-3.5-flash-lite`): 20 casos, 16 `SUCCESS`, 4 `WARNING`, 0 `ERROR`.
 - Primera corrida reanudable real (16 de septiembre de 2026): 22 casos terminales, 22 `SUCCESS`, sin intervencion adicional del operador.
@@ -62,7 +62,7 @@ Google Apps Script, clasp, Gemini API (`gemini-3.5-flash-lite`), Gmail API, Goog
 
 Version para LinkedIn/CV:
 
-Disene y construi un sistema de automatizacion editorial con IA para Insider Latam que transforma comunicados recibidos por Gmail, con sus adjuntos, Google Docs, imagenes y videos, en borradores de WordPress listos para revision humana. Tras validar el concepto con un POC en Zapier, lo reescribi sobre Google Apps Script y Gemini API con orquestacion reanudable por lotes, idempotencia por intento, prompts versionados en Google Sheets, seleccion de imagen destacada con verificacion SHA-256, reglas de estilo editorial y un plugin WordPress de control. En la validacion con una muestra real del cliente, 20 de 20 casos terminaron sin errores (16 OK y 4 con advertencias editoriales).
+Disene y construi un sistema de automatizacion editorial con IA para Insider Latam que transforma comunicados recibidos por Gmail, con sus adjuntos, Google Docs, imagenes y videos, en borradores de WordPress listos para revision humana. Tras validar el concepto con un POC en Zapier, lo reescribi sobre Google Apps Script y Gemini API con orquestacion reanudable por lotes, idempotencia por intento, prompts versionados en Google Sheets, seleccion de imagen destacada con verificacion SHA-256, reglas de estilo editorial y un plugin WordPress de control. Los editores mantienen el control de cada publicacion.
 
 Version corta:
 
@@ -86,7 +86,7 @@ Contexto:
 
 - Cliente/proyecto: IntermarketFlow.
 - Sitio: intermarketflow.com.
-- Periodo: freelance, 2024 - actualidad.
+- Periodo: freelance, agosto 2025 - actualidad.
 - Dominio: analisis intermarket, tecnico y macroeconomico aplicado a mercados financieros.
 
 Resumen:
@@ -430,8 +430,8 @@ Aplicacion web administrativa para la gestion integral de consorcios y expensas,
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: mayo 2025 - actualidad.
-- Rol: Senior Frontend Engineer / Full Stack Engineer.
+- Periodo aproximado: mayo 2025 - actualidad.
+- Rol: Senior Full Stack Engineer.
 - Participacion: definicion general de UI tomando como guia el dashboard de Material UI; segundo contribuidor del repositorio (mas de 1.400 commits propios en un equipo de 4 personas); pipeline de despliegue.
 
 Resumen:
@@ -471,7 +471,7 @@ React 18, TypeScript, Vite, Material UI, MUI X DataGrid, MUI X Date Pickers, Rea
 
 Version para LinkedIn/CV:
 
-Desarrollo y mantenimiento de una plataforma administrativa React + TypeScript para la gestion de consorcios: expensas, liquidaciones, sueldos, pagos, proveedores, documentos y soporte interno. Defini la UI base y soy el segundo contribuidor del repositorio, con foco en payroll, unidades, recibos y el sistema de tickets en tiempo real sobre GraphQL subscriptions. Arquitectura Clean Architecture + CQRS + Presenter Pattern, con multiples portales compilados desde un mismo core. Construi el pipeline de despliegue con GitHub Actions, Docker, GHCR y AWS Lightsail con Traefik.
+Portal Expensas: build a condominium management platform covering settlements, payroll, payments, units, suppliers, and documents. Develop interfaces and business workflows using React, TypeScript, Material UI, and Apollo GraphQL, applying Clean Architecture, CQRS, and the Presenter Pattern. (Texto publicado en LinkedIn. El dato de segundo contribuidor queda para entrevistas, no para el perfil.)
 
 Version corta:
 
@@ -484,7 +484,7 @@ Plataforma web para la gestion, busqueda, analisis y visualizacion de articulos 
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: noviembre 2023 - marzo 2025.
+- Periodo aproximado: noviembre 2023 - marzo 2025.
 - Cliente: cliente nativo de Estados Unidos.
 - Participacion: desarrollo full stack y definicion/planteo de UI.
 
@@ -547,7 +547,8 @@ Contexto:
 
 - Cliente/organizacion: Mundialito Senior.
 - Periodo: marzo 2026 - julio 2026.
-- Tipo: proyecto de producto en desarrollo.
+- Tipo: desarrollo freelance para un cliente.
+- Estado: presentado al cliente con devolucion positiva; puesta en marcha pendiente del lado del cliente.
 - Objetivo: reducir consultas manuales a organizadores y ofrecer respuestas rapidas, consistentes y auditables.
 - Canal: WhatsApp mediante webhook de Twilio.
 - Estado: arquitectura v2 implementada en NestJS, con camino documentado hacia WhatsApp Business productivo.
@@ -697,7 +698,7 @@ Portal web administrativo y de inteligencia de negocios para aliados de Fanki.
 Contexto:
 
 - Compania: 404 Crafters.
-- Periodo: agosto 2024 - abril 2025.
+- Periodo aproximado: agosto 2024 - abril 2025.
 - Participacion: desarrollo de producto y definicion general de UI.
 
 Resumen:

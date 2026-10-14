@@ -8,7 +8,7 @@ Hernan Federico Cardoso es un Senior Full Stack Engineer con orientacion fuerte 
 
 En los ultimos anos su foco principal estuvo puesto en React, TypeScript, arquitectura frontend, integracion con APIs, dashboards administrativos, sistemas B2B y soluciones con separacion clara entre dominio, infraestructura y UI.
 
-Desde 2026 suma experiencia concreta en IA aplicada: un pipeline de automatizacion editorial con Google Apps Script y Gemini API validado con datos reales del cliente, y un asistente de WhatsApp con function calling estricto y guarda anti-alucinacion. Trabaja de forma habitual con agentes de codigo (Claude Code, Codex) guiados por `AGENTS.md` y ADRs.
+Desde 2026 suma experiencia concreta en IA aplicada: un pipeline de automatizacion editorial con Google Apps Script y Gemini API con revision humana, y un asistente de WhatsApp con function calling y control de respuestas contra los datos. Trabaja de forma habitual con agentes de codigo (Claude Code, Codex) guiados por `AGENTS.md` y ADRs.
 
 Tambien posee una base solida en PHP, WordPress, Laravel, Node.js, GraphQL, Docker, CI/CD y despliegues cloud. Su experiencia combina desarrollo moderno, mantenimiento de sistemas legacy, integraciones externas, automatizacion de procesos y participacion en equipos internacionales.
 
@@ -51,7 +51,7 @@ In recent years, focused on React and TypeScript, designing frontend architectur
 
 Strong background in PHP, WordPress plugin development, Node.js, REST and GraphQL APIs. Experienced in legacy modernization, API integrations, CI/CD workflows with GitHub Actions, Docker-based deployments on AWS and international collaboration.
 
-In 2026, designed and shipped applied AI systems: an editorial automation pipeline on Google Apps Script and Gemini API validated with real client data, and a WhatsApp assistant with strict function calling and hallucination guardrails.
+In 2026, built applied AI systems for clients: an editorial automation pipeline on Google Apps Script and the Gemini API that turns press releases into WordPress drafts with human review, and a WhatsApp assistant with OpenAI function calling and answer checks against real data.
 
 ## Skills
 
@@ -182,7 +182,7 @@ In 2026, designed and shipped applied AI systems: an editorial automation pipeli
 
 ## Experiencia Destacada
 
-### 404 Crafters - Senior Frontend Engineer / Full Stack Engineer
+### 404 Crafters - Senior Full Stack Engineer
 
 Periodo: noviembre 2023 - actualidad
 
@@ -201,7 +201,7 @@ Proyectos asociados:
 - Portal de Aliados: agosto 2024 - abril 2025.
 - Portal Expensas Admins: mayo 2025 - actualidad.
 
-Fechas reconstruidas a partir del historial de commits; hay solapamientos en las transiciones.
+Periodos por proyecto aproximados (historial de commits); no se publican en CV ni LinkedIn.
 
 ### Doppler - Senior WordPress Developer
 
@@ -215,36 +215,38 @@ Periodo: abril 2013 - febrero 2023
 
 ### Freelance / Growth Period
 
-Periodo: febrero 2023 - noviembre 2023
+Periodo: marzo 2023 - noviembre 2023
 
 - Profundizacion en React, Node.js, React Native y Expo.
 - Desarrollo freelance en CUTI, aplicacion mobile con React Native, TypeScript, Agora RTC y Socket.IO.
 - Aprendizaje autodidacta de React, TypeScript, Laravel, arquitectura hexagonal y clean code.
 - Inicio de cursos de ingles.
 
-### Freelance / IntermarketFlow
+### Freelance / IntermarketFlow - WordPress Plugin Developer
 
-Periodo: 2024 - actualidad
+Periodo: agosto 2025 - actualidad
 
 - Trabajo freelance en intermarketflow.com, sitio orientado a analisis intermarket, tecnico y macroeconomico aplicado a mercados financieros.
 - Desarrollo del plugin SEO Content Locker para monetizacion, captacion de leads y control de acceso a contenido premium.
 - 2026: refactor a servicios y repositorios, proteccion anti-bot por capas (reCAPTCHA v3 y rate limiting) y reporte diario por WP-Cron.
 - Mantenimiento y tareas evolutivas sobre el sitio WordPress.
 
-### Insider Latam / Insider
+### Insider Latam - Full Stack & AI Automation Developer (freelance)
 
-Periodo: 2023 - actualidad
+Periodo: octubre 2024 - actualidad
 
 - Mantenimiento del portal de noticias insiderlatam.com.
 - Migracion del sitio WordPress a PHP 8.
 - Desarrollo de plugins WordPress internos como newsletters, publicacion en LinkedIn, popups y mejoras del admin editorial.
 - Trabajo sobre necesidades editoriales, marketing, exportacion de contenido y automatizacion de flujos.
-- Insider Automation (2026): POC Gmail -> Zapier -> Gemini y luego reescritura sobre Google Apps Script + Gemini API + Drive/Docs/Sheets + WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados, seleccion de imagen verificada con SHA-256 y plugin WordPress de control. Validado con muestra real del cliente: 20 casos, 16 OK, 4 warnings, 0 errores.
+- Insider Automation (2026): POC Gmail -> Zapier -> Gemini y luego reescritura sobre Google Apps Script + Gemini API + Drive/Docs/Sheets + WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados, seleccion de imagen verificada con SHA-256 y plugin WordPress de control. Validado en staging con emails reales del cliente; las cifras de la validacion son internas y no se publican.
 - Plugins 2026: Insider Shorts (YouTube Data API v3), World Cup 2026 Widget (API-Football) y Cannes Festival Medal Tracker (PhpSpreadsheet).
 
-### Mundialito Senior - AI / Full Stack Developer
+### Mundialito Senior - Full Stack & AI Developer (freelance)
 
 Periodo: marzo 2026 - julio 2026
+
+- Estado: presentado al cliente con devolucion positiva; puesta en marcha pendiente del lado del cliente. No presentarlo como sistema en produccion.
 
 - WhatsApp AI Tournament Assistant con NestJS, OpenAI, Twilio, PostgreSQL, Google Docs y CopaFacil API.
 - Siete tools con function calling estricto, fallback y guarda anti-alucinacion.
@@ -308,6 +310,15 @@ Resumen de proyectos principales:
 ## Keywords Para LinkedIn / ATS
 
 React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, GHCR, AWS, AWS Lightsail, Traefik, Vercel, GraphQL Subscriptions, WebSockets, Kubernetes, Helm, LLM Integration, Applied AI, Multimodal AI, Gemini API, Google Apps Script, Google Workspace APIs, AI Automation, AI-assisted Development, Claude Code, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
+
+## Fuente De Verdad
+
+El perfil de LinkedIn (actualizado en octubre de 2026) es la fuente de verdad para fechas, titulos y descripciones publicas. El CV debe contar la misma historia. Criterios acordados:
+
+- No publicar metricas internas de clientes (por ejemplo resultados de validaciones) sin su acuerdo.
+- Priorizar responsabilidades y resultados sobre detalles internos (cantidad de tests, algoritmos de hash, cantidad de commits).
+- No describir como productivos proyectos que no estan en produccion.
+- No inferir fechas de empleo a partir de commits.
 
 ## Tono Profesional Deseado
 

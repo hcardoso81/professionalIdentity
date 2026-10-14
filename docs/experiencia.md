@@ -8,9 +8,11 @@ Sitio: https://www.proyecto404.com/
 
 Periodo: noviembre 2023 - actualidad.
 
-Rol sugerido: Senior Frontend Engineer / Full Stack Engineer.
+Rol: Senior Full Stack Engineer.
 
-Nota sobre fechas: los periodos por proyecto se reconstruyeron a partir del historial de commits. Hubo solapamientos durante las transiciones entre proyectos.
+Fuente de verdad para fechas, titulos y descripciones publicas: el perfil de LinkedIn (actualizado en octubre de 2026). Rol en LinkedIn: Senior Full Stack Engineer, noviembre 2023 - actualidad.
+
+Los periodos por proyecto dentro de 404 Crafters son aproximados (reconstruidos desde el historial de commits) y no se publican en el CV ni en LinkedIn.
 
 ### Mayo 2025 - actualidad
 
@@ -59,7 +61,9 @@ Responsabilidades:
 
 Sitio: intermarketflow.com.
 
-Periodo: 2024 - actualidad.
+Rol: WordPress Plugin Developer (profesional independiente, remoto).
+
+Periodo: agosto 2025 - actualidad.
 
 Descripcion del negocio:
 
@@ -76,7 +80,9 @@ Responsabilidades:
 
 Sitio: insiderlatam.com.
 
-Periodo: 2023 - actualidad.
+Rol: Full Stack & AI Automation Developer (autonomo, remoto).
+
+Periodo: octubre 2024 - actualidad.
 
 Responsabilidades:
 
@@ -88,7 +94,7 @@ Responsabilidades:
 - Desarrollo de Welcome Popup Manager para popups configurables desde WP Admin.
 - Desarrollo de WP Admin Posts Extended para filtros avanzados y exportacion editorial a Excel.
 - Mantenimiento continuo del sitio: actualizacion de plugins, limpieza de logs de errores (mu-plugin para silenciar avisos inofensivos) y correcciones de rendimiento y scripts.
-- 2026: Insider Automation, sistema de automatizacion editorial con IA. Primero un POC con Gmail, Zapier y Gemini (mayo 2026); luego reescritura sobre Google Apps Script, Gemini API, Drive, Sheets y WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados y plugin WordPress de control (agosto 2026 - actualidad). Validado en staging con una muestra real del cliente: 20 casos, 16 OK, 4 con advertencias, 0 errores.
+- 2026: Insider Automation, sistema de automatizacion editorial con IA. Primero un POC con Gmail, Zapier y Gemini (mayo 2026); luego reescritura sobre Google Apps Script, Gemini API, Drive, Sheets y WordPress REST API, con orquestacion reanudable por lotes, idempotencia, prompts versionados y plugin WordPress de control (agosto 2026 - actualidad). Validado en staging con una muestra de emails reales del cliente (resultado interno; no se publica en CV ni LinkedIn).
 - 2026: plugins Insider Shorts (carrusel de shorts desde playlists de YouTube), World Cup 2026 Widget (partidos del Mundial via API-Football) y Cannes Festival Medal Tracker (medallero de Cannes Lions importado desde Excel).
 - 2026: evolucion de WP2LinkedIn (estados editables, reconexion de token), WP Admin Posts Extended (filtros por autor/ano, campo hasVideo) y plugins chicos de Edicion rapida.
 
@@ -96,7 +102,9 @@ Responsabilidades:
 
 Periodo: marzo 2026 - julio 2026.
 
-Rol sugerido: AI / Full Stack Developer.
+Estado: presentado al cliente con devolucion positiva; la puesta en marcha esta pendiente del lado del cliente. No describirlo como sistema en produccion.
+
+Rol: Full Stack & AI Developer (profesional independiente, remoto).
 
 Proyecto principal: WhatsApp AI Tournament Assistant.
 
@@ -121,7 +129,7 @@ Periodo: julio 2026 - actualidad.
 
 ## Freelance / Growth Period
 
-Periodo: febrero 2023 - noviembre 2023.
+Periodo: marzo 2023 - noviembre 2023 (LinkedIn todavia muestra marzo 2023 - junio 2024; pendiente de corregir alli).
 
 Contexto:
 
