@@ -16,7 +16,7 @@ Tambien posee una base solida en PHP, WordPress, Laravel, Node.js, GraphQL, Dock
 
 Perfil sugerido:
 
-Senior Full Stack Engineer | React & TypeScript | Clean Architecture | Applied AI & Automation
+Senior Full Stack & Applied AI Engineer | React, TypeScript & LLM Applications (headline publicado en LinkedIn)
 
 Version alternativa:
 
@@ -41,7 +41,7 @@ Fortalezas diferenciales:
 
 ## Headline Base
 
-Senior Full Stack Engineer | React & TypeScript | Clean Architecture | Applied AI & Automation
+Senior Full Stack & Applied AI Engineer | React, TypeScript & LLM Applications
 
 ## Summary Base
 
@@ -203,7 +203,7 @@ Proyectos asociados:
 
 Periodos por proyecto aproximados (historial de commits); no se publican en CV ni LinkedIn.
 
-### Doppler - Senior WordPress Developer
+### Doppler - Senior WordPress Developer / Scrum Master
 
 Periodo: abril 2013 - febrero 2023
 
@@ -244,7 +244,7 @@ Periodo: octubre 2024 - actualidad
 
 ### Mundialito Senior - Full Stack & AI Developer (freelance)
 
-Periodo: marzo 2026 - julio 2026
+Periodo: marzo 2026 - junio 2026 (segun LinkedIn)
 
 - Estado: presentado al cliente con devolucion positiva; puesta en marcha pendiente del lado del cliente. No presentarlo como sistema en produccion.
 

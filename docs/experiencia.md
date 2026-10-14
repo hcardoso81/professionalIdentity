@@ -100,7 +100,7 @@ Responsabilidades:
 
 ## Mundialito Senior
 
-Periodo: marzo 2026 - julio 2026.
+Periodo: marzo 2026 - junio 2026 (segun LinkedIn; el historial de commits llega a julio 2026).
 
 Estado: presentado al cliente con devolucion positiva; la puesta en marcha esta pendiente del lado del cliente. No describirlo como sistema en produccion.
 
