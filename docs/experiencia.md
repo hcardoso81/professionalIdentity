@@ -100,7 +100,7 @@ Responsabilidades:
 
 ## Mundialito Senior
 
-Periodo: marzo 2026 - junio 2026 (segun LinkedIn; el historial de commits llega a julio 2026).
+Periodo: marzo 2026 - julio 2026 (segun LinkedIn).
 
 Estado: presentado al cliente con devolucion positiva; la puesta en marcha esta pendiente del lado del cliente. No describirlo como sistema en produccion.
 
@@ -129,7 +129,7 @@ Periodo: julio 2026 - actualidad.
 
 ## Freelance / Growth Period
 
-Periodo: marzo 2023 - junio 2024 (segun LinkedIn; se superpone con el inicio en 404 Crafters en noviembre 2023).
+Periodo: marzo 2023 - octubre 2023 (segun LinkedIn).
 
 Contexto:
 

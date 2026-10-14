@@ -215,7 +215,7 @@ Periodo: abril 2013 - febrero 2023
 
 ### Freelance / Growth Period
 
-Periodo: marzo 2023 - junio 2024 (segun LinkedIn)
+Periodo: marzo 2023 - octubre 2023 (segun LinkedIn)
 
 - Profundizacion en React, Node.js, React Native y Expo.
 - Desarrollo freelance en CUTI, aplicacion mobile con React Native, TypeScript, Agora RTC y Socket.IO.
@@ -244,7 +244,7 @@ Periodo: octubre 2024 - actualidad
 
 ### Mundialito Senior - Full Stack & AI Developer (freelance)
 
-Periodo: marzo 2026 - junio 2026 (segun LinkedIn)
+Periodo: marzo 2026 - julio 2026 (segun LinkedIn)
 
 - Estado: presentado al cliente con devolucion positiva; puesta en marcha pendiente del lado del cliente. No presentarlo como sistema en produccion.
 

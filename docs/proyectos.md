@@ -546,7 +546,7 @@ Asistente conversacional por WhatsApp para torneos amateur que permite a partici
 Contexto:
 
 - Cliente/organizacion: Mundialito Senior.
-- Periodo: marzo 2026 - junio 2026.
+- Periodo: marzo 2026 - julio 2026.
 - Tipo: desarrollo freelance para un cliente.
 - Estado: presentado al cliente con devolucion positiva; puesta en marcha pendiente del lado del cliente.
 - Objetivo: reducir consultas manuales a organizadores y ofrecer respuestas rapidas, consistentes y auditables.

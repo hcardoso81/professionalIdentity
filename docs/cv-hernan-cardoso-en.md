@@ -61,7 +61,7 @@ Freelance · Remote · insiderlatam.com
 
 ### Mundialito Senior - Full Stack & AI Developer
 
-Mar 2026 - Jun 2026  
+Mar 2026 - Jul 2026  
 Freelance · Remote
 
 - Developed a WhatsApp AI assistant for a client running amateur football tournaments, so participants and organizers can ask about fixtures, results, standings, teams and rules in natural language.
@@ -81,7 +81,7 @@ Freelance · Remote · intermarketflow.com
 
 ### Career Break - Professional Growth
 
-Mar 2023 - Jun 2024  
+Mar 2023 - Oct 2023  
 Tandil, Argentina
 
 - Self-directed upskilling in React, Node.js, React Native and Laravel 10 (Livewire, Eloquent, Sanctum), while updating WordPress and WooCommerce skills.
