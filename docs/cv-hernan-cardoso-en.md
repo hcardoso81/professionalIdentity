@@ -84,9 +84,10 @@ Freelance · Remote · intermarketflow.com
 Mar 2023 - Oct 2023  
 Tandil, Argentina
 
-- Self-directed upskilling in React, Node.js, React Native and Laravel 10 (Livewire, Eloquent, Sanctum), while updating WordPress and WooCommerce skills.
-- Collaborated on CUTI, a mobile app for voice calls and recordings between companies and investors: React Native frontend and Node.js backend in TypeScript, REST API, Agora integration for calls and recordings stored on Amazon S3.
-- Started a structured English program with two weekly courses to support work with international teams.
+- Planned career break focused on expanding my full stack skills, with an emphasis on React, TypeScript, Node.js and React Native.
+- Self-directed learning in React, Node.js and React Native, alongside Laravel 10 (Livewire, Eloquent, Sanctum) and WordPress/WooCommerce customization using hooks and filters.
+- Collaborated with a small team on CUTI, a mobile app for voice calls and recordings between companies and investors (React Native, Node.js, TypeScript, REST API, Agora and Amazon S3). Contributed the login and registration flows.
+- Started a structured English program in April 2023, with two classes per week, and completed it in 2026.
 
 ### Doppler - Senior WordPress Developer / Scrum Master
 
