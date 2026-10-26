@@ -33,6 +33,8 @@ Mejoras opcionales que siguen abiertas en LinkedIn (no generan inconsistencias c
 - **Ingles**: Competencia basica profesional; revisar si refleja tu nivel actual.
 - **Aptitudes viejas**: AngularJS, Microsoft SQL Server, SQL Server, Servicios web, Web Services e Infraestructura de software.
 
+Cobertura del perfil frente a busquedas tipicas de recruiters: ver [busquedas-recruiters.md](busquedas-recruiters.md).
+
 Criterios acordados en la revision (aplican tambien a las secciones de abajo):
 
 - No publicar el resultado de la validacion de Insider (20 casos) ni otras metricas internas del cliente.
