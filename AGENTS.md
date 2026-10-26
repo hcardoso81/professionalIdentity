@@ -357,6 +357,15 @@ Las recomendaciones de colegas, clientes y lideres destacan patrones consistente
 - Proactividad, orientacion a objetivos y capacidad para ponerse del lado del cliente.
 - Responsabilidad, calidad tecnica y valor humano.
 
+## Educacion
+
+Universidad Nacional del Centro de la Provincia de Buenos Aires (UNICEN), Facultad de Ciencias Exactas:
+
+- Ingeniero de Sistemas: 2001 - 2015, graduado (titulo expedido en 2015).
+- Analista Programador Universitario: 2001 - 2006, graduado (titulo expedido en 2007).
+
+Las fechas publicas son las de LinkedIn (2001 - 2015 y 2001 - 2006). En firmas y presentaciones formales puede usar "Ing. Hernan Federico Cardoso".
+
 ## Ingles
 
 Nivel publicado en LinkedIn y usado en el CV:
