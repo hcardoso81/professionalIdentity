@@ -132,8 +132,8 @@ WordPress plugin for premium content access and lead capture: trial access by em
 
 ## Education
 
-- Systems Engineering Degree- UNICEN (2001 - 2015 · Graduated)
-- University Programmer Analyst- UNICEN (2001 - 2006 · Graduated)
+- Systems Engineering Degree - UNICEN (2001 - 2015 · Graduated)
+- University Programmer Analyst - UNICEN (2001 - 2006 · Graduated)
 
 ## Languages
 
