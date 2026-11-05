@@ -349,6 +349,38 @@ Reglas:
 - Verificar nonces.
 - Escapar siempre la salida.
 - Mantener vistas en `templates/admin` si el HTML crece.
+- No mostrar avisos de otros plugins, del tema ni de WordPress en las pantallas propias del plugin: le sacan el foco a la pantalla.
+
+Patron para ocultar avisos ajenos:
+
+```php
+add_action('in_admin_header', [$this, 'hideForeignNotices'], PHP_INT_MAX);
+
+public function hideForeignNotices(): void
+{
+    if (! $this->isPluginScreen()) {
+        return;
+    }
+
+    foreach (['admin_notices', 'all_admin_notices', 'network_admin_notices', 'user_admin_notices'] as $hook) {
+        remove_all_actions($hook);
+    }
+}
+```
+
+- Aplicarlo solo en las pantallas del plugin (comparar `get_current_screen()`), nunca de forma global: en el resto del admin los avisos deben seguir visibles.
+- Debe correr al final de `in_admin_header`, justo antes de que WordPress imprima los avisos, para incluir los registrados tarde.
+- Los avisos propios no deben usar esos hooks: imprimirlos dentro de la vista del plugin. Los mensajes nativos de una pantalla de CPT ("Entrada actualizada") no los usan y se siguen mostrando.
+- Algunos plugins imprimen avisos fuera de esos hooks (por ejemplo en `admin_print_footer_scripts`) y el JavaScript del admin los mueve junto al titulo. Para esos casos sumar un respaldo CSS en una hoja que cargue solo en las pantallas del plugin:
+
+```css
+.wrap > :is(.notice, .updated, .error, .update-nag):not(#message, #notice, #lost-connection-notice, #local-storage-notice) {
+    display: none;
+}
+```
+
+- Si la vista del plugin imprime avisos propios, excluir tambien su selector de esa regla.
+- Comprobar la pantalla en el navegador. Los overlays y punteros de otros plugins no quedan cubiertos: resolverlos solo si molestan.
 
 ### UI/Frontend
 
