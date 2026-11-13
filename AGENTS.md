@@ -191,7 +191,7 @@ Periodo: noviembre 2023 - actualidad
 - Aplicacion de Clean Architecture, CQRS y Presenter Pattern para mejorar mantenibilidad.
 - Participacion en productos B2B, dashboards, reportes, gestion de usuarios, eventos, pagos, noticias y expensas.
 - Definicion y construccion de UI tomando como referencia patrones del dashboard de Material UI.
-- Colaboracion con clientes y equipos internacionales en contextos de comunicacion tecnica en ingles.
+- Colaboracion con clientes y equipos internacionales; trabajo integramente en ingles con el cliente de EE.UU. de News Kiosk (hasta 2025).
 - Pipeline de despliegue de Portal Expensas con GitHub Actions, Docker, GHCR, AWS Lightsail y Traefik.
 - Tickets en tiempo real con GraphQL subscriptions sobre WebSocket.
 
@@ -372,7 +372,7 @@ Nivel publicado en LinkedIn y usado en el CV:
 
 English: Limited working proficiency (Competencia basica profesional). Si se actualiza en LinkedIn, actualizar tambien el CV.
 
-Contexto: curso de ingles de tres anos completado en 2026; trabajo diario con clientes y equipos en ingles.
+Contexto: curso de ingles de tres anos completado en 2026. Hace unos dos anos que no trabaja integramente en ingles y hoy no se siente comodo tomando un proyecto que se trabaje todo en ingles (noviembre 2026). En CV y LinkedIn no presentar el ingles como fortaleza de comunicacion con clientes (evitar "in English" en esas frases) y priorizar ofertas en espanol o con ingles intermedio.
 
 ## Prompts Reutilizables
 

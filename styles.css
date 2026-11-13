@@ -11,7 +11,7 @@
 
     @page {
       size: A4;
-      margin: 13mm 12mm;
+      margin: 11mm 12mm;
     }
 
     * {
@@ -265,7 +265,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
       gap: 18px;
     }
 
@@ -329,9 +329,33 @@
         display: none;
       }
 
-      .experience-section {
-        break-before: page;
-        page-break-before: always;
-        margin-top: 0;
+      .section {
+        margin-top: 10px;
+      }
+
+      .job {
+        margin-top: 8px;
+      }
+
+      .project-list li {
+        margin: 3px 0;
+        padding: 3px 7px;
+      }
+
+      .section-title,
+      .job-head,
+      .job-subtitle {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .job {
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .job li {
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
     }
