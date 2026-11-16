@@ -2,7 +2,9 @@
 
 Guia de trabajo para agentes IA en plugins WordPress personalizados.
 
-Usar este documento como base para crear un `AGENTS.md` inicial en cualquier plugin nuevo. La guia prioriza arquitectura clara, seguridad WordPress, bootstrap liviano, separacion por capas, convenciones mantenibles y documentacion viva.
+Version de la guia: 2026-11-07
+
+Usar este documento como referencia para redactar un `AGENTS.md` corto en cualquier plugin nuevo. La guia prioriza arquitectura clara, seguridad WordPress, bootstrap liviano, separacion por capas, convenciones mantenibles y documentacion viva.
 
 La estructura propuesta es una referencia maxima, no una obligacion. Para plugins pequenos, priorizar claridad, seguridad WordPress y bajo costo de mantenimiento. Escalar hacia capas de dominio, aplicacion e infraestructura cuando exista logica de negocio real, integraciones externas, workflows complejos o necesidad de testing aislado.
 
@@ -10,7 +12,7 @@ La estructura propuesta es una referencia maxima, no una obligacion. Para plugin
 
 - Claude Code carga automaticamente `CLAUDE.md`, no `AGENTS.md`. En cada plugin crear un `CLAUDE.md` minimo que importe el otro archivo con una linea `@AGENTS.md`. Asi Claude Code, Codex y otros agentes leen las mismas reglas.
 - `AGENTS.md` se carga completo en cada sesion. Mantenerlo corto (idealmente menos de 200 lineas) y especifico del plugin: seccion `Proyecto`, reglas criticas y decisiones propias.
-- Esta guia general no se copia entera en cada plugin: guardarla en `docs/plugins-wordpress.md` (o una ruta compartida) y referenciarla desde `AGENTS.md` para que el agente la lea cuando la tarea lo requiera.
+- Esta guia no se copia dentro de `AGENTS.md`: guardarla sin editar en `docs/plugins-wordpress.md` del plugin y referenciarla desde `AGENTS.md` para que el agente la lea cuando la tarea lo requiera. Comparar `Version de la guia` con la original para detectar copias viejas.
 - Si una regla de esta guia no aplica a un plugin puntual, dejarlo explicito en `AGENTS.md` en lugar de borrarla silenciosamente.
 
 ## Proyecto
@@ -34,7 +36,9 @@ Completar esta seccion al iniciar un plugin nuevo:
 - AJAX / admin-post / REST:
 - Cron jobs:
 - Integraciones:
+- Datos personales (que se guarda, para que, por cuanto tiempo y a que terceros se envia):
 - Dependencias:
+- Repositorio y visibilidad:
 - Entorno local (URL, ruta PHP, WP-CLI disponible):
 - Comandos de validacion:
 
@@ -61,7 +65,7 @@ Antes de modificar codigo:
 2. Ejecutar o revisar `git status --short` si es posible.
 3. No revertir cambios locales del usuario.
 4. Mantener el cambio acotado al pedido.
-5. No introducir frameworks, Composer o dependencias externas sin confirmacion.
+5. No introducir frameworks ni dependencias de produccion sin confirmacion. Composer se permite sin consulta solo como dependencia de desarrollo (`require-dev`) para PHPCS y PHPUnit.
 6. No cambiar slugs, nombres de opciones, CPTs, meta keys, tablas o campos ACF existentes sin plan de compatibilidad o migracion.
 7. Ante decisiones que afecten datos persistentes (borrado, migraciones, renombres), consultar antes de implementar.
 
@@ -72,15 +76,16 @@ Al finalizar cada tarea:
 3. Actualizar `AGENTS.md` si se agregaron reglas, arquitectura, convenciones o flujos nuevos.
 4. Indicar archivos modificados y validaciones ejecutadas (o recomendadas si no se pudieron ejecutar).
 5. Proponer tests manuales cuando no exista suite automatica.
+6. Repasar el `Checklist de cierre`.
 
 ## Stack base
 
-- PHP (version minima definida en `Proyecto`).
+- PHP 8.3 o superior, salvo que el hosting real del cliente exija otra version: definirla en `Proyecto` y validar con esa misma version. No usar como minimo de un plugin nuevo una version sin soporte de seguridad.
 - WordPress Plugin API.
 - JavaScript o jQuery solo cuando sea necesario.
 - HTML/CSS para vistas admin o frontend.
 - ACF opcional, si el plugin lo requiere.
-- Composer opcional, solo si el proyecto ya lo usa o se confirma su incorporacion.
+- Composer para herramientas de desarrollo. Dependencias de produccion solo si el proyecto ya las usa o se confirma su incorporacion.
 
 ## Estructura recomendada
 
@@ -91,7 +96,12 @@ plugin-name/
 |-- AGENTS.md
 |-- CLAUDE.md
 |-- README.md
+|-- CHANGELOG.md
 |-- composer.json
+|-- phpcs.xml.dist
+|-- phpunit.xml.dist
+|-- .gitattributes
+|-- .github/workflows/ci.yml
 |-- autoload.php
 |-- src/
 |   |-- Bootstrap/
@@ -147,12 +157,24 @@ plugin-name/
 |   |-- Frontend/
 |   `-- Support/
 |-- templates/
-`-- assets/
+|-- assets/
+|-- CHANGELOG.md
+|-- composer.json
+|-- phpcs.xml.dist
+|-- .gitattributes
+`-- .github/workflows/ci.yml
 ```
 
 Cuando el plugin crezca, `src/Admin` y `src/Frontend` migran a `src/UI/Admin` y `src/UI/Frontend`, y la logica de negocio que haya en ellos se extrae a `Domain` o `Application`. Documentar en `AGENTS.md` cual de las dos estructuras usa el plugin.
 
 El objetivo no es demostrar arquitectura, sino construir plugins mantenibles, seguros y faciles de evolucionar. La arquitectura debe justificar su costo: separar capas cuando reduzca acoplamiento real, facilite testing o permita cambiar infraestructura sin tocar reglas de negocio.
+
+Criterios para elegir:
+
+- Estructura simple: sin integraciones externas ni reglas de negocio propias.
+- Agregar `Domain`: hay reglas que conviene probar sin WordPress.
+- Agregar `Application`: hay flujos con varios pasos o varias entradas (admin, cron, REST).
+- Ninguna clase o vista deberia superar 400 lineas: dividir por responsabilidad.
 
 ## Archivo principal del plugin
 
@@ -176,7 +198,7 @@ Ejemplo:
  * Description:       Plugin description.
  * Version:           1.0.0
  * Requires at least: 6.4
- * Requires PHP:      8.1
+ * Requires PHP:      8.3
  * Author:            Hernan Cardoso
  * Author URI:        https://www.linkedin.com/in/cardosohernan/
  * License:           GPL-2.0-or-later
@@ -236,7 +258,8 @@ Convenciones:
 - Clases en `PascalCase`, un archivo por clase con el mismo nombre (`Plugin.php` contiene `Plugin`).
 - Metodos en `camelCase`.
 - Constantes en `UPPER_SNAKE_CASE`.
-- Hooks, options, meta keys, nonces, AJAX actions, cron events, handles y tablas con prefijo unico del plugin.
+- Hooks, options, meta keys, nonces, AJAX actions, cron events, handles, tablas, shortcodes, constantes y funciones globales con prefijo unico del plugin.
+- El codigo nuevo va en clases con namespace. Evitar funciones globales: un nombre generico como `get_ip()` puede causar un error fatal si otro plugin lo declara.
 - Evitar strings repetidos: usar constantes de clase para slugs, post types, option names y action names.
 - Si el plugin expone hooks propios para extension, usar el prefijo (`plugin_name_before_save`) y documentarlos en `README.md`.
 
@@ -287,6 +310,14 @@ No mezclar includes manuales por todos lados. Centralizar carga en `autoload.php
 Si el plugin se distribuye a sitios de terceros con librerias Composer populares (por ejemplo PhpSpreadsheet), considerar prefijar dependencias con Strauss o PHP-Scoper para evitar conflictos de versiones con otros plugins.
 
 ## Capas
+
+### Regla de dependencias
+
+`UI -> Application -> Domain`. `Infrastructure` implementa los detalles tecnicos.
+
+- `Domain` no depende de ninguna otra capa ni de WordPress.
+- `Application` no usa `$wpdb`, superglobales ni HTML.
+- Crear una interfaz solo si hay una integracion externa, mas de una implementacion o necesidad real de sustituirla en tests.
 
 ### Domain
 
@@ -382,6 +413,11 @@ public function hideForeignNotices(): void
 - Si la vista del plugin imprime avisos propios, excluir tambien su selector de esa regla.
 - Comprobar la pantalla en el navegador. Los overlays y punteros de otros plugins no quedan cubiertos: resolverlos solo si molestan.
 
+Avisos despues de una accion:
+
+- Guardar el resultado en un transient por usuario, no en la URL: un link armado podria mostrarle texto falso a un administrador.
+- Leerlo una sola vez y borrarlo al mostrarlo.
+
 ### UI/Frontend
 
 Contiene shortcodes, render publico, templates, assets frontend y AJAX publico.
@@ -455,6 +491,7 @@ Usar hooks de ciclo de vida solo para tareas propias de instalacion, limpieza o 
 
 Activation:
 
+- Debe ser idempotente y nunca borrar datos: reactivar un plugin no puede cambiar datos existentes.
 - Crear tablas personalizadas si aplica.
 - Guardar defaults iniciales.
 - Registrar roles o capabilities si el plugin los necesita.
@@ -470,8 +507,8 @@ Uninstall:
 
 - Borrar opciones, tablas o archivos solo si el comportamiento esta documentado.
 - Nunca borrar datos del usuario sin confirmacion clara o setting explicito (por ejemplo `plugin_name_delete_data_on_uninstall`).
-- Preferir `uninstall.php` y validar al inicio `if (!defined('WP_UNINSTALL_PLUGIN')) { exit; }`.
-- Si se usa `register_uninstall_hook()`, el callback debe ser una funcion o metodo estatico (no closures ni metodos de instancia).
+- `uninstall.php` es obligatorio si el plugin guarda tablas, opciones o archivos, aunque decida conservarlos: debe documentar que borra y que no.
+- Validar al inicio `if (!defined('WP_UNINSTALL_PLUGIN')) { exit; }`.
 
 Actualizaciones y migraciones:
 
@@ -491,6 +528,7 @@ Si el plugin usa cron jobs:
 - Usar action names con prefijo unico del plugin.
 - Limpiar eventos en deactivation (`wp_clear_scheduled_hook()`).
 - No ejecutar tareas pesadas en cada request.
+- Procesar el trabajo largo por lotes, con un lock contra ejecuciones superpuestas.
 - Delegar la tarea programada a un servicio o caso de uso.
 - Loguear errores relevantes sin exponer datos sensibles.
 - WP-Cron depende de visitas; si la tarea es critica, documentar el uso de un cron real del sistema.
@@ -507,6 +545,7 @@ Para pantallas de configuracion:
 - Preferir una sola opcion serializada (`plugin_name_settings`) antes que muchas opciones sueltas.
 - Opciones grandes o de uso poco frecuente: guardarlas con autoload desactivado.
 - Secretos (API keys, tokens): preferir constantes en `wp-config.php` y usar la opcion solo como fallback. Nunca mostrarlos completos en pantalla.
+- El formulario nunca reimprime un secreto, ni siquiera en un campo `password`: dejar el campo vacio y conservar el valor actual si no se envia uno nuevo.
 
 ## Seguridad WordPress
 
@@ -567,7 +606,7 @@ check_admin_referer('plugin_name_save_settings');        // admin / admin-post
 check_ajax_referer('plugin_name_save_lead', 'nonce');    // AJAX
 ```
 
-Un nonce no es autorizacion: siempre combinarlo con `current_user_can()`. En AJAX publico (`nopriv`) el nonce protege contra CSRF pero no autentica; aplicar validaciones y, si corresponde, rate limiting. Tener en cuenta que el cache de pagina puede servir nonces vencidos.
+Un nonce no es autorizacion: siempre combinarlo con `current_user_can()`. En AJAX publico (`nopriv`) el nonce protege contra CSRF pero no autentica: aplicar validaciones, y rate limiting obligatorio si el endpoint consulta datos, escribe o llama a un servicio externo. La respuesta no debe revelar si un email u otro dato existe. Tener en cuenta que el cache de pagina puede servir nonces vencidos.
 
 Permisos:
 
@@ -604,6 +643,22 @@ Para imports Excel:
 - Normalizar datos antes de persistirlos.
 - Persistir conteos como enteros no negativos.
 - Para archivos grandes, procesar por lotes y contemplar limites de memoria y tiempo de ejecucion.
+
+### Exportaciones CSV
+
+- Exigir capability y nonce.
+- Neutralizar formulas: anteponer `'` a las celdas que empiecen con `=`, `+`, `-`, `@`, tab o CR.
+- No mostrar mensajes de excepcion al usuario.
+
+### Datos personales
+
+Aplica a emails, IPs, nombres y cualquier dato que identifique a una persona.
+
+- Documentar en `AGENTS.md` que datos se guardan, para que, por cuanto tiempo y a que terceros se envian.
+- Si hay consentimiento, guardar la fecha y la version del texto aceptado.
+- Nunca reactivar en un servicio externo a un contacto dado de baja.
+- Enviar a un tercero solo lo necesario y por HTTPS.
+- Integrar los exportadores y borradores de datos personales de WordPress (`wp_privacy_personal_data_exporters` y `wp_privacy_personal_data_erasers`).
 
 ## AJAX, admin-post y REST API
 
@@ -654,7 +709,29 @@ add_action('rest_api_init', function (): void {
 - Nombres de tabla con `$wpdb->prefix . 'plugin_name_items'`, centralizados en el repositorio.
 - Usar `$wpdb->insert()`, `$wpdb->update()` y `$wpdb->delete()` con arrays de formato cuando sea posible.
 - Verificar el resultado de cada operacion y loguear `$wpdb->last_error` cuando falle, sin mostrarlo al usuario.
+- Si falla una escritura, el repositorio lanza una excepcion. Una transaccion solo sirve si esos fallos la interrumpen.
 - Preferir CPTs + meta cuando el dato encaje en el modelo de WordPress; usar tablas propias cuando haya volumen, consultas complejas o estructura relacional.
+
+## Integraciones externas
+
+- Timeout explicito en toda llamada; solo HTTPS.
+- Validar el codigo HTTP y la forma de la respuesta antes de usarla.
+- No encadenar llamadas bloqueantes al renderizar una pantalla ni dentro de un request publico: diferirlas (cron o Action Scheduler) o pedirlas por AJAX.
+- Con redirecciones manuales, usar una allowlist de hosts.
+- Definir que pasa si el servicio falla y como se registra.
+- Confirmar que la licencia del servicio permite el uso comercial.
+
+## Integraciones con IA
+
+- Usar el AI Client de WordPress (`wp_ai_client_prompt()`, WordPress 7.0+) cuando el plugin no exija un proveedor concreto.
+- Comprobar `is_supported_for_text_generation()` antes de ofrecer la funcion.
+- `generate_text()` devuelve `string|WP_Error`; `generate_text_result()` devuelve un objeto, no un string.
+- El modelo es una preferencia: el plugin debe funcionar sin el.
+- La IA es opcional salvo que sea el objetivo del plugin: definir un fallback.
+- Tratar su salida como no confiable: validar, sanitizar y escapar.
+- Las acciones que publican o modifican datos requieren revision humana.
+- Probar el camino real, no solo el fallback.
+- Exponer acciones a agentes (Abilities API) solo si hace falta, con permisos especificos.
 
 ## ACF
 
@@ -716,8 +793,8 @@ Si el plugin usa logs:
 - Registrar errores relevantes de imports, uploads, integraciones y procesos administrativos.
 - No mostrar stack traces, rutas absolutas ni detalles internos al usuario final; esos detalles deben ir al log.
 - No commitear `.log`.
-- Documentar politica de rotacion o limpieza si el volumen puede crecer.
-- No loguear secretos, tokens, passwords ni payloads sensibles.
+- La rotacion y la retencion son obligatorias: definir tamano maximo o antiguedad y documentarlas.
+- No loguear secretos, tokens, passwords ni payloads sensibles. Emails e IPs van con hash, salvo necesidad justificada.
 - Incluir contexto util: `post_id`, `user_id`, `status`, `http_code`, `action`.
 - Usar niveles: `info`, `warning`, `error`, `exception`.
 
@@ -770,40 +847,121 @@ Reglas:
 - Si el plugin no se distribuye por wordpress.org, cargar traducciones con `load_plugin_textdomain('plugin-name', false, dirname(MY_PLUGIN_BASENAME) . '/languages')` en `init`.
 - Usar `sprintf()` con placeholders y comentarios `/* translators: */` en lugar de concatenar textos.
 
-## Validacion recomendada
+## Accesibilidad
 
-Sintaxis PHP:
+- Foco visible y navegacion por teclado.
+- Modales con `role="dialog"`, `aria-modal`, cierre con Esc y foco atrapado.
+- Labels en los formularios y `alt` en las imagenes.
+- No comunicar estados solo por color.
 
-```bash
-php -l plugin-name.php
-php -l src/Path/File.php
-```
+## Calidad automatizada
 
-Si hay Composer:
+Minimo obligatorio en todo plugin nuevo:
 
-```bash
-composer install
-composer dump-autoload
-```
+- `php -l` y PHPCS en GitHub Actions, en cada push y PR.
+- Los errores de PHPCS bloquean; las advertencias se revisan.
+- Solo se admite `phpcs:ignore` en la linea afectada y con motivo.
+- PHPUnit para `Domain` si existe, sin levantar WordPress.
+- Sin `Domain`: pruebas manuales documentadas en `docs/` o `README.md`.
 
-Herramientas opcionales recomendadas (via Composer dev):
-
-- PHPCS con WordPress Coding Standards (`wp-coding-standards/wpcs`): detecta falta de escaping, nonces y sanitizacion. Usar un `phpcs.xml.dist` que excluya las reglas de nombres que chocan con esta guia (`WordPress.NamingConventions.ValidFunctionName`, `WordPress.NamingConventions.ValidVariableName`, `WordPress.Files.FileName`), ya que aqui se usa PSR-4 y `camelCase`.
-- PHPStan con `szepeviktor/phpstan-wordpress` para analisis estatico.
-
-Si hay JavaScript o CSS, validar manualmente o con herramientas disponibles.
+PHPStan con `szepeviktor/phpstan-wordpress` es opcional. Si hay JavaScript o CSS, validar manualmente o con herramientas disponibles.
 
 Documentar en la seccion `Proyecto` los comandos exactos de validacion para que el agente pueda ejecutarlos.
 
+`composer.json`:
+
+```json
+{
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+    "phpunit/phpunit": "^11.5"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
+}
+```
+
+`phpcs.xml.dist` (reglas de seguridad, sin el estilo de WPCS, que choca con PSR-4 y `camelCase`):
+
+```xml
+<?xml version="1.0"?>
+<ruleset name="Plugin">
+  <file>.</file>
+  <exclude-pattern>/vendor/*</exclude-pattern>
+  <exclude-pattern>/node_modules/*</exclude-pattern>
+  <exclude-pattern>/dist/*</exclude-pattern>
+  <exclude-pattern>/tests/*</exclude-pattern>
+  <arg name="extensions" value="php"/>
+  <config name="ignore_warnings_on_exit" value="1"/>
+  <rule ref="WordPress.Security">
+    <exclude name="WordPress.Security.EscapeOutput.ExceptionNotEscaped"/>
+  </rule>
+  <rule ref="WordPress.DB.PreparedSQL"/>
+  <rule ref="WordPress.DB.PreparedSQLPlaceholders"/>
+  <rule ref="WordPress.WP.I18n"/>
+  <rule ref="WordPress.PHP.DevelopmentFunctions"/>
+</ruleset>
+```
+
+`.github/workflows/ci.yml`:
+
+```yaml
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: composer
+      - run: composer install --no-interaction --no-progress
+      - name: Sintaxis
+        run: find . -name '*.php' -not -path './vendor/*' -not -path './node_modules/*' -print0 | xargs -0 -n1 php -l
+      - run: vendor/bin/phpcs
+      - name: Tests
+        if: hashFiles('phpunit.xml.dist') != ''
+        run: vendor/bin/phpunit
+```
+
+`phpunit.xml.dist`:
+
+```xml
+<?xml version="1.0"?>
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+  <testsuites>
+    <testsuite name="unit">
+      <directory>tests/Unit</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>
+```
+
+`tests/bootstrap.php` (las clases protegen su carga con `ABSPATH`):
+
+```php
+<?php
+
+declare(strict_types=1);
+
+define('ABSPATH', __DIR__ . '/');
+
+require __DIR__ . '/../autoload.php';
+```
+
 ## Testing
 
-La cobertura debe escalar con el riesgo del cambio.
+El minimo esta en `Calidad automatizada`. Por encima de ese minimo, la cobertura debe escalar con el riesgo del cambio:
 
-Opciones recomendadas:
-
-- `php -l` para validacion sintactica minima.
-- Tests manuales documentados cuando no exista suite automatica.
-- PHPUnit + Brain Monkey para logica desacoplada de WordPress.
+- Brain Monkey cuando la logica a probar llama funciones de WordPress.
 - Tests de integracion en un WordPress local cuando el cambio toque hooks, AJAX, admin-post, REST, CPTs, tablas o migraciones.
 
 Priorizar tests en:
@@ -841,7 +999,7 @@ Formato recomendado:
 ## Technology Chips
 
 ![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-8.1%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?style=for-the-badge&logo=php&logoColor=white)
 ![Composer](https://img.shields.io/badge/Composer-885630?style=for-the-badge&logo=composer&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-Custom%20Tables-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ```
@@ -862,9 +1020,43 @@ Actualizar `AGENTS.md` cuando se agregue:
 
 `CLAUDE.md` solo contiene la linea `@AGENTS.md` (y, si hace falta, instrucciones exclusivas de Claude Code). La fuente de verdad es `AGENTS.md`.
 
+## Repositorio y release
+
+- Repos de clientes: privados por defecto.
+- Nunca commitear emails personales, datos de clientes, logs ni secretos.
+- Hallazgos de seguridad abiertos: solo en repos privados.
+- Paquete reproducible: `.gitattributes` con `export-ignore` y, si hay dependencias de produccion, `composer install --no-dev`.
+- Version alineada entre header, constante y tag.
+- `CHANGELOG.md` actualizado en cada release.
+
+`.gitattributes`:
+
+```text
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+
+/docs export-ignore
+/tests export-ignore
+/.github export-ignore
+/.vscode export-ignore
+/.claude export-ignore
+/composer.json export-ignore
+/composer.lock export-ignore
+/phpcs.xml.dist export-ignore
+/phpunit.xml.dist export-ignore
+*.md export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+```
+
+Si el plugin tiene dependencias de produccion, generar `vendor/` con `--no-dev` e incluirlo en el paquete.
+
 ## Commit convencional
 
 Cada respuesta final debe incluir una sugerencia de commit.
+
+Los commits, las descripciones de PR y los comentarios se publican solo con la identidad del autor del repositorio. Los agentes IA no firman: sin `Co-Authored-By`, sin "Generated with Claude Code" ni marcas equivalentes, y sin enlaces de sesion.
 
 Formato:
 
@@ -901,7 +1093,7 @@ Crear `.vscode/settings.json`:
 
 ```json
 {
-  "intelephense.environment.phpVersion": "8.1.0",
+  "intelephense.environment.phpVersion": "8.3.0",
   "intelephense.stubs": [
     "wordpress",
     "superglobals",
@@ -937,6 +1129,14 @@ Notas:
 
 - Al definir `intelephense.stubs` se reemplaza la lista por defecto. Incluir `superglobals` evita el falso positivo `Undefined variable '$_POST'` sin necesidad de desactivar `intelephense.diagnostics.undefinedVariables`, que oculta errores reales.
 - Ajustar `intelephense.environment.phpVersion` a la version minima del plugin y `php.validate.executablePath` a la ruta real de PHP en Laragon.
+
+## Checklist de cierre
+
+- [ ] CI en verde.
+- [ ] Nonce, capability, sanitizacion y escaping en todo lo tocado.
+- [ ] Activar, desactivar y reactivar sin perder datos.
+- [ ] Probado sin plugins opcionales y con el servicio externo caido.
+- [ ] `README.md`, `AGENTS.md` y `CHANGELOG.md` actualizados.
 
 ## Principios finales
 
