@@ -20,7 +20,7 @@ Senior Full Stack Engineer with 18+ years of experience building, maintaining an
 - **Languages:** TypeScript, JavaScript, PHP, SQL, HTML, CSS
 - **Frontend:** React, Vite, Material UI, MUI X DataGrid, Apollo Client, React Router, React Query, React Hook Form, Zod, i18next
 - **Backend / Data:** Node.js, NestJS, Express, Laravel, REST APIs, GraphQL (Apollo, subscriptions), PostgreSQL, MySQL, MongoDB, Mongoose
-- **AI:** Generative AI, LLMs, OpenAI API, function calling, Google Gemini, Google Apps Script, Gmail/Drive/Sheets APIs, Twilio WhatsApp API, Zapier, human-in-the-loop workflows, AI-assisted development (Claude Code, Codex)
+- **AI:** Generative AI, LLMs, OpenAI API, function calling, Google Gemini, Google Apps Script, Gmail/Drive/Sheets APIs, Twilio WhatsApp API, Zapier, human-in-the-loop workflows, agentic development (Claude Code, Codex, subagents, custom skills), MCP, Playwright
 - **Architecture:** Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, design patterns, OOP
 - **WordPress:** Plugin development, REST API, WP-Cron, custom tables, ACF, Custom Post Types, web application security (nonces, reCAPTCHA v3, rate limiting), Mailchimp, YouTube Data API
 - **DevOps:** Docker, Docker Compose, GitHub Actions, GitLab CI/CD, AWS, Vercel, NGINX, PM2, Git
@@ -28,7 +28,7 @@ Senior Full Stack Engineer with 18+ years of experience building, maintaining an
 ## Professional Strengths
 
 - **Ownership & Client Communication:** Own client projects end to end, from requirements and technical decisions to delivery and support, working directly with clients and non-technical stakeholders. Previously led development teams and worked as Scrum Master.
-- **Deliberate Technical Decisions:** Validate ideas with low-cost POCs, document architecture decisions and work with AI coding agents (Claude Code, Codex) under explicit rules and tests. Deep PHP and WordPress experience to modernize existing systems within production constraints.
+- **Deliberate Technical Decisions:** Validate ideas with low-cost POCs, document architecture decisions and work with AI coding agents (Claude Code, Codex) under explicit rules, cross-agent code review and browser QA. Deep PHP and WordPress experience to modernize existing systems within production constraints.
 
 ## Professional Experience
 
@@ -41,8 +41,8 @@ Full-time · Remote · proyecto404.com
 - **Portal Expensas:** build interfaces and business workflows for condominium administration (settlements, payroll, payments, units, suppliers and documents) with React, TypeScript, Material UI and Apollo GraphQL, including real-time support tickets over GraphQL subscriptions. Apply Clean Architecture, CQRS and the Presenter Pattern to keep business logic separate from UI and infrastructure.
 - **Portal de Aliados - Fanki:** B2B portal for event operations, sales, payments, attendance and business metrics. Dashboards, exportable reports and role-based interfaces with React, TypeScript and Material UI.
 - **News Kiosk:** frontend and backend work on a news analysis platform for a US client: search interfaces, dashboards, saved searches, PDF viewing and email sharing with React, React Query, Node.js, Express and MongoDB.
+- Agentic development workflow: Claude Code implements and Codex reviews the code and runs browser QA with Playwright on each acceptance criterion, recording video evidence for the Jira ticket. Custom skills and MCP integrations keep agents within team conventions.
 - Configure AWS environments and CI/CD workflows with GitHub Actions, Docker and Docker Compose to support application delivery and deployment.
-- Work directly with clients and teammates to clarify requirements, discuss technical decisions and deliver maintainable solutions.
 
 ### Insider Latam - Full Stack & AI Automation Developer
 

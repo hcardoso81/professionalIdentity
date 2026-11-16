@@ -27,6 +27,15 @@ Responsabilidades:
 - Aplicacion de Clean Architecture, CQRS y Presenter Pattern; desde 2026 el repositorio compila varios portales desde un core compartido.
 - Pipeline de despliegue con GitHub Actions, Docker, GitHub Container Registry, AWS Lightsail y Traefik, incluyendo flujo de hotfixes por tags.
 - Integracion con GraphQL, Apollo, Material UI, MUI X DataGrid, React Router e i18next.
+- Mantenimiento de las guias de pantalla del Copilot del portal (asistente de IA integrado que las consulta con la tool `get_screen_guide`), actualizadas con cada cambio de pantalla. Las tools del Copilot las construyo principalmente otro integrante del equipo: no presentarlo como autor del asistente.
+- Flujo de desarrollo con agentes (2026), definido en el repo con `CLAUDE.md`, skills y subagentes:
+  - Claude Code es el unico interlocutor: propone el plan, implementa, corre lint y build, y lanza a Codex por detras para definir y verificar.
+  - Codex arma borradores de tickets de Jira (busca duplicados, analiza el codigo, saca capturas); Claude los publica con su aprobacion.
+  - Codex hace el QA en el navegador con Playwright contra los criterios de aceptacion y graba videos por criterio que se adjuntan al ticket de Jira junto con el link al PR; despues revisa el diff en solo lectura con una guia de code review (arquitectura, i18n, reutilizacion, clean code, eficiencia). Claude corrige lo que falla y abre el PR.
+  - Skills propias: `/tarea` y `/entregar` (sprint board en Notion, lint/build, subagente `qa-e2e`, PR), verificacion posterior al deploy de produccion y `/sync-copilot` con hook de pre-push.
+  - Integraciones MCP y por API: Jira, Notion, Playwright y GitHub CLI. Perfiles de Codex con solo las herramientas necesarias para controlar el costo por paso.
+  - El proyecto no tiene suite de tests automatizados (Vitest fue removido): no publicar "tests unitarios" para este proyecto; la verificacion es lint, build y QA en navegador con evidencia.
+  - Publicable solo a nivel general (sin nombres de herramientas internas, del Jira del cliente ni de personas).
 
 ### Agosto 2024 - abril 2025
 
