@@ -163,6 +163,9 @@ In 2026, built applied AI systems for clients: an editorial automation pipeline 
 - Gmail-to-content editorial workflows
 - Structured JSON outputs and human-in-the-loop review
 - AI-assisted development with coding agents (Claude Code, Codex, AGENTS.md)
+- Agentic development workflows: subagentes, skills propias, revision cruzada entre agentes (Claude implementa, Codex revisa y hace QA)
+- MCP (Model Context Protocol): Jira, Notion, Playwright, Google Sheets
+- Playwright para QA en navegador con evidencia en video
 - Twilio WhatsApp API
 - Agora RTC
 - Socket.IO
@@ -194,6 +197,8 @@ Periodo: noviembre 2023 - actualidad
 - Colaboracion con clientes y equipos internacionales; trabajo integramente en ingles con el cliente de EE.UU. de News Kiosk (hasta 2025).
 - Pipeline de despliegue de Portal Expensas con GitHub Actions, Docker, GHCR, AWS Lightsail y Traefik.
 - Tickets en tiempo real con GraphQL subscriptions sobre WebSocket.
+- Flujo de desarrollo con agentes en Portal Expensas: Claude Code implementa y delega en Codex la revision de codigo y el QA en navegador con Playwright por criterio de aceptacion, con video como evidencia en el ticket de Jira; skills propias, subagentes e integraciones MCP. Publicar solo a nivel general. Sin suite de tests automatizados en ese proyecto.
+- Mantenimiento de las guias de pantalla que consulta el asistente de IA integrado al portal (no es autor del asistente).
 
 Proyectos asociados:
 
@@ -309,7 +314,7 @@ Resumen de proyectos principales:
 
 ## Keywords Para LinkedIn / ATS
 
-React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, GHCR, AWS, AWS Lightsail, Traefik, Vercel, GraphQL Subscriptions, WebSockets, Kubernetes, Helm, LLM Integration, Applied AI, Multimodal AI, Gemini API, Google Apps Script, Google Workspace APIs, AI Automation, AI-assisted Development, Claude Code, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
+React, TypeScript, Senior Frontend Engineer, Senior Full Stack Engineer, Clean Architecture, Hexagonal Architecture, CQRS, Presenter Pattern, Material UI, MUI DataGrid, React Query, GraphQL, Apollo, REST API, Node.js, NestJS, Express, MongoDB, Mongoose, PostgreSQL, MySQL, JWT, WordPress Plugin Development, PHP, Laravel, Docker, CI/CD, GitLab CI, GitHub Actions, GHCR, AWS, AWS Lightsail, Traefik, Vercel, GraphQL Subscriptions, WebSockets, Kubernetes, Helm, LLM Integration, Applied AI, Multimodal AI, Gemini API, Google Apps Script, Google Workspace APIs, AI Automation, AI-assisted Development, Claude Code, Codex, Agentic Workflows, AI Agents, MCP, Model Context Protocol, Playwright, Jira, Conversational AI, Function Calling, Structured Outputs, Hallucination Guardrails, AI Assistant, Workflow Automation, Zapier, Gmail, Human-in-the-loop, Twilio WhatsApp API, OpenAI API, Groq, dashboards, B2B platform, admin panel, business intelligence, reporting, data export, search platform, content management, news analytics, API integrations, legacy modernization.
 
 ## Fuente De Verdad
 
